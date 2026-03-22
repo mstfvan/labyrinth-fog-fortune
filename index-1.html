@@ -1,0 +1,2794 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Labyrinth">
+<meta name="application-name" content="Labyrinth: Fog & Fortune">
+<meta name="theme-color" content="#0e0f1a">
+<meta name="description" content="Sisi geç, serveti kazan! 25 bölümlük labirent macerası. Conquer the fog, seize the fortune!">
+<meta property="og:title" content="Labyrinth: Fog & Fortune">
+<meta property="og:description" content="Sisi geç, serveti kazan! 25 bölümlük labirent macerası.">
+<meta property="og:type" content="game">
+<meta property="og:url" content="https://labyrinthfogandfortune.netlify.app">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Labyrinth: Fog & Fortune</title>
+<meta name="author" content="Labyrinth: Fog &amp; Fortune">
+<meta name="copyright" content="© 2026 Labyrinth: Fog &amp; Fortune. All rights reserved.">
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}:root{--gem:#00d4ff;--gemneon:rgba(0,212,255,.8);--bg:#0e0f1a;--sf:#1a1d30;--br:#2e3258;--pl:#e8eaf6;--gn:#00ffaa;--gd:#ffbe30;--rd:#ff3355;--tx:#9aa0c0;--dm:#4a5080;--amber:#ffbe30;--warm:#e8eaf6}html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-family:'Oxanium',sans-serif;color:var(--tx);touch-action:none;user-select:none}.screen{display:none;width:100%;height:100%;position:absolute;top:0;left:0;flex-direction:column;align-items:center;justify-content:center}.screen.active{display:flex}#mnu{background:radial-gradient(ellipse at 30% 20%,rgba(80,120,255,.18) 0%,transparent 55%),radial-gradient(ellipse at 75% 75%,rgba(0,200,255,.10) 0%,transparent 50%),linear-gradient(160deg,#0a0c1a 0%,#0e1020 60%,#080a14 100%)}#mnu::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(80,130,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(80,130,255,.05) 1px,transparent 1px);background-size:38px 38px}#mnu::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 0%,rgba(80,140,255,.14) 0%,transparent 40%),radial-gradient(circle at 50% 100%,rgba(0,200,255,.08) 0%,transparent 40%)}.mnu-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}.mnu-emblem{width:clamp(60px,16vw,88px);height:clamp(60px,16vw,88px);border:3px solid var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:clamp(1.6rem,7vw,2.4rem);box-shadow:0 0 28px rgba(80,160,255,.4),inset 0 0 18px rgba(80,160,255,.15);margin-bottom:.5em;animation:emblem-pulse 3s ease-in-out infinite}@keyframes emblem-pulse{0%,100%{box-shadow:0 0 28px rgba(80,160,255,.4),inset 0 0 18px rgba(80,160,255,.15)}50%{box-shadow:0 0 52px rgba(80,160,255,.7),inset 0 0 30px rgba(80,160,255,.25)}}.T{display:none}.mnu-divider{width:clamp(120px,50vw,220px);height:3px;background:linear-gradient(90deg,transparent,#5080ff,#00d4ff,#5080ff,transparent);border-radius:2px;margin:.3em 0 .6em;box-shadow:0 0 12px rgba(80,160,255,.55)}.S{font-size:.58rem;letter-spacing:.14em;color:var(--tx);text-transform:uppercase;margin-bottom:1.8em;opacity:.85}.MB{font-family:'Oxanium',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.12em;padding:15px 50px;margin:.32em 0;min-width:240px;background:transparent;cursor:pointer;transition:all .22s;position:relative;overflow:hidden}.MB.primary{border:2.5px solid #5080ff;color:var(--warm);box-shadow:0 0 18px rgba(80,128,255,.3),inset 0 0 20px rgba(80,128,255,.07)}.MB.primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(80,128,255,.14),transparent 60%);opacity:0;transition:opacity .22s}.MB.primary:active::before{opacity:1}.MB.primary:active{box-shadow:0 0 32px rgba(80,128,255,.6),inset 0 0 24px rgba(80,128,255,.18)}.MB.secondary{border:2px solid var(--br);color:var(--tx);font-size:1rem;box-shadow:none}.MB.secondary:active{border-color:var(--tx);color:var(--warm)}.mhint{margin-top:1.6em;font-size:.5rem;letter-spacing:.1em;color:var(--dm);text-align:center;line-height:2.6}.mnu-gold{display:flex;align-items:center;gap:8px;font-family:'Oxanium',sans-serif;font-size:1.1rem;color:var(--gd);letter-spacing:.1em;background:rgba(0,200,255,.08);border:1.5px solid rgba(0,200,255,.3);border-radius:20px;padding:5px 18px;margin-bottom:1.4em;box-shadow:0 0 10px rgba(0,200,255,.18)}#chs{background:radial-gradient(ellipse at 50% 35%,#12152a,#0a0c18)}.cht{font-family:'Oxanium',sans-serif;font-weight:700;font-size:2rem;letter-spacing:.2em;color:var(--pl);margin-bottom:1.2em}.chgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;width:min(340px,86vw);margin-bottom:1.8em}.chb{aspect-ratio:1;border-radius:10px;border:1.5px solid rgba(80,120,200,.2);background:linear-gradient(145deg,rgba(20,24,45,.9),rgba(12,15,30,.95));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;transition:all .22s;box-shadow:0 2px 8px rgba(0,0,0,.4);position:relative;overflow:hidden}.chb::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .22s;background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.06),transparent 70%)}.chb:active::before{opacity:1}.chb.done{border-color:rgba(255,190,48,.5);background:linear-gradient(145deg,rgba(40,30,10,.9),rgba(20,18,5,.95));box-shadow:0 0 12px rgba(255,190,48,.15),0 2px 8px rgba(0,0,0,.4)}.chb.done::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,190,48,.06) 0%,transparent 60%)}.chb:active{transform:scale(.92)}.chb.locked{opacity:.22;pointer-events:none;filter:grayscale(.8)}.chn{font-family:'Oxanium',sans-serif;font-size:1.4rem;font-weight:800;color:var(--pl);line-height:1;position:relative;z-index:1}.chd{font-size:.34rem;letter-spacing:.07em;text-transform:uppercase;position:relative;z-index:1}.chs{font-size:.55rem;color:var(--gd);position:relative;z-index:1;text-shadow:0 0 8px rgba(255,190,48,.4)}#gms{background:#0a0c18}#cv{position:absolute;top:0;left:0;width:100%;height:100%;display:block;z-index:1}#hud{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:8px 12px;pointer-events:none;background:linear-gradient(to bottom,rgba(4,6,18,.95) 0%,rgba(4,6,18,.6) 70%,transparent 100%)}.hi{display:flex;flex-direction:column;align-items:center;gap:1px}.hl{font-size:.38rem;letter-spacing:.18em;color:rgba(100,140,200,.6);text-transform:uppercase}.hv{font-family:'Oxanium',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:.06em;color:var(--pl);line-height:1}.hv.g{color:var(--gn)}.hv.y{color:var(--gd)}.hv.r{color:var(--rd)}.hv.danger{color:var(--rd);animation:timer-shake .18s infinite}@keyframes timer-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-2px)}75%{transform:translateX(2px)}}.hv.warn{color:#ffbe30;animation:timer-pulse .6s ease-in-out infinite}@keyframes timer-pulse{0%,100%{opacity:1}50%{opacity:.55}}.hsep{width:1px;height:22px;background:rgba(80,120,200,.2)}#hud-timer-big{position:absolute;top:0;left:50%;transform:translateX(-50%);font-family:'Oxanium',sans-serif;font-weight:800;font-size:clamp(1.6rem,7vw,2.2rem);letter-spacing:.06em;color:var(--gd);text-shadow:0 0 20px rgba(255,190,48,.5);line-height:1;padding-top:6px;transition:color .3s,text-shadow .3s;pointer-events:none}#hud-timer-big.warn{color:#ffbe30;text-shadow:0 0 24px rgba(255,190,48,.8);animation:timer-pulse .6s ease-in-out infinite}#hud-timer-big.danger{color:var(--rd);text-shadow:0 0 28px rgba(255,51,85,.9);animation:timer-shake .18s infinite}#fxbar{position:absolute;top:52px;left:0;right:0;z-index:10;display:flex;gap:5px;justify-content:center;padding:0 10px;pointer-events:none}.fx{font-size:.44rem;letter-spacing:.09em;padding:2px 8px;border-radius:20px;border:1px solid;white-space:nowrap}.fx.g{border-color:rgba(0,255,170,.4);color:rgba(0,255,170,.85);background:rgba(0,255,170,.05)}.fx.y{border-color:rgba(255,209,102,.4);color:rgba(255,209,102,.85);background:rgba(255,209,102,.05)}.fx.b{border-color:rgba(100,180,255,.4);color:rgba(100,180,255,.9);background:rgba(100,180,255,.07)}.fx.o{border-color:rgba(255,160,80,.4);color:rgba(255,160,80,.85);background:rgba(255,160,80,.05)}#mapbtn{position:absolute;top:54px;right:12px;z-index:20;display:flex;flex-direction:column;align-items:center;border:2px solid rgba(255,144,32,.4);background:rgba(255,120,10,.07);border-radius:10px;padding:7px 10px;cursor:pointer;gap:2px;transition:opacity .3s,filter .3s}#mapbtn.used{opacity:.2;pointer-events:none;filter:grayscale(1)}#mapbtn span:first-child{font-size:1.1rem}#mapbtn .ml{font-size:.42rem;letter-spacing:.1em;color:rgba(255,160,60,.85);text-transform:uppercase}#mapbtn .ms{font-size:.38rem;color:var(--dm)}#toast{position:absolute;bottom:42%;left:50%;transform:translateX(-50%);z-index:30;font-family:'Oxanium',sans-serif;font-size:1.3rem;letter-spacing:.1em;padding:8px 18px;border-radius:8px;border:1px solid;pointer-events:none;opacity:0;white-space:nowrap}#toast.show{animation:tfly .85s ease forwards}@keyframes tfly{0%{opacity:0;transform:translateX(-50%) translateY(8px)}15%{opacity:1;transform:translateX(-50%) translateY(-6px)}75%{opacity:1;transform:translateX(-50%) translateY(-10px)}100%{opacity:0;transform:translateX(-50%) translateY(-18px)}}#toast.bon{color:var(--gn);border-color:rgba(0,255,170,.35);background:rgba(0,0,0,.85)}#toast.pen{color:var(--rd);border-color:rgba(255,51,85,.35);background:rgba(0,0,0,.85)}#toast.inf{color:var(--gd);border-color:rgba(255,190,48,.35);background:rgba(0,0,0,.85)}#fl{position:absolute;inset:0;z-index:12;pointer-events:none;background:transparent;transition:background .12s}#fl.r{background:rgba(255,51,85,.25)}#fl.b{background:rgba(100,170,255,.22)}#dpad{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:20;width:168px;height:168px;pointer-events:all}.dp{position:absolute;width:52px;height:52px;border-radius:50%;border:2px solid rgba(0,212,255,.35);background:radial-gradient(circle at 40% 35%,rgba(0,200,255,.18),rgba(0,100,180,.08));display:flex;align-items:center;justify-content:center;font-size:1.2rem;cursor:pointer;color:rgba(0,220,255,.6);transition:all .08s;box-shadow:0 0 8px rgba(0,200,255,.12),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(2px)}.dp:active,.dp.on{background:radial-gradient(circle at 40% 35%,rgba(0,220,255,.45),rgba(0,150,220,.25));border-color:rgba(0,220,255,.9);color:#00eeff;box-shadow:0 0 18px rgba(0,200,255,.7),inset 0 1px 0 rgba(255,255,255,.2);transform:scale(.93)}#dpu{top:0;left:58px}#dpd{bottom:0;left:58px}#dpl{top:58px;left:0}#dpr{top:58px;right:0}#dpm{top:58px;left:58px;border-radius:50%;border:1px solid rgba(0,200,255,.1);background:rgba(0,10,20,.4);font-size:.3rem;color:rgba(0,200,255,.3);letter-spacing:.04em;line-height:1.4;text-align:center;box-shadow:none}#inv{background:radial-gradient(ellipse at 50% 40%,#101a2a,#0a0c18)}.invt{font-family:'Oxanium',sans-serif;font-weight:700;font-size:1.8rem;letter-spacing:.2em;color:var(--pl);margin-bottom:.3em}.invsub{font-size:.52rem;letter-spacing:.18em;color:var(--dm);margin-bottom:.8em;text-align:center}.invgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:min(340px,88vw);margin-bottom:1.2em;max-height:48vh;overflow-y:auto}.invcard{background:var(--sf);border:2px solid var(--br);border-radius:10px;padding:11px 12px;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;gap:4px}.invcard:active{transform:scale(.96)}.invcard.active{border-color:#ffe600;background:rgba(255,230,0,.07);box-shadow:0 0 0 2px #ffe600,0 0 14px rgba(255,220,0,.7),0 0 28px rgba(255,200,0,.35)}.invcard.empty{opacity:.28;pointer-events:none;border-style:dashed}.invcard .iico{font-size:1.4rem}.invcard .inm{font-family:'Oxanium',sans-serif;font-size:.85rem;letter-spacing:.08em;color:var(--pl)}.invcard .idsc{font-size:.46rem;letter-spacing:.06em;color:var(--dm);line-height:1.5}.invcard .icnt{font-family:'Oxanium',sans-serif;font-size:.78rem;color:var(--gd);margin-top:2px}.invcard.active .inm{color:#ffe600;text-shadow:0 0 8px rgba(255,220,0,.8)}.invcard.active .icnt{color:#ffe600}.inv-note{font-size:.5rem;color:var(--dm);letter-spacing:.08em;margin-bottom:1em;text-align:center;opacity:.8;line-height:1.7}#win{background:radial-gradient(ellipse at 50% 40%,#101a28,#0a0c18)}.wch{font-family:'Oxanium',sans-serif;font-size:clamp(.9rem,4vw,1.15rem);letter-spacing:.12em;color:var(--dm);margin-bottom:.3em}.wtit{font-family:'Oxanium',sans-serif;font-weight:800;font-size:clamp(3rem,14vw,5rem);letter-spacing:.1em;color:var(--gn);line-height:1;text-shadow:0 0 60px rgba(0,255,170,.4);margin-bottom:.15em}.wstr{font-size:clamp(1.8rem,8vw,2.8rem);letter-spacing:.15em;color:var(--gd);text-shadow:0 0 18px rgba(255,209,102,.35);margin-bottom:.65em}.wrwbox{background:rgba(255,190,48,.07);border:2px solid rgba(255,190,48,.22);border-radius:10px;padding:10px 20px;margin-bottom:1em;text-align:center}.wrwlbl{font-size:.44rem;letter-spacing:.12em;color:rgba(255,190,48,.5);text-transform:uppercase;margin-bottom:4px}.wrwval{font-size:.95rem;color:var(--gd)}.wnewrw{background:rgba(0,255,170,.05);border:2px solid rgba(0,255,170,.2);border-radius:8px;padding:8px 16px;margin-bottom:.8em;text-align:center;font-size:.72rem;color:rgba(0,255,170,.8);letter-spacing:.1em}.wstat{font-size:.58rem;letter-spacing:.1em;color:var(--dm);margin-bottom:1.4em;line-height:2.2}.wstat b{color:var(--pl);font-weight:400}.brow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.WB{font-family:'Oxanium',sans-serif;font-weight:600;font-size:.95rem;letter-spacing:.2em;padding:12px 24px;border:2px solid;background:transparent;cursor:pointer;transition:all .2s;border-radius:3px}.WB.p{border-color:var(--gn);color:var(--gn);box-shadow:0 0 10px rgba(0,255,170,.15)}.WB.p:active{background:rgba(0,255,170,.12)}.WB.s{border-color:var(--br);color:var(--dm)}.WB.s:active{color:var(--tx);border-color:var(--tx)}#sco{background:radial-gradient(ellipse at 50% 50%,#10102a,#0a0c18)}.scot{font-family:'Oxanium',sans-serif;font-size:2rem;letter-spacing:.2em;color:var(--pl);margin-bottom:1.2em}.scol{width:min(330px,86vw);margin-bottom:1.8em}.scor{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.62rem;letter-spacing:.07em}.scor:first-child .scot2{color:var(--gd)}.scoi{color:var(--dm);width:18px;font-size:.5rem}.scot2{font-family:'Oxanium',sans-serif;font-size:1rem;color:var(--pl)}.scom{color:var(--dm);font-size:.5rem;text-align:right;line-height:1.8}.scoe{text-align:center;padding:20px;color:var(--dm);font-size:.58rem;letter-spacing:.15em}#cfg{background:radial-gradient(ellipse at 50% 40%,#10122a,#0a0c18)}.cfgt{font-family:'Oxanium',sans-serif;font-size:2rem;letter-spacing:.2em;color:var(--pl);margin-bottom:1.4em}.cfgbox{width:min(320px,88vw);display:flex;flex-direction:column;gap:14px;margin-bottom:2em}.cfgrow{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--sf);border:2px solid var(--br);border-radius:10px}.cfglbl{font-size:.6rem;letter-spacing:.14em;color:var(--tx)}.cfgsub{font-size:.44rem;color:var(--dm);margin-top:2px;letter-spacing:.06em}.slider-wrap{display:flex;align-items:center;gap:8px}.slider-wrap input[type=range]{width:90px;accent-color:var(--gd);cursor:pointer}.slider-val{font-family:'Oxanium',sans-serif;font-size:.85rem;color:var(--gd);min-width:28px;text-align:right}.tog{width:44px;height:26px;border-radius:13px;background:var(--br);border:2px solid rgba(255,255,255,.1);cursor:pointer;position:relative;transition:background .2s}.tog.on{background:rgba(255,144,32,.4);border-color:rgba(255,144,32,.5)}.tog::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--dm);transition:left .2s,background .2s}.tog.on::after{left:22px;background:var(--amber)}#shop{background:radial-gradient(ellipse at 50% 35%,#101428,#0a0c18)}.shopt{font-family:'Oxanium',sans-serif;font-weight:700;font-size:2rem;letter-spacing:.2em;color:var(--gd);margin-bottom:.3em}.shopsub{font-size:.5rem;color:var(--dm);letter-spacing:.15em;margin-bottom:1.2em}.shopbal{font-family:'Oxanium',sans-serif;font-size:1.4rem;color:var(--gd);margin-bottom:1.2em;letter-spacing:.08em}.shopgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:min(340px,88vw);margin-bottom:1.4em;max-height:52vh;overflow-y:auto}.shopcard{background:var(--sf);border:2px solid var(--br);border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;gap:5px;cursor:pointer;transition:all .2s}.shopcard:active{transform:scale(.96)}.shopcard.canbuy{border-color:rgba(255,190,48,.5);box-shadow:0 0 8px rgba(255,190,48,.08)}.shopcard.selected{border-color:#ffe600!important;box-shadow:0 0 0 2px #ffe600,0 0 16px rgba(255,220,0,.65),0 0 30px rgba(255,200,0,.3)!important}.shopcard.canbuy:active{background:rgba(255,190,48,.08)}.shopcard.nobuy{opacity:.35;pointer-events:none}.shopcard .sico{font-size:1.5rem}.shopcard .snm{font-family:'Oxanium',sans-serif;font-size:.82rem;letter-spacing:.07em;color:var(--pl)}.shopcard .sdsc{font-size:.42rem;letter-spacing:.05em;color:var(--dm);line-height:1.5}.shopcard .sprc{font-family:'Oxanium',sans-serif;font-size:.88rem;color:var(--gd)}@keyframes bonus-pop{0%{transform:scale(0.3) translateY(30px);opacity:0}50%{transform:scale(1.15) translateY(-10px);opacity:1}80%{transform:scale(0.95) translateY(0);opacity:.9}100%{transform:scale(0.4) translateY(-40px);opacity:0}}.adw{display:flex;flex-direction:column;align-items:center;gap:14px;padding:24px;width:min(320px,88vw)}.adtag{font-size:.48rem;letter-spacing:.14em;color:var(--dm);text-transform:uppercase;border:1px solid var(--br);padding:3px 10px}.adnum{font-family:'Oxanium',sans-serif;font-size:3.8rem;color:var(--gn);line-height:1;text-shadow:0 0 28px rgba(0,255,170,.5)}.adlbl{font-size:.54rem;letter-spacing:.18em;color:var(--dm)}.adprz{font-size:.6rem;letter-spacing:.12em;color:rgba(255,190,48,.7)}.adrew{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--sf);border:2px solid rgba(255,190,48,.3);border-radius:10px;cursor:pointer;transition:all .18s}.adrew:active{background:rgba(255,190,48,.08);transform:scale(.97)}.adrew.selected{border-color:#ffe600!important;box-shadow:0 0 0 2px #ffe600,0 0 14px rgba(255,220,0,.7)!important}.adrew .ar_ico{font-size:1.6rem;min-width:32px;text-align:center}.adrew .ar_info{flex:1}.adrew .ar_nm{font-family:'Oxanium',sans-serif;font-size:.9rem;letter-spacing:.08em;color:var(--pl)}.adrew .ar_dsc{font-size:.44rem;color:var(--dm);letter-spacing:.05em;margin-top:2px}.adrew .ar_tag{font-family:'Oxanium',sans-serif;font-size:.75rem;color:var(--gd);white-space:nowrap}.adtitle{font-family:'Oxanium',sans-serif;font-size:1.4rem;letter-spacing:.15em;color:var(--pl);margin-bottom:.8em;text-align:center}</style>
+</head>
+<body>
+
+<!-- MENU -->
+<div id="mnu" class="screen active">
+  <canvas id="mnu-cv" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+  <div class="mnu-inner">
+    <div class="mnu-emblem">🌫️</div>
+    <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:.2em;">
+      <div style="
+        font-family:'Oxanium',sans-serif;font-weight:800;
+        font-size:clamp(3rem,14vw,5.5rem);
+        letter-spacing:.08em;color:var(--warm);line-height:1;
+        text-shadow:2px 3px 0 rgba(0,0,0,.9),0 0 40px rgba(100,160,255,.55);">
+        LABYRINTH
+      </div>
+      <div style="
+        font-family:'Oxanium',sans-serif;font-weight:600;
+        font-size:clamp(.65rem,3vw,1rem);letter-spacing:.4em;
+        color:var(--gd);text-transform:uppercase;
+        text-shadow:0 0 14px rgba(255,190,48,.6);
+        margin-top:.1em;">
+        FOG &amp; FORTUNE
+      </div>
+    </div>
+    <div class="mnu-divider"></div>
+    <div class="S" id="mnu-tagline">Labirenti Çöz · Elmas Topla · Kazan</div>
+    <div class="mnu-gold">💎 <span id="MNU_gold">0</span> <span id="mnu-diamonds-lbl">ELMAS</span></div>
+    <button class="MB primary" onclick="showScreen('chs')" id="btn-play">▶ OYNA</button>
+    <button class="MB secondary" onclick="showScreen('shop')" id="btn-shop">💎 ELMAS DÜKKAN</button>
+    <button class="MB secondary" onclick="showScreen('sco')" id="btn-stats">📊 İSTATİSTİKLER</button>
+    <button class="MB secondary" onclick="showScreen('cfg')" id="btn-settings">⚙ AYARLAR</button>
+    <div class="mhint" id="mnu-hint">Ok / WASD · Kaydır · 💎 Elmas · 💀 Tuzak · 👻 Gizli Geçit</div>
+    <div style="margin-top:.8em;font-size:.38rem;letter-spacing:.08em;
+      color:var(--dm);opacity:.5;">
+      © 2026 Labyrinth: Fog &amp; Fortune
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTER SELECT -->
+<div id="chs" class="screen">
+  <div class="cht" id="chs-title">BÖLÜM SEÇ</div>
+  <div class="chgrid" id="cgrid"></div>
+  <button class="WB s" onclick="showScreen('mnu')">← GERİ</button>
+</div>
+
+<!-- GAME -->
+<div id="gms" class="screen">
+  <canvas id="cv"></canvas>
+  <div id="hud">
+    <div onclick="pauseAndGoMenu()" style="cursor:pointer;padding:5px 10px;border:1px solid rgba(0,200,255,.2);border-radius:20px;display:flex;align-items:center;gap:5px;background:rgba(0,10,30,.5);pointer-events:all;">
+      <span style="font-size:.85rem;color:rgba(0,200,255,.7);">◀</span>
+      <span style="font-family:Oxanium,sans-serif;font-size:.38rem;letter-spacing:.12em;color:rgba(0,200,255,.55);">MENÜ</span>
+    </div>
+    <div class="hi" style="margin-left:4px;">
+      <span class="hl">BÖLÜM</span>
+      <span class="hv y" id="H_ch" style="font-size:.9rem;">1</span>
+    </div>
+    <!-- Büyük süre ortada -->
+    <div id="hud-timer-big">00:00</div>
+    <div class="hi" style="margin-right:4px;">
+      <span class="hl">💎 ELMAS</span>
+      <span class="hv y" id="H_tg" style="font-size:.9rem;">0</span>
+    </div>
+    <div class="hi" style="display:none;"><span id="H_tm">00:00</span><span id="H_gd">0</span></div>
+  </div>
+  <div id="fxbar"></div>
+  <!-- Harita butonu - sağ üst -->
+  <div id="mapbtn" onclick="openAd()" style="position:absolute;top:54px;right:12px;z-index:26;display:flex;flex-direction:column;align-items:center;border:2px solid rgba(0,200,255,.4);background:rgba(0,200,255,.1);border-radius:10px;padding:7px 10px;cursor:pointer;gap:2px;transition:opacity .3s,filter .3s;">
+    <span style="font-size:1.1rem;">🗺</span>
+    <span style="font-size:.42rem;letter-spacing:.1em;color:rgba(0,200,255,.85);text-transform:uppercase;">Harita</span>
+  </div>
+  <div id="musicBtn" onclick="toggleMusic()" style="
+    position:absolute;top:54px;left:12px;z-index:20;
+    width:34px;height:34px;border-radius:50%;
+    border:1px solid rgba(255,180,80,.28);background:rgba(255,140,40,.06);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1rem;cursor:pointer;color:rgba(255,180,80,.8);
+    transition:opacity .3s;
+  ">🔊</div>
+  <div id="toast"></div>
+  <div id="fl"></div>
+  <!-- Süre bitti overlay — win ekranını ezmez -->
+  <div id="timesup-overlay" style="display:none;position:fixed;inset:0;z-index:300;
+    background:rgba(8,10,22,.96);align-items:center;justify-content:center;flex-direction:column;">
+  </div>
+  <!-- Geri sayım overlay -->
+  <div id="countdown-overlay" style="
+    display:none;position:absolute;inset:0;z-index:50;
+    background:rgba(8,10,22,.82);backdrop-filter:blur(3px);
+    display:none;align-items:center;justify-content:center;
+    pointer-events:none;
+  "></div>
+  <div id="dpad">
+    <div class="dp" id="dpu">▲</div>
+    <div class="dp" id="dpl">◄</div>
+    <div class="dp" id="dpm">HAR<br>EKE<br>T</div>
+    <div class="dp" id="dpr">►</div>
+    <div class="dp" id="dpd">▼</div>
+  </div>
+</div>
+
+<!-- REWARD INVENTORY — bölüm başı seçim -->
+<div id="inv" class="screen">
+  <div class="invt">⚔️ BÖLÜM HAZIRLIĞI</div>
+  <div class="invsub" id="inv_chname">Bölüm 1 — Işık Vadisi</div>
+  <!-- Depoda ne var özet -->
+  <div id="inv_bank_summary" style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:.8em;width:min(340px,88vw);"></div>
+  <div style="font-size:.48rem;color:var(--dm);letter-spacing:.1em;margin-bottom:.8em;">Depondaki güçlendirmeler otomatik uygulanır — veya kendin seç:</div>
+  <div class="invgrid" id="invgrid"></div>
+  <div class="inv-note" id="invnote">Seçili: 0/2</div>
+  <div class="brow" style="flex-direction:column;gap:8px;align-items:center;">
+    <button class="WB p" id="invstart" onclick="startWithRewards()">▶ BAŞLA</button>
+    <button class="WB s" style="font-size:.7rem;" onclick="watchAdForPower()">💎 + Elmas</button>
+    <button class="WB s" onclick="showScreen('mnu')">← MENÜ</button>
+  </div>
+</div>
+
+<!-- AD -->
+<div id="ads" class="screen">
+  <div class="adw">
+    
+    <div id="ad_reward_pick" style="width:100%;display:flex;flex-direction:column;gap:10px;"></div>
+    <div id="ad_countdown_box" style="display:none;text-align:center;">
+      <div class="adnum" id="AD_n">5</div>
+      <div class="adlbl">saniye sonra ödülünü alıyorsun</div>
+      <div class="adprz" id="ad_prz_lbl">🗺 Harita 5 saniye açılacak</div>
+      <div style="margin-top:12px;width:220px;height:4px;background:rgba(255,255,255,.08);border-radius:2px;">
+        <div id="ad_prog" style="height:4px;background:var(--gn);border-radius:2px;width:100%;transition:width 1s linear;"></div>
+      </div>
+    </div>
+    <button class="WB s" id="ad_cancel" onclick="cancelAd()" style="margin-top:12px;">✕ Vazgeç</button>
+  </div>
+</div>
+
+<!-- WIN -->
+<div id="win" class="screen">
+  <div class="wch" id="W_ch">BÖLÜM 1 TAMAMLANDI</div>
+  <div class="wtit">ÇIKIŞ!</div>
+  <div class="wstr" id="W_st">★★★</div>
+  <div class="wrwbox"><div class="wrwlbl">Ödül Kazanıldı</div><div class="wrwval" id="W_rw">🔮 Görüş Genişledi</div></div>
+  <div class="wnewrw" id="W_bank">🎒 Depoya eklendi!</div>
+  <div class="wstat" id="W_info"></div>
+  <div style="font-family:'Oxanium',sans-serif;font-size:1rem;color:#88eeff;letter-spacing:.12em;margin-bottom:.8em;">
+    TOPLAM 💎: <span id="W_tgold" style="font-size:1.3rem;color:#00d4ff;">0</span>
+  </div>
+  <div style="margin-bottom:.8em;">
+    <button class="WB" style="border-color:rgba(0,200,255,.4);color:#88eeff;font-size:.8rem;" onclick="openAdFromWin()">💎 + Elmas</button>
+  </div>
+  <div class="brow">
+    <button class="WB p" id="W_next" onclick="nextChap()">▶ SONRAKİ</button>
+    <button class="WB s" onclick="showScreen('chs')">BÖLÜM SEÇ</button>
+  </div>
+</div>
+
+<!-- SCORES -->
+<div id="sco" class="screen" style="justify-content:flex-start;padding-top:max(20px,4vh);">
+  <div class="scot" style="margin-bottom:.6em;" id="sco-title">📊 İSTATİSTİKLER</div>
+  <div class="scol" id="sclist" style="width:min(340px,92vw);max-height:72vh;overflow-y:auto;margin-bottom:.8em;"></div>
+  <button class="WB s" onclick="showScreen('mnu')" style="flex-shrink:0;margin-bottom:12px;">← GERİ</button>
+</div>
+
+<!-- SETTINGS -->
+<div id="cfg" class="screen">
+  <div class="cfgt" id="cfg-title">⚙ AYARLAR</div>
+  <div class="cfgbox">
+    <div class="cfgrow">
+      <div><div class="cfglbl">🎵 Müzik</div><div class="cfgsub">Arka plan müziği</div></div>
+      <div class="tog on" id="tog_music" onclick="toggleSetting('music')"></div>
+    </div>
+    <div class="cfgrow">
+      <div><div class="cfglbl">🔊 Müzik Seviyesi</div><div class="cfgsub">Ortam sesi şiddeti</div></div>
+      <div class="slider-wrap">
+        <input type="range" min="0" max="100" value="55" id="sl_music" oninput="setMusicVol(this.value)">
+        <span class="slider-val" id="sv_music">55</span>
+      </div>
+    </div>
+    <div class="cfgrow">
+      <div><div class="cfglbl">🥁 Adım Sesi</div><div class="cfgsub">Yürüyüş tıkırdaması</div></div>
+      <div class="tog on" id="tog_step" onclick="toggleSetting('step')"></div>
+    </div>
+    <div class="cfgrow">
+      <div><div class="cfglbl">🔔 Efekt Sesleri</div><div class="cfgsub">Elmas, hız, tuzak sesleri</div></div>
+      <div class="tog on" id="tog_sfx" onclick="toggleSetting('sfx')"></div>
+    </div>
+    <div class="cfgrow">
+      <div><div class="cfglbl">🔊 Efekt Seviyesi</div><div class="cfgsub">Ses efektleri şiddeti</div></div>
+      <div class="slider-wrap">
+        <input type="range" min="0" max="100" value="70" id="sl_sfx" oninput="setSfxVol(this.value)">
+        <span class="slider-val" id="sv_sfx">70</span>
+      </div>
+    </div>
+  </div>
+  <button class="WB s" onclick="showScreen('mnu')">← GERİ</button>
+</div>
+
+<!-- ELMAS DÜKKAN -->
+<div id="shop" class="screen">
+  <div class="shopt" style="margin-bottom:.1em;" id="shop-title">💎 DEPO</div>
+  <div style="font-family:Oxanium,sans-serif;font-size:1.5rem;color:var(--gd);letter-spacing:.08em;margin-bottom:.3em;">
+    💎 <span id="SH_bal">0</span> Elmas</div>
+  <div style="font-size:.44rem;color:var(--dm);letter-spacing:.12em;margin-bottom:.8em;">
+    Her güçlendirme 1💎 · Bölüm başında kullanılır</div>
+  <div style="margin-bottom:.7em;display:flex;gap:8px;">
+    <button class="WB" style="border-color:rgba(100,220,255,.4);color:#88eeff;font-size:.75rem;padding:7px 18px;" onclick="openAd('shop')">💎 + Elmas Kazan</button>
+  </div>
+  <div id="shopgrid" style="width:min(340px,92vw);display:flex;flex-direction:column;gap:7px;max-height:52vh;overflow-y:auto;margin-bottom:1em;"></div>
+  <button class="WB s" onclick="showScreen('mnu')">← GERİ</button>
+</div>
+
+<script>/*!
+ * ============================================================
+ *  LABYRINTH: FOG & FORTUNE
+ *  © 2026 Labyrinth: Fog & Fortune. Tüm hakları saklıdır.
+ *  All Rights Reserved. Tous droits réservés.
+ *  Bu yazılım telif hakkı yasaları ile korunmaktadır.
+ *  This software is protected by copyright laws.
+ *  Yetkisiz kopyalama, dağıtım veya değiştirme yasaktır.
+ *  Unauthorized copying, distribution or modification
+ *  is strictly prohibited and legally actionable.
+ *  TÜRKPATENT Marka Başvurusu / Trademark Application
+ *  contact: fogandfortune.game@gmail.com
+ * ============================================================
+ */
+'use strict';
+(function(){
+  const _w='TGFieXJpbnRoOkZvZyZGb3J0dW5lOjIwMjY6T3JpZ2luYWxXb3JrOlByb3RlY3RlZA==';
+  const _d=atob(_w);
+  if(typeof console!=='undefined'){
+    console.log('%c⚠️ LABYRINTH: FOG & FORTUNE','color:#ff6600;font-size:16px;font-weight:bold;');
+    console.log('%c© 2026 Tüm hakları saklıdır. Bu oyunun kodu telif hakkı ile korunmaktadır.','color:#ffaa00;font-size:12px;');
+    console.log('%cYetkisiz kullanım hukuki işlem gerektirir.','color:#ff4444;font-size:11px;');
+  }
+  try{
+    const _m=document.createElement('meta');
+    _m.name='_lff_sig';
+    _m.content=_w;
+    document.head.appendChild(_m);
+  }catch(e){}
+  if(window.self!==window.top){
+    try{
+      const allowed=['localhost','netlify.app','fogandfortune','labyrinth'];
+      const ref=document.referrer||'';
+      const isAllowed=allowed.some(d=>ref.includes(d)||window.top.location.href.includes(d));
+      if(!isAllowed){
+        document.body.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#000;color:#ff4444;font-family:sans-serif;font-size:1.2rem;text-align:center;padding:20px;">⚠️ Bu içerik yalnızca orijinal sitesinde oynanabilir.<br><br>This content can only be played on its original site.<br><br><a href="https://fogandfortune.netlify.app" style="color:#00ffaa;">▶ Orijinal Siteye Git / Play Original</a></div>';
+      }
+    }catch(e){}
+  }
+})();
+const TRANSLATIONS = {
+  tr: {
+    tagline:'Sisi Geç · Serveti Kazan · Efsane Ol',
+    play:'▶ OYNA', shop:'💎 ELMAS DÜKKAN', stats:'📊 İSTATİSTİKLER', settings:'⚙ AYARLAR',
+    hint:'Ok / WASD · Kaydır · 💎 Elmas · 💀 Tuzak · 👻 Gizli Geçit',
+    diamonds:'ELMAS',
+    selectChapter:'BÖLÜM SEÇ', back:'← GERİ',
+    phaseLearn:'🌱 ÖĞRENME', phaseHard:'⚔️ ZORLUK', phaseLegend:'💀 EFSANE',
+    phaseChaos:'☠️ KAOS', phaseDark:'⚫ KARANLIK',
+    chapter:'BÖLÜM', time:'SÜRE', chapterGem:'BÖLÜM💎', totalGem:'TOPLAM💎',
+    menu:'MENÜ', map:'Harita',
+    fx_frozen:'❄', fx_vision:'👁', fx_speed:'⚡', fx_compass:'🧭',
+    t_time3:'⏱ +3 Saniye!', t_time5:'⏱ +5 Saniye!',
+    t_vision:'👁 Görüş Genişledi 15sn!', t_speed:'⚡ Hız Artışı! 8sn',
+    t_compass:'🧭 Pusula 8sn!', t_gem:'Elmas!', t_gems:'Elmas!',
+    t_teleport:'🌀 Işınlandın!', t_timeMinus:'-3 Saniye!',
+    t_frozen:'❄ Donuyorsun! 2sn', t_shieldIce:'🔥 Kalkan! +5sn Kazandın!',
+    t_shieldTime:'💰 Kalkan! +3sn Kazandın!', t_mapUsed:'🗺 Harita hakkı yok! Depoda satın al.',
+    t_noRewind:'🔄 Geri Sarma kalmadı!', t_noHistory:'🔄 Yeterli geçmiş yok',
+    t_rewound:'adım geri sarıldı!', t_magnet:'Elmas!',
+    t_phantom:'👻 Gizli Geçit!',
+    t_adTime:'+30 Saniye! Devam et!',
+    t_mapOpen:'🗺 HARİTA AÇIK —', t_mapSec:'s',
+    prepTitle:'⚔️ BÖLÜM HAZIRLIĞI', prepStart:'▶ BAŞLA',
+    prepSelected:'güçlenme seçildi — hazır!',
+    prepNone:'elmasın var — güçlenme seçmek için dokun',
+    prepGemBtn:'💎 + Elmas', prepMenuBtn:'← MENÜ',
+    autoSelected:'Seçildi (1💎)', inBank:'Depoda ×', usePower:'— Kullan',
+    buyPower:'💎1 ile al', noGem:'💎 yok', maxFull:'Max doldu', buyBtn:'💎 Al',
+    cdReady:'HAZIR OL', cdStart:'BAŞLA!',
+    paused:'DURAKLATILDI', resume:'▶ DEVAM ET', exitMenu:'◀ MENÜYE DÖN',
+    noSave:'İlerleme kaydedilmez',
+    completed:'TAMAMLANDI', exit:'ÇIKIŞ!',
+    rewardEarned:'Ödül Kazanıldı', addedToBank:'Depoya eklendi!',
+    timeLeft:'sn kaldı →', timeGems:'💎 geliyor!',
+    chapGems:'elmas topladın!', finished:'🏁 Tamamlandı!',
+    chapGemLabel:'💎 Bölüm: +', gemAdded:'💎 eklendi! Toplam:',
+    gemAdding:'elmas ekleniyor...',
+    totalDiamonds:'TOPLAM 💎:', nextChap:'▶ BÖLÜM', allDone:'🏆 TAMAMLANDI!',
+    selectChap:'BÖLÜM SEÇ', gemEarn:'💎 + Elmas',
+    statTime:'Süre:', statStep:'Adım:', statExplore:'Keşif:',
+    timesUp:'SÜRE BİTTİ', extraTime:'+30 SN', lastChance:'(Son hak)',
+    noMoreTime:'⛔ Ek süre hakkı bitti', retry:'↺ TEKRAR',
+    adTitle:'✨ Ödülünü Seç', adSec:'saniye sonra ödülünü alıyorsun',
+    adCancel:'✕ Vazgeç', adPreparing:'hazırlanıyor...',
+    shopTitle:'💎 DEPO', shopSub:'Her güçlendirme 1💎 · Bölüm başında kullanılır',
+    shopEarn:'💎 + Elmas Kazan', shopMax:'MAKS', shopIn:'depoda',
+    shopBought:'alındı! Depoda:', shopNoGem:'💎 Elmas yok!', shopFull:'Depo dolu!',
+    statsTitle:'📊 İSTATİSTİKLER', chaps:'Bölüm', stars:'Yıldız',
+    cfgTitle:'⚙ AYARLAR', music:'🎵 Müzik', musicSub:'Arka plan müziği',
+    musicVol:'🔊 Müzik Seviyesi', musicVolSub:'Ortam sesi şiddeti',
+    stepSound:'🥁 Adım Sesi', stepSub:'Yürüyüş tıkırdaması',
+    sfx:'🔔 Efekt Sesleri', sfxSub:'Elmas, hız, tuzak sesleri',
+    sfxVol:'🔊 Efekt Seviyesi', sfxVolSub:'Ses efektleri şiddeti',
+    easy:'Kolay', hard:'Zor', legend:'Efsane',
+  },
+  en: {
+    tagline:'Conquer the Fog · Seize the Fortune · Become Legend',
+    play:'▶ PLAY', shop:'💎 DIAMOND SHOP', stats:'📊 STATISTICS', settings:'⚙ SETTINGS',
+    hint:'Arrow / WASD · Swipe · 💎 Diamond · 💀 Trap · 👻 Secret Path',
+    diamonds:'DIAMONDS',
+    selectChapter:'SELECT LEVEL', back:'← BACK',
+    phaseLearn:'🌱 TRAINING', phaseHard:'⚔️ CHALLENGE', phaseLegend:'💀 LEGEND',
+    phaseChaos:'☠️ CHAOS', phaseDark:'⚫ DARKNESS',
+    chapter:'LEVEL', time:'TIME', chapterGem:'LEVEL💎', totalGem:'TOTAL💎',
+    menu:'MENU', map:'Map',
+    fx_frozen:'❄', fx_vision:'👁', fx_speed:'⚡', fx_compass:'🧭',
+    t_time3:'⏱ +3 Seconds!', t_time5:'⏱ +5 Seconds!',
+    t_vision:'👁 Vision +15s!', t_speed:'⚡ Speed Boost! 8s',
+    t_compass:'🧭 Compass 8s!', t_gem:'Diamond!', t_gems:'Diamonds!',
+    t_teleport:'🌀 Teleported!', t_timeMinus:'-3 Seconds!',
+    t_frozen:'❄ Frozen! 2s', t_shieldIce:'🔥 Shield! +5s Bonus!',
+    t_shieldTime:'💰 Shield! +3s Bonus!', t_mapUsed:'🗺 No map access! Buy in shop.',
+    t_noRewind:'🔄 No rewinds left!', t_noHistory:'🔄 Not enough history',
+    t_rewound:'steps rewound!', t_magnet:'Diamond!',
+    t_phantom:'👻 Secret Path!',
+    t_adTime:'+30 Seconds! Keep going!',
+    t_mapOpen:'🗺 MAP OPEN —', t_mapSec:'s',
+    prepTitle:'⚔️ LEVEL PREP', prepStart:'▶ START',
+    prepSelected:'boosts selected — ready!',
+    prepNone:'diamonds — tap to select boost',
+    prepGemBtn:'💎 + Diamonds', prepMenuBtn:'← MENU',
+    autoSelected:'Selected (1💎)', inBank:'In bank ×', usePower:'— Use',
+    buyPower:'Buy 1💎', noGem:'No 💎', maxFull:'Max reached', buyBtn:'💎 Get',
+    cdReady:'GET READY', cdStart:'GO!',
+    paused:'PAUSED', resume:'▶ RESUME', exitMenu:'◀ MAIN MENU',
+    noSave:'Progress will not be saved',
+    completed:'COMPLETED', exit:'EXIT!',
+    rewardEarned:'Reward Earned', addedToBank:'Added to bank!',
+    timeLeft:'s left →', timeGems:'💎 coming!',
+    chapGems:'diamonds collected!', finished:'🏁 Finished!',
+    chapGemLabel:'💎 Level: +', gemAdded:'💎 added! Total:',
+    gemAdding:'adding diamonds...',
+    totalDiamonds:'TOTAL 💎:', nextChap:'▶ LEVEL', allDone:'🏆 COMPLETED!',
+    selectChap:'SELECT LEVEL', gemEarn:'💎 + Earn Diamonds',
+    statTime:'Time:', statStep:'Steps:', statExplore:'Explored:',
+    timesUp:'TIME IS UP', extraTime:'+30 SEC', lastChance:'(Last chance)',
+    noMoreTime:'⛔ No more extra time', retry:'↺ RETRY',
+    adTitle:'✨ Choose Your Reward', adSec:'seconds until reward',
+    adCancel:'✕ Cancel', adPreparing:'preparing...',
+    shopTitle:'💎 STORE', shopSub:'1💎 per boost · Applied at level start',
+    shopEarn:'💎 + Earn Diamonds', shopMax:'MAX', shopIn:'in stock',
+    shopBought:'added! In bank:', shopNoGem:'No diamonds!', shopFull:'Bank full!',
+    statsTitle:'📊 STATISTICS', chaps:'Levels', stars:'Stars',
+    cfgTitle:'⚙ SETTINGS', music:'🎵 Music', musicSub:'Background music',
+    musicVol:'🔊 Music Volume', musicVolSub:'Ambient sound level',
+    stepSound:'🥁 Step Sound', stepSub:'Footstep clicks',
+    sfx:'🔔 Sound Effects', sfxSub:'Diamond, speed, trap sounds',
+    sfxVol:'🔊 Effect Volume', sfxVolSub:'Sound effect level',
+    easy:'Easy', hard:'Hard', legend:'Legend',
+  },
+  de: {
+    tagline:'Durchquere den Nebel · Ergreife das Glück · Werde Legende',
+    play:'▶ SPIELEN', shop:'💎 DIAMANT SHOP', stats:'📊 STATISTIKEN', settings:'⚙ EINSTELLUNGEN',
+    hint:'Pfeile / WASD · Wischen · 💎 Diamant · 💀 Falle · 👻 Geheimer Pfad',
+    diamonds:'DIAMANTEN', selectChapter:'LEVEL WÄHLEN', back:'← ZURÜCK',
+    phaseLearn:'🌱 TRAINING', phaseHard:'⚔️ HERAUSFORDERUNG', phaseLegend:'💀 LEGENDE',
+    phaseChaos:'☠️ CHAOS', phaseDark:'⚫ DUNKELHEIT',
+    chapter:'LEVEL', time:'ZEIT', chapterGem:'LEVEL💎', totalGem:'GESAMT💎',
+    menu:'MENÜ', map:'Karte',
+    fx_frozen:'❄', fx_vision:'👁', fx_speed:'⚡', fx_compass:'🧭',
+    t_time3:'⏱ +3 Sekunden!', t_time5:'⏱ +5 Sekunden!',
+    t_vision:'👁 Sicht +15s!', t_speed:'⚡ Schub! 8s',
+    t_compass:'🧭 Kompass 8s!', t_gem:'Diamant!', t_gems:'Diamanten!',
+    t_teleport:'🌀 Teleportiert!', t_timeMinus:'-3 Sekunden!',
+    t_frozen:'❄ Eingefroren! 2s', t_shieldIce:'🔥 Schutz! +5s Bonus!',
+    t_shieldTime:'💰 Schutz! +3s Bonus!', t_mapUsed:'🗺 Keine Karte! Im Shop kaufen.',
+    t_noRewind:'🔄 Kein Zurückspulen!', t_noHistory:'🔄 Nicht genug Verlauf',
+    t_rewound:'Schritte zurück!', t_magnet:'Diamant!', t_phantom:'👻 Geheimweg!',
+    t_adTime:'+30 Sekunden! Weiter!', t_mapOpen:'🗺 KARTE OFFEN —', t_mapSec:'s',
+    prepTitle:'⚔️ LEVEL VORBEREITUNG', prepStart:'▶ START',
+    prepSelected:'Boosts gewählt — bereit!', prepNone:'Diamanten — tippen zum Wählen',
+    prepGemBtn:'💎 + Diamanten', prepMenuBtn:'← MENÜ',
+    autoSelected:'Gewählt (1💎)', inBank:'Im Depot ×', usePower:'— Nutzen',
+    buyPower:'1💎 kaufen', noGem:'Kein 💎', maxFull:'Maximum', buyBtn:'💎 Holen',
+    cdReady:'BEREIT', cdStart:'LOS!',
+    paused:'PAUSIERT', resume:'▶ WEITER', exitMenu:'◀ HAUPTMENÜ',
+    noSave:'Fortschritt wird nicht gespeichert',
+    completed:'ABGESCHLOSSEN', exit:'AUSGANG!',
+    rewardEarned:'Belohnung erhalten', addedToBank:'Zum Depot hinzugefügt!',
+    timeLeft:'s übrig →', timeGems:'💎 kommen!',
+    chapGems:'Diamanten gesammelt!', finished:'🏁 Fertig!',
+    chapGemLabel:'💎 Level: +', gemAdded:'💎 hinzugefügt! Gesamt:',
+    gemAdding:'Diamanten werden hinzugefügt...',
+    totalDiamonds:'GESAMT 💎:', nextChap:'▶ LEVEL', allDone:'🏆 ABGESCHLOSSEN!',
+    selectChap:'LEVEL WÄHLEN', gemEarn:'💎 + Diamanten verdienen',
+    statTime:'Zeit:', statStep:'Schritte:', statExplore:'Erkundet:',
+    timesUp:'ZEIT ABGELAUFEN', extraTime:'+30 SEK', lastChance:'(Letzte Chance)',
+    noMoreTime:'⛔ Keine Extrazeit mehr', retry:'↺ NOCHMAL',
+    adTitle:'✨ Wähle deine Belohnung', adSec:'Sekunden bis zur Belohnung',
+    adCancel:'✕ Abbrechen', adPreparing:'wird vorbereitet...',
+    shopTitle:'💎 DEPOT', shopSub:'1💎 pro Boost · Beim Levelstart angewendet',
+    shopEarn:'💎 + Diamanten verdienen', shopMax:'MAX', shopIn:'im Depot',
+    shopBought:'hinzugefügt! Im Depot:', shopNoGem:'Keine Diamanten!', shopFull:'Depot voll!',
+    statsTitle:'📊 STATISTIKEN', chaps:'Levels', stars:'Sterne',
+    cfgTitle:'⚙ EINSTELLUNGEN', music:'🎵 Musik', musicSub:'Hintergrundmusik',
+    musicVol:'🔊 Musiklautstärke', musicVolSub:'Umgebungstonlautstärke',
+    stepSound:'🥁 Schrittgeräusch', stepSub:'Schritttöne',
+    sfx:'🔔 Soundeffekte', sfxSub:'Diamant, Tempo, Fallensounds',
+    sfxVol:'🔊 Effektlautstärke', sfxVolSub:'Soundeffektlautstärke',
+    easy:'Leicht', hard:'Schwer', legend:'Legende',
+  },
+  fr: {
+    tagline:'Traverse le Brouillard · Saisit la Fortune · Deviens Légende',
+    play:'▶ JOUER', shop:'💎 BOUTIQUE', stats:'📊 STATISTIQUES', settings:'⚙ PARAMÈTRES',
+    hint:'Flèches / WASD · Glisser · 💎 Diamant · 💀 Piège · 👻 Passage Secret',
+    diamonds:'DIAMANTS', selectChapter:'CHOISIR NIVEAU', back:'← RETOUR',
+    phaseLearn:'🌱 ENTRAÎNEMENT', phaseHard:'⚔️ DÉFI', phaseLegend:'💀 LÉGENDE',
+    phaseChaos:'☠️ CHAOS', phaseDark:'⚫ OBSCURITÉ',
+    chapter:'NIVEAU', time:'TEMPS', chapterGem:'NIV💎', totalGem:'TOTAL💎',
+    menu:'MENU', map:'Carte',
+    fx_frozen:'❄', fx_vision:'👁', fx_speed:'⚡', fx_compass:'🧭',
+    t_time3:'⏱ +3 Secondes!', t_time5:'⏱ +5 Secondes!',
+    t_vision:'👁 Vision +15s!', t_speed:'⚡ Boost! 8s',
+    t_compass:'🧭 Boussole 8s!', t_gem:'Diamant!', t_gems:'Diamants!',
+    t_teleport:'🌀 Téléporté!', t_timeMinus:'-3 Secondes!',
+    t_frozen:'❄ Gelé! 2s', t_shieldIce:'🔥 Bouclier! +5s!',
+    t_shieldTime:'💰 Bouclier! +3s!', t_mapUsed:'🗺 Pas de carte! Achète en boutique.',
+    t_noRewind:'🔄 Plus de retour!', t_noHistory:'🔄 Historique insuffisant',
+    t_rewound:'pas en arrière!', t_magnet:'Diamant!', t_phantom:'👻 Passage Secret!',
+    t_adTime:'+30 Secondes! Continue!', t_mapOpen:'🗺 CARTE OUVERTE —', t_mapSec:'s',
+    prepTitle:'⚔️ PRÉPARATION', prepStart:'▶ DÉMARRER',
+    prepSelected:'boosts sélectionnés — prêt!', prepNone:'diamants — touche pour choisir',
+    prepGemBtn:'💎 + Diamants', prepMenuBtn:'← MENU',
+    autoSelected:'Sélectionné (1💎)', inBank:'En stock ×', usePower:'— Utiliser',
+    buyPower:'Acheter 1💎', noGem:'Pas de 💎', maxFull:'Maximum', buyBtn:'💎 Obtenir',
+    cdReady:'PRÊT', cdStart:'PARTEZ!',
+    paused:'EN PAUSE', resume:'▶ REPRENDRE', exitMenu:'◀ MENU PRINCIPAL',
+    noSave:'La progression ne sera pas sauvegardée',
+    completed:'TERMINÉ', exit:'SORTIE!',
+    rewardEarned:'Récompense Gagnée', addedToBank:'Ajouté au dépôt!',
+    timeLeft:'s restantes →', timeGems:'💎 arrivent!',
+    chapGems:'diamants collectés!', finished:'🏁 Terminé!',
+    chapGemLabel:'💎 Niveau: +', gemAdded:'💎 ajouté! Total:',
+    gemAdding:'ajout de diamants...',
+    totalDiamonds:'TOTAL 💎:', nextChap:'▶ NIVEAU', allDone:'🏆 TERMINÉ!',
+    selectChap:'CHOISIR NIVEAU', gemEarn:'💎 + Gagner des Diamants',
+    statTime:'Temps:', statStep:'Pas:', statExplore:'Exploré:',
+    timesUp:'TEMPS ÉCOULÉ', extraTime:'+30 SEC', lastChance:'(Dernière chance)',
+    noMoreTime:'⛔ Plus de temps supplémentaire', retry:'↺ RÉESSAYER',
+    adTitle:'✨ Choisissez votre récompense', adSec:'secondes avant la récompense',
+    adCancel:'✕ Annuler', adPreparing:'en préparation...',
+    shopTitle:'💎 DÉPÔT', shopSub:'1💎 par boost · Appliqué au début du niveau',
+    shopEarn:'💎 + Gagner des Diamants', shopMax:'MAX', shopIn:'en stock',
+    shopBought:'ajouté! En dépôt:', shopNoGem:'Pas de diamants!', shopFull:'Dépôt plein!',
+    statsTitle:'📊 STATISTIQUES', chaps:'Niveaux', stars:'Étoiles',
+    cfgTitle:'⚙ PARAMÈTRES', music:'🎵 Musique', musicSub:'Musique de fond',
+    musicVol:'🔊 Volume Musique', musicVolSub:'Niveau du son ambiant',
+    stepSound:'🥁 Son de Pas', stepSub:'Cliquetis de marche',
+    sfx:'🔔 Effets Sonores', sfxSub:'Sons diamant, vitesse, piège',
+    sfxVol:'🔊 Volume Effets', sfxVolSub:'Niveau des effets sonores',
+    easy:'Facile', hard:'Difficile', legend:'Légende',
+  },
+  es: {
+    tagline:'Conquista la Niebla · Alcanza la Fortuna · Sé Leyenda',
+    play:'▶ JUGAR', shop:'💎 TIENDA', stats:'📊 ESTADÍSTICAS', settings:'⚙ AJUSTES',
+    hint:'Flechas / WASD · Deslizar · 💎 Diamante · 💀 Trampa · 👻 Paso Secreto',
+    diamonds:'DIAMANTES', selectChapter:'ELEGIR NIVEL', back:'← VOLVER',
+    phaseLearn:'🌱 ENTRENAMIENTO', phaseHard:'⚔️ DESAFÍO', phaseLegend:'💀 LEYENDA',
+    phaseChaos:'☠️ CAOS', phaseDark:'⚫ OSCURIDAD',
+    chapter:'NIVEL', time:'TIEMPO', chapterGem:'NIV💎', totalGem:'TOTAL💎',
+    menu:'MENÚ', map:'Mapa',
+    fx_frozen:'❄', fx_vision:'👁', fx_speed:'⚡', fx_compass:'🧭',
+    t_time3:'⏱ +3 Segundos!', t_time5:'⏱ +5 Segundos!',
+    t_vision:'👁 Visión +15s!', t_speed:'⚡ Impulso! 8s',
+    t_compass:'🧭 Brújula 8s!', t_gem:'¡Diamante!', t_gems:'¡Diamantes!',
+    t_teleport:'🌀 ¡Teletransportado!', t_timeMinus:'-3 Segundos!',
+    t_frozen:'❄ ¡Congelado! 2s', t_shieldIce:'🔥 ¡Escudo! +5s!',
+    t_shieldTime:'💰 ¡Escudo! +3s!', t_mapUsed:'🗺 Sin mapa! Compra en tienda.',
+    t_noRewind:'🔄 Sin retroceso!', t_noHistory:'🔄 Historial insuficiente',
+    t_rewound:'pasos atrás!', t_magnet:'¡Diamante!', t_phantom:'👻 ¡Paso Secreto!',
+    t_adTime:'+30 Segundos! ¡Continúa!', t_mapOpen:'🗺 MAPA ABIERTO —', t_mapSec:'s',
+    prepTitle:'⚔️ PREPARACIÓN', prepStart:'▶ INICIAR',
+    prepSelected:'mejoras seleccionadas — ¡listo!', prepNone:'diamantes — toca para elegir',
+    prepGemBtn:'💎 + Diamantes', prepMenuBtn:'← MENÚ',
+    autoSelected:'Seleccionado (1💎)', inBank:'En banco ×', usePower:'— Usar',
+    buyPower:'Comprar 1💎', noGem:'Sin 💎', maxFull:'Máximo', buyBtn:'💎 Obtener',
+    cdReady:'PREPÁRATE', cdStart:'¡YA!',
+    paused:'PAUSADO', resume:'▶ CONTINUAR', exitMenu:'◀ MENÚ PRINCIPAL',
+    noSave:'El progreso no se guardará',
+    completed:'COMPLETADO', exit:'¡SALIDA!',
+    rewardEarned:'Recompensa Ganada', addedToBank:'¡Añadido al banco!',
+    timeLeft:'s restantes →', timeGems:'💎 ¡vienen!',
+    chapGems:'diamantes recogidos!', finished:'🏁 ¡Terminado!',
+    chapGemLabel:'💎 Nivel: +', gemAdded:'💎 añadido! Total:',
+    gemAdding:'añadiendo diamantes...',
+    totalDiamonds:'TOTAL 💎:', nextChap:'▶ NIVEL', allDone:'🏆 ¡COMPLETADO!',
+    selectChap:'ELEGIR NIVEL', gemEarn:'💎 + Ganar Diamantes',
+    statTime:'Tiempo:', statStep:'Pasos:', statExplore:'Explorado:',
+    timesUp:'TIEMPO AGOTADO', extraTime:'+30 SEG', lastChance:'(Última oportunidad)',
+    noMoreTime:'⛔ Sin tiempo extra', retry:'↺ REINTENTAR',
+    adTitle:'✨ Elige tu Recompensa', adSec:'segundos hasta la recompensa',
+    adCancel:'✕ Cancelar', adPreparing:'preparando...',
+    shopTitle:'💎 TIENDA', shopSub:'1💎 por mejora · Aplicado al inicio del nivel',
+    shopEarn:'💎 + Ganar Diamantes', shopMax:'MÁX', shopIn:'en banco',
+    shopBought:'añadido! En banco:', shopNoGem:'¡Sin diamantes!', shopFull:'¡Banco lleno!',
+    statsTitle:'📊 ESTADÍSTICAS', chaps:'Niveles', stars:'Estrellas',
+    cfgTitle:'⚙ AJUSTES', music:'🎵 Música', musicSub:'Música de fondo',
+    musicVol:'🔊 Volumen Música', musicVolSub:'Nivel de sonido ambiental',
+    stepSound:'🥁 Sonido de Pasos', stepSub:'Clics de pisadas',
+    sfx:'🔔 Efectos de Sonido', sfxSub:'Sonidos de diamante, velocidad, trampa',
+    sfxVol:'🔊 Volumen Efectos', sfxVolSub:'Nivel de efectos de sonido',
+    easy:'Fácil', hard:'Difícil', legend:'Leyenda',
+  },
+  pt: { tagline:'Conquiste a Névoa · Alcance a Fortuna · Seja Lenda', play:'▶ JOGAR', shop:'💎 LOJA', stats:'📊 ESTATÍSTICAS', settings:'⚙ CONFIGURAÇÕES', hint:'Setas / WASD · Deslizar · 💎 Diamante · 💀 Armadilha · 👻 Passagem Secreta', diamonds:'DIAMANTES', selectChapter:'ESCOLHER NÍVEL', back:'← VOLTAR', phaseLearn:'🌱 TREINAMENTO', phaseHard:'⚔️ DESAFIO', phaseLegend:'💀 LENDA', phaseChaos:'☠️ CAOS', phaseDark:'⚫ ESCURIDÃO', chapter:'NÍVEL', time:'TEMPO', chapterGem:'NÍV💎', totalGem:'TOTAL💎', menu:'MENU', map:'Mapa', fx_frozen:'❄', fx_vision:'👁', fx_speed:'⚡', fx_compass:'🧭', t_time3:'⏱ +3 Segundos!', t_time5:'⏱ +5 Segundos!', t_vision:'👁 Visão +15s!', t_speed:'⚡ Impulso! 8s', t_compass:'🧭 Bússola 8s!', t_gem:'Diamante!', t_gems:'Diamantes!', t_teleport:'🌀 Teletransportado!', t_timeMinus:'-3 Segundos!', t_frozen:'❄ Congelado! 2s', t_shieldIce:'🔥 Escudo! +5s!', t_shieldTime:'💰 Escudo! +3s!', t_mapUsed:'🗺 Sem mapa! Compre na loja.', t_noRewind:'🔄 Sem retrocesso!', t_noHistory:'🔄 Histórico insuficiente', t_rewound:'passos de volta!', t_magnet:'Diamante!', t_phantom:'👻 Passagem Secreta!', t_adTime:'+30 Segundos! Continue!', t_mapOpen:'🗺 MAPA ABERTO —', t_mapSec:'s', prepTitle:'⚔️ PREPARAÇÃO', prepStart:'▶ INICIAR', prepSelected:'melhorias selecionadas — pronto!', prepNone:'diamantes — toque para escolher', prepGemBtn:'💎 + Diamantes', prepMenuBtn:'← MENU', autoSelected:'Selecionado (1💎)', inBank:'No banco ×', usePower:'— Usar', buyPower:'Comprar 1💎', noGem:'Sem 💎', maxFull:'Máximo', buyBtn:'💎 Obter', cdReady:'PREPARE-SE', cdStart:'JÁ!', paused:'PAUSADO', resume:'▶ RETOMAR', exitMenu:'◀ MENU PRINCIPAL', noSave:'O progresso não será salvo', completed:'CONCLUÍDO', exit:'SAÍDA!', rewardEarned:'Recompensa Ganha', addedToBank:'Adicionado ao banco!', timeLeft:'s restantes →', timeGems:'💎 vindo!', chapGems:'diamantes coletados!', finished:'🏁 Concluído!', chapGemLabel:'💎 Nível: +', gemAdded:'💎 adicionado! Total:', gemAdding:'adicionando diamantes...', totalDiamonds:'TOTAL 💎:', nextChap:'▶ NÍVEL', allDone:'🏆 CONCLUÍDO!', selectChap:'ESCOLHER NÍVEL', gemEarn:'💎 + Ganhar Diamantes', statTime:'Tempo:', statStep:'Passos:', statExplore:'Explorado:', timesUp:'TEMPO ESGOTADO', extraTime:'+30 SEG', lastChance:'(Última chance)', noMoreTime:'⛔ Sem tempo extra', retry:'↺ TENTAR NOVAMENTE', adTitle:'✨ Escolha sua Recompensa', adSec:'segundos até a recompensa', adCancel:'✕ Cancelar', adPreparing:'preparando...', shopTitle:'💎 LOJA', shopSub:'1💎 por melhoria · Aplicado no início do nível', shopEarn:'💎 + Ganhar Diamantes', shopMax:'MÁX', shopIn:'no banco', shopBought:'adicionado! No banco:', shopNoGem:'Sem diamantes!', shopFull:'Banco cheio!', statsTitle:'📊 ESTATÍSTICAS', chaps:'Níveis', stars:'Estrelas', cfgTitle:'⚙ CONFIGURAÇÕES', music:'🎵 Música', musicSub:'Música de fundo', musicVol:'🔊 Volume da Música', musicVolSub:'Nível de som ambiente', stepSound:'🥁 Som de Passos', stepSub:'Cliques de passos', sfx:'🔔 Efeitos Sonoros', sfxSub:'Sons de diamante, velocidade, armadilha', sfxVol:'🔊 Volume de Efeitos', sfxVolSub:'Nível de efeitos sonoros', easy:'Fácil', hard:'Difícil', legend:'Lenda' },
+  ru: { tagline:'Сквозь туман · К богатству · Стань легендой', play:'▶ ИГРАТЬ', shop:'💎 МАГАЗИН', stats:'📊 СТАТИСТИКА', settings:'⚙ НАСТРОЙКИ', hint:'Стрелки / WASD · Свайп · 💎 Алмаз · 💀 Ловушка · 👻 Секретный путь', diamonds:'АЛМАЗЫ', selectChapter:'ВЫБРАТЬ УРОВЕНЬ', back:'← НАЗАД', phaseLearn:'🌱 ОБУЧЕНИЕ', phaseHard:'⚔️ ВЫЗОВ', phaseLegend:'💀 ЛЕГЕНДА', phaseChaos:'☠️ ХАОС', phaseDark:'⚫ ТЬМА', chapter:'УРОВЕНЬ', time:'ВРЕМЯ', chapterGem:'УР💎', totalGem:'ВСЕГО💎', menu:'МЕНЮ', map:'Карта', fx_frozen:'❄', fx_vision:'👁', fx_speed:'⚡', fx_compass:'🧭', t_time3:'⏱ +3 Секунды!', t_time5:'⏱ +5 Секунд!', t_vision:'👁 Видение +15s!', t_speed:'⚡ Ускорение! 8s', t_compass:'🧭 Компас 8s!', t_gem:'Алмаз!', t_gems:'Алмазы!', t_teleport:'🌀 Телепортация!', t_timeMinus:'-3 Секунды!', t_frozen:'❄ Заморожен! 2s', t_shieldIce:'🔥 Щит! +5s!', t_shieldTime:'💰 Щит! +3s!', t_mapUsed:'🗺 Нет карты! Купи в магазине.', t_noRewind:'🔄 Перемотка недоступна!', t_noHistory:'🔄 Недостаточно истории', t_rewound:'шагов назад!', t_magnet:'Алмаз!', t_phantom:'👻 Секретный путь!', t_adTime:'+30 Секунд! Продолжай!', t_mapOpen:'🗺 КАРТА ОТКРЫТА —', t_mapSec:'с', prepTitle:'⚔️ ПОДГОТОВКА', prepStart:'▶ НАЧАТЬ', prepSelected:'бустов выбрано — готов!', prepNone:'алмазов — нажми чтобы выбрать', prepGemBtn:'💎 + Алмазы', prepMenuBtn:'← МЕНЮ', autoSelected:'Выбрано (1💎)', inBank:'На складе ×', usePower:'— Использовать', buyPower:'Купить 1💎', noGem:'Нет 💎', maxFull:'Максимум', buyBtn:'💎 Взять', cdReady:'ГОТОВЬСЯ', cdStart:'СТАРТ!', paused:'ПАУЗА', resume:'▶ ПРОДОЛЖИТЬ', exitMenu:'◀ ГЛАВНОЕ МЕНЮ', noSave:'Прогресс не будет сохранён', completed:'ЗАВЕРШЕНО', exit:'ВЫХОД!', rewardEarned:'Награда получена', addedToBank:'Добавлено на склад!', timeLeft:'с осталось →', timeGems:'💎 идут!', chapGems:'алмазов собрано!', finished:'🏁 Готово!', chapGemLabel:'💎 Уровень: +', gemAdded:'💎 добавлено! Итого:', gemAdding:'добавление алмазов...', totalDiamonds:'ВСЕГО 💎:', nextChap:'▶ УРОВЕНЬ', allDone:'🏆 ЗАВЕРШЕНО!', selectChap:'ВЫБРАТЬ УРОВЕНЬ', gemEarn:'💎 + Заработать алмазы', statTime:'Время:', statStep:'Шаги:', statExplore:'Исследовано:', timesUp:'ВРЕМЯ ВЫШЛО', extraTime:'+30 СЕК', lastChance:'(Последний шанс)', noMoreTime:'⛔ Нет дополнительного времени', retry:'↺ ПОВТОРИТЬ', adTitle:'✨ Выбери награду', adSec:'секунд до награды', adCancel:'✕ Отмена', adPreparing:'подготовка...', shopTitle:'💎 СКЛАД', shopSub:'1💎 за буст · Применяется в начале уровня', shopEarn:'💎 + Заработать алмазы', shopMax:'МАКС', shopIn:'на складе', shopBought:'добавлено! На складе:', shopNoGem:'Нет алмазов!', shopFull:'Склад полон!', statsTitle:'📊 СТАТИСТИКА', chaps:'Уровни', stars:'Звёзды', cfgTitle:'⚙ НАСТРОЙКИ', music:'🎵 Музыка', musicSub:'Фоновая музыка', musicVol:'🔊 Громкость музыки', musicVolSub:'Уровень окружающего звука', stepSound:'🥁 Звук шагов', stepSub:'Щелчки шагов', sfx:'🔔 Звуковые эффекты', sfxSub:'Звуки алмаза, скорости, ловушки', sfxVol:'🔊 Громкость эффектов', sfxVolSub:'Уровень звуковых эффектов', easy:'Лёгкий', hard:'Сложный', legend:'Легенда' },
+  ja: { tagline:'霧を越えろ · 富を掴め · 伝説になれ', play:'▶ プレイ', shop:'💎 ダイヤショップ', stats:'📊 統計', settings:'⚙ 設定', hint:'矢印 / WASD · スワイプ · 💎 ダイヤ · 💀 トラップ · 👻 秘密通路', diamonds:'ダイヤ', selectChapter:'レベル選択', back:'← 戻る', phaseLearn:'🌱 トレーニング', phaseHard:'⚔️ チャレンジ', phaseLegend:'💀 レジェンド', phaseChaos:'☠️ カオス', phaseDark:'⚫ 闇', chapter:'レベル', time:'時間', chapterGem:'レベル💎', totalGem:'合計💎', menu:'メニュー', map:'マップ', fx_frozen:'❄', fx_vision:'👁', fx_speed:'⚡', fx_compass:'🧭', t_time3:'⏱ +3秒!', t_time5:'⏱ +5秒!', t_vision:'👁 視野+15秒!', t_speed:'⚡ スピード! 8秒', t_compass:'🧭 コンパス 8秒!', t_gem:'ダイヤ!', t_gems:'ダイヤ!', t_teleport:'🌀 テレポート!', t_timeMinus:'-3秒!', t_frozen:'❄ 凍った! 2秒', t_shieldIce:'🔥 シールド! +5秒!', t_shieldTime:'💰 シールド! +3秒!', t_mapUsed:'🗺 マップなし!', t_noRewind:'🔄 巻き戻しなし!', t_noHistory:'🔄 履歴不足', t_rewound:'歩後退!', t_magnet:'ダイヤ!', t_phantom:'👻 秘密通路!', t_adTime:'+30秒! 続けて!', t_mapOpen:'🗺 マップ公開 —', t_mapSec:'秒', prepTitle:'⚔️ 準備', prepStart:'▶ スタート', prepSelected:'ブースト選択済み — 準備完了!', prepNone:'ダイヤ — タップして選択', prepGemBtn:'💎 + ダイヤ', prepMenuBtn:'← メニュー', autoSelected:'選択済み (1💎)', inBank:'倉庫 ×', usePower:'— 使用', buyPower:'1💎で購入', noGem:'💎なし', maxFull:'最大', buyBtn:'💎 ゲット', cdReady:'準備して', cdStart:'スタート!', paused:'一時停止', resume:'▶ 再開', exitMenu:'◀ メインメニュー', noSave:'進行状況は保存されません', completed:'完了', exit:'出口!', rewardEarned:'報酬獲得', addedToBank:'倉庫に追加!', timeLeft:'秒残り →', timeGems:'💎 来る!', chapGems:'ダイヤ収集!', finished:'🏁 完了!', chapGemLabel:'💎 レベル: +', gemAdded:'💎 追加! 合計:', gemAdding:'ダイヤ追加中...', totalDiamonds:'合計 💎:', nextChap:'▶ レベル', allDone:'🏆 完了!', selectChap:'レベル選択', gemEarn:'💎 + ダイヤ獲得', statTime:'時間:', statStep:'歩:', statExplore:'探索:', timesUp:'時間切れ', extraTime:'+30秒', lastChance:'(最後のチャンス)', noMoreTime:'⛔ 追加時間なし', retry:'↺ リトライ', adTitle:'✨ 報酬を選択', adSec:'秒後に報酬', adCancel:'✕ キャンセル', adPreparing:'準備中...', shopTitle:'💎 倉庫', shopSub:'1💎/ブースト · レベル開始時に適用', shopEarn:'💎 + ダイヤ獲得', shopMax:'最大', shopIn:'在庫', shopBought:'追加! 倉庫:', shopNoGem:'ダイヤなし!', shopFull:'倉庫満杯!', statsTitle:'📊 統計', chaps:'レベル', stars:'スター', cfgTitle:'⚙ 設定', music:'🎵 音楽', musicSub:'バックグラウンドミュージック', musicVol:'🔊 音楽音量', musicVolSub:'環境音レベル', stepSound:'🥁 足音', stepSub:'歩行クリック', sfx:'🔔 効果音', sfxSub:'ダイヤ、スピード、トラップ音', sfxVol:'🔊 効果音量', sfxVolSub:'効果音レベル', easy:'簡単', hard:'難しい', legend:'レジェンド' },
+  ko: { tagline:'안개를 뚫어라 · 부를 잡아라 · 전설이 되어라', play:'▶ 플레이', shop:'💎 다이아 상점', stats:'📊 통계', settings:'⚙ 설정', hint:'화살표 / WASD · 스와이프 · 💎 다이아 · 💀 함정 · 👻 비밀 통로', diamonds:'다이아', selectChapter:'레벨 선택', back:'← 뒤로', phaseLearn:'🌱 훈련', phaseHard:'⚔️ 도전', phaseLegend:'💀 전설', phaseChaos:'☠️ 혼돈', phaseDark:'⚫ 어둠', chapter:'레벨', time:'시간', chapterGem:'레벨💎', totalGem:'합계💎', menu:'메뉴', map:'지도', fx_frozen:'❄', fx_vision:'👁', fx_speed:'⚡', fx_compass:'🧭', t_time3:'⏱ +3초!', t_time5:'⏱ +5초!', t_vision:'👁 시야 +15초!', t_speed:'⚡ 속도! 8초', t_compass:'🧭 나침반 8초!', t_gem:'다이아!', t_gems:'다이아!', t_teleport:'🌀 텔레포트!', t_timeMinus:'-3초!', t_frozen:'❄ 얼었다! 2초', t_shieldIce:'🔥 방패! +5초!', t_shieldTime:'💰 방패! +3초!', t_mapUsed:'🗺 지도 없음!', t_noRewind:'🔄 되감기 없음!', t_noHistory:'🔄 기록 부족', t_rewound:'걸음 되감기!', t_magnet:'다이아!', t_phantom:'👻 비밀 통로!', t_adTime:'+30초! 계속!', t_mapOpen:'🗺 지도 공개 —', t_mapSec:'초', prepTitle:'⚔️ 준비', prepStart:'▶ 시작', prepSelected:'부스트 선택됨 — 준비!', prepNone:'다이아 — 탭하여 선택', prepGemBtn:'💎 + 다이아', prepMenuBtn:'← 메뉴', autoSelected:'선택됨 (1💎)', inBank:'창고 ×', usePower:'— 사용', buyPower:'1💎 구매', noGem:'💎 없음', maxFull:'최대', buyBtn:'💎 획득', cdReady:'준비', cdStart:'시작!', paused:'일시정지', resume:'▶ 재개', exitMenu:'◀ 메인 메뉴', noSave:'진행상황이 저장되지 않습니다', completed:'완료', exit:'출구!', rewardEarned:'보상 획득', addedToBank:'창고에 추가!', timeLeft:'초 남음 →', timeGems:'💎 온다!', chapGems:'다이아 수집!', finished:'🏁 완료!', chapGemLabel:'💎 레벨: +', gemAdded:'💎 추가! 합계:', gemAdding:'다이아 추가 중...', totalDiamonds:'합계 💎:', nextChap:'▶ 레벨', allDone:'🏆 완료!', selectChap:'레벨 선택', gemEarn:'💎 + 다이아 획득', statTime:'시간:', statStep:'걸음:', statExplore:'탐험:', timesUp:'시간 초과', extraTime:'+30초', lastChance:'(마지막 기회)', noMoreTime:'⛔ 추가 시간 없음', retry:'↺ 재시도', adTitle:'✨ 보상 선택', adSec:'초 후 보상', adCancel:'✕ 취소', adPreparing:'준비 중...', shopTitle:'💎 창고', shopSub:'1💎/부스트 · 레벨 시작 시 적용', shopEarn:'💎 + 다이아 획득', shopMax:'최대', shopIn:'재고', shopBought:'추가! 창고:', shopNoGem:'다이아 없음!', shopFull:'창고 가득!', statsTitle:'📊 통계', chaps:'레벨', stars:'별', cfgTitle:'⚙ 설정', music:'🎵 음악', musicSub:'배경 음악', musicVol:'🔊 음악 볼륨', musicVolSub:'환경음 레벨', stepSound:'🥁 발소리', stepSub:'발걸음 클릭', sfx:'🔔 효과음', sfxSub:'다이아, 속도, 함정 소리', sfxVol:'🔊 효과음 볼륨', sfxVolSub:'효과음 레벨', easy:'쉬움', hard:'어려움', legend:'전설' },
+  zh: { tagline:'穿越迷雾 · 掌握财富 · 成为传奇', play:'▶ 开始', shop:'💎 钻石商店', stats:'📊 统计', settings:'⚙ 设置', hint:'箭头 / WASD · 滑动 · 💎 钻石 · 💀 陷阱 · 👻 秘密通道', diamonds:'钻石', selectChapter:'选择关卡', back:'← 返回', phaseLearn:'🌱 训练', phaseHard:'⚔️ 挑战', phaseLegend:'💀 传奇', phaseChaos:'☠️ 混沌', phaseDark:'⚫ 黑暗', chapter:'关卡', time:'时间', chapterGem:'关卡💎', totalGem:'总计💎', menu:'菜单', map:'地图', fx_frozen:'❄', fx_vision:'👁', fx_speed:'⚡', fx_compass:'🧭', t_time3:'⏱ +3秒!', t_time5:'⏱ +5秒!', t_vision:'👁 视野+15秒!', t_speed:'⚡ 加速! 8秒', t_compass:'🧭 指南针 8秒!', t_gem:'钻石!', t_gems:'钻石!', t_teleport:'🌀 传送!', t_timeMinus:'-3秒!', t_frozen:'❄ 冻结! 2秒', t_shieldIce:'🔥 护盾! +5秒!', t_shieldTime:'💰 护盾! +3秒!', t_mapUsed:'🗺 没有地图!', t_noRewind:'🔄 没有回退!', t_noHistory:'🔄 历史不足', t_rewound:'步后退!', t_magnet:'钻石!', t_phantom:'👻 秘密通道!', t_adTime:'+30秒! 继续!', t_mapOpen:'🗺 地图开放 —', t_mapSec:'秒', prepTitle:'⚔️ 准备', prepStart:'▶ 开始', prepSelected:'增益已选 — 准备!', prepNone:'钻石 — 点击选择', prepGemBtn:'💎 + 钻石', prepMenuBtn:'← 菜单', autoSelected:'已选 (1💎)', inBank:'仓库 ×', usePower:'— 使用', buyPower:'购买 1💎', noGem:'无 💎', maxFull:'已满', buyBtn:'💎 获取', cdReady:'准备', cdStart:'开始!', paused:'暂停', resume:'▶ 继续', exitMenu:'◀ 主菜单', noSave:'进度不会保存', completed:'完成', exit:'出口!', rewardEarned:'获得奖励', addedToBank:'已加入仓库!', timeLeft:'秒剩余 →', timeGems:'💎 来了!', chapGems:'钻石收集!', finished:'🏁 完成!', chapGemLabel:'💎 关卡: +', gemAdded:'💎 已加! 总计:', gemAdding:'添加钻石中...', totalDiamonds:'总计 💎:', nextChap:'▶ 关卡', allDone:'🏆 完成!', selectChap:'选择关卡', gemEarn:'💎 + 赚取钻石', statTime:'时间:', statStep:'步数:', statExplore:'探索:', timesUp:'时间到', extraTime:'+30秒', lastChance:'(最后机会)', noMoreTime:'⛔ 没有额外时间', retry:'↺ 重试', adTitle:'✨ 选择奖励', adSec:'秒后获得奖励', adCancel:'✕ 取消', adPreparing:'准备中...', shopTitle:'💎 仓库', shopSub:'1💎/增益 · 关卡开始时应用', shopEarn:'💎 + 赚取钻石', shopMax:'最大', shopIn:'库存', shopBought:'已加! 仓库:', shopNoGem:'没有钻石!', shopFull:'仓库满了!', statsTitle:'📊 统计', chaps:'关卡', stars:'星星', cfgTitle:'⚙ 设置', music:'🎵 音乐', musicSub:'背景音乐', musicVol:'🔊 音乐音量', musicVolSub:'环境音级别', stepSound:'🥁 脚步声', stepSub:'行走点击', sfx:'🔔 音效', sfxSub:'钻石、速度、陷阱声音', sfxVol:'🔊 效果音量', sfxVolSub:'音效级别', easy:'简单', hard:'困难', legend:'传奇' },
+  ar: { tagline:'اخترق الضباب · انتزع الثروة · كن أسطورة', play:'▶ العب', shop:'💎 متجر الألماس', stats:'📊 الإحصائيات', settings:'⚙ الإعدادات', hint:'الأسهم / WASD · اسحب · 💎 ألماس · 💀 فخ · 👻 ممر سري', diamonds:'ألماس', selectChapter:'اختر المستوى', back:'رجوع ←', phaseLearn:'🌱 تدريب', phaseHard:'⚔️ تحدي', phaseLegend:'💀 أسطورة', phaseChaos:'☠️ فوضى', phaseDark:'⚫ ظلام', chapter:'مستوى', time:'وقت', chapterGem:'مستوى💎', totalGem:'الإجمالي💎', menu:'قائمة', map:'خريطة', fx_frozen:'❄', fx_vision:'👁', fx_speed:'⚡', fx_compass:'🧭', t_time3:'⏱ +3 ثوان!', t_time5:'⏱ +5 ثوان!', t_vision:'👁 رؤية +15ث!', t_speed:'⚡ سرعة! 8ث', t_compass:'🧭 بوصلة 8ث!', t_gem:'ألماس!', t_gems:'ألماس!', t_teleport:'🌀 انتقال!', t_timeMinus:'-3 ثوان!', t_frozen:'❄ مجمد! 2ث', t_shieldIce:'🔥 درع! +5ث!', t_shieldTime:'💰 درع! +3ث!', t_mapUsed:'🗺 لا خريطة!', t_noRewind:'🔄 لا تراجع!', t_noHistory:'🔄 سجل غير كافٍ', t_rewound:'خطوات للخلف!', t_magnet:'ألماس!', t_phantom:'👻 ممر سري!', t_adTime:'+30 ثانية! استمر!', t_mapOpen:'🗺 الخريطة مفتوحة —', t_mapSec:'ث', prepTitle:'⚔️ التحضير', prepStart:'▶ ابدأ', prepSelected:'تعزيزات محددة — جاهز!', prepNone:'ألماس — اضغط للاختيار', prepGemBtn:'💎 + ألماس', prepMenuBtn:'القائمة ←', autoSelected:'محدد (1💎)', inBank:'المخزن ×', usePower:'— استخدم', buyPower:'اشترِ 1💎', noGem:'لا 💎', maxFull:'الحد الأقصى', buyBtn:'💎 احصل', cdReady:'استعد', cdStart:'ابدأ!', paused:'متوقف', resume:'▶ استمر', exitMenu:'القائمة الرئيسية ◀', noSave:'لن يتم حفظ التقدم', completed:'مكتمل', exit:'مخرج!', rewardEarned:'تم الحصول على المكافأة', addedToBank:'أضيف إلى المخزن!', timeLeft:'ث متبقية →', timeGems:'💎 قادمة!', chapGems:'ألماس تم جمعه!', finished:'🏁 انتهى!', chapGemLabel:'💎 مستوى: +', gemAdded:'💎 أضيف! الإجمالي:', gemAdding:'إضافة ألماس...', totalDiamonds:'إجمالي 💎:', nextChap:'▶ مستوى', allDone:'🏆 مكتمل!', selectChap:'اختر المستوى', gemEarn:'💎 + اكسب ألماس', statTime:'وقت:', statStep:'خطوات:', statExplore:'استكشاف:', timesUp:'انتهى الوقت', extraTime:'+30 ث', lastChance:'(آخر فرصة)', noMoreTime:'⛔ لا وقت إضافي', retry:'↺ أعد المحاولة', adTitle:'✨ اختر مكافأتك', adSec:'ثوان حتى المكافأة', adCancel:'✕ إلغاء', adPreparing:'جارٍ التحضير...', shopTitle:'💎 المخزن', shopSub:'1💎 لكل تعزيز · يطبق في بداية المستوى', shopEarn:'💎 + اكسب ألماس', shopMax:'أقصى', shopIn:'في المخزن', shopBought:'أضيف! في المخزن:', shopNoGem:'لا ألماس!', shopFull:'المخزن ممتلئ!', statsTitle:'📊 الإحصائيات', chaps:'مستويات', stars:'نجوم', cfgTitle:'⚙ الإعدادات', music:'🎵 موسيقى', musicSub:'موسيقى الخلفية', musicVol:'🔊 مستوى الموسيقى', musicVolSub:'مستوى صوت البيئة', stepSound:'🥁 صوت الخطى', stepSub:'نقرات المشي', sfx:'🔔 المؤثرات الصوتية', sfxSub:'أصوات الألماس والسرعة والفخ', sfxVol:'🔊 مستوى المؤثرات', sfxVolSub:'مستوى المؤثرات الصوتية', easy:'سهل', hard:'صعب', legend:'أسطورة' },
+};
+function detectLang() {
+  const supported = Object.keys(TRANSLATIONS);
+  const nav = navigator.language || navigator.userLanguage || 'en';
+  const lang2 = nav.slice(0, 2).toLowerCase();
+  if (lang2 === 'zh') return 'zh';
+  if (lang2 === 'ar') return 'ar';
+  return supported.includes(lang2) ? lang2 : 'en';
+}
+const LANG = detectLang();
+const T = TRANSLATIONS[LANG] || TRANSLATIONS['en'];
+if (LANG === 'ar') {
+  document.documentElement.setAttribute('dir', 'rtl');
+  document.documentElement.setAttribute('lang', 'ar');
+}
+const C  = document.getElementById('cv');
+const cx = C.getContext('2d');
+const CHAPS = [
+  {i:1,  name:'Işık Vadisi',   diff:'Kolay',  W:15, H:15, fog:7.0, minD:40,  nb:5, nt:0, nk:0, ntp:0, ng:2, tl:120, noAdv:true},
+  {i:2,  name:'Kayalık Yol',   diff:'Kolay',  W:17, H:17, fog:6.5, minD:55,  nb:5, nt:1, nk:0, ntp:0, ng:2, tl:115, noAdv:true},
+  {i:3,  name:'Sarı Koridor',  diff:'Kolay',  W:19, H:19, fog:6.0, minD:75,  nb:5, nt:1, nk:0, ntp:1, ng:3, tl:110, noAdv:true},
+  {i:4,  name:'Gölge Odası',   diff:'Kolay',  W:21, H:21, fog:5.5, minD:95,  nb:5, nt:2, nk:0, ntp:1, ng:3, tl:110, noAdv:true},
+  {i:5,  name:'Tuzak Evi',     diff:'Kolay',  W:23, H:23, fog:5.0, minD:118, nb:5, nt:2, nk:0, ntp:1, ng:3, tl:105, noAdv:true},
+  {i:6,  name:'Gri Geçit',     diff:'Zor',    W:25, H:25, fog:4.8, minD:145, nb:4, nt:3,  nk:0, ntp:1, ng:2, tl:100},
+  {i:7,  name:'Derin Tünel',   diff:'Zor',    W:27, H:27, fog:4.5, minD:175, nb:4, nt:4,  nk:0, ntp:1, ng:2, tl:95 },
+  {i:8,  name:'Sis Koridoru',  diff:'Zor',    W:29, H:29, fog:4.2, minD:210, nb:3, nt:5,  nk:0, ntp:2, ng:2, tl:90 },
+  {i:9,  name:'Kör Köşe',      diff:'Zor',    W:31, H:31, fog:3.9, minD:248, nb:3, nt:6,  nk:0, ntp:2, ng:2, tl:85 },
+  {i:10, name:'Yıldırım Yolu', diff:'Zor',    W:33, H:33, fog:3.6, minD:290, nb:3, nt:7,  nk:0, ntp:2, ng:2, tl:80 },
+  {i:11, name:'Gece Koridoru', diff:'Efsane', W:33, H:33, fog:3.3, minD:290, nb:2, nt:7,  nk:0, ntp:2, ng:3, tl:75 },
+  {i:12, name:'Demir Geçit',   diff:'Efsane', W:35, H:35, fog:3.0, minD:330, nb:2, nt:8,  nk:0, ntp:3, ng:3, tl:70 },
+  {i:13, name:'Yıldız Çukuru', diff:'Efsane', W:37, H:37, fog:2.7, minD:375, nb:2, nt:9,  nk:0, ntp:3, ng:3, tl:65 },
+  {i:14, name:'Son Viraj',     diff:'Efsane', W:39, H:39, fog:2.4, minD:425, nb:1, nt:10, nk:0, ntp:3, ng:3, tl:60 },
+  {i:15, name:'Sonsuz Yol',    diff:'Efsane', W:41, H:41, fog:2.1, minD:480, nb:1, nt:11, nk:0, ntp:3, ng:4, tl:55 },
+  {i:16, name:'Kristal Kafes', diff:'Efsane', W:41, H:41, fog:1.9, minD:480, nb:1, nt:11, nk:0, ntp:3, ng:5, tl:70 },
+  {i:17, name:'Fırtına Geçidi',diff:'Efsane', W:43, H:43, fog:1.7, minD:525, nb:1, nt:12, nk:0, ntp:4, ng:5, tl:65 },
+  {i:18, name:'Demir Çember',  diff:'Efsane', W:43, H:43, fog:1.5, minD:525, nb:1, nt:12, nk:0, ntp:4, ng:5, tl:60 },
+  {i:19, name:'Son Sınır',     diff:'Efsane', W:45, H:45, fog:1.3, minD:575, nb:1, nt:13, nk:0, ntp:4, ng:6, tl:55 },
+  {i:20, name:'Sonsuzluk',     diff:'Efsane', W:45, H:45, fog:1.1, minD:575, nb:1, nt:14, nk:0, ntp:5, ng:6, tl:50 },
+  {i:21, name:'Karanlık Dedektif',diff:'Efsane', W:45, H:45, fog:1.0, minD:575, nb:1, nt:15, nk:0, ntp:5, ng:6, tl:48 },
+  {i:22, name:'Demir Fırtına',    diff:'Efsane', W:47, H:47, fog:0.9, minD:620, nb:1, nt:16, nk:0, ntp:5, ng:6, tl:46 },
+  {i:23, name:'Gümüş Tünel',      diff:'Efsane', W:47, H:47, fog:0.8, minD:620, nb:1, nt:17, nk:0, ntp:6, ng:7, tl:44 },
+  {i:24, name:'Son Kapı',         diff:'Efsane', W:49, H:49, fog:0.7, minD:668, nb:1, nt:18, nk:0, ntp:6, ng:7, tl:42 },
+  {i:25, name:'Fog & Fortune',        diff:'Efsane', W:49, H:49, fog:0.6, minD:668, nb:1, nt:20, nk:0, ntp:6, ng:8, tl:40 },
+];
+const REWARDS = [
+  '🔮 Görüş Alanı Genişledi','⚡ Hız Artışı Kazandın',
+  '🌟 Ekstra Harita Hakkı',  '💎 Donma Kalkanı',
+  '💰 Zaman Kalkanı',        '💎 Elmas Çarpanı',
+  '🧠 Geniş Görüş Ödülü',   '🏆 Ekstra Süre Ödülü',
+  '👁 Gece Görüşü Ödülü',    '🌈 Çift Harita Ödülü',
+];
+const DIFF_COLOR = {Kolay:'#00ffaa', Orta:'#ffd166', Zor:'#ff8855', Efsane:'#ff4466'};
+function localDiff(d) {
+  return d==='Kolay'?T.easy:d==='Zor'?T.hard:d==='Efsane'?T.legend:d;
+}
+let SAVE = JSON.parse(localStorage.getItem('lab_save') || '{"unlocked":1,"done":{},"hi":[],"bank":{},"diamonds":0}');
+if (!SAVE.bank) SAVE.bank = {};
+if (!SAVE.diamonds) SAVE.diamonds = 0;
+if (SAVE.totalGold) { SAVE.diamonds += Math.floor(SAVE.totalGold/10); delete SAVE.totalGold; }
+let SFX_ON   = true;
+let STEP_ON  = true;
+let sfxVol   = 0.70;
+const POWER_DEFS = [
+  {id:'fog+',  ico:'👁',  nm:'Geniş Görüş',    dsc:'Tüm bölüm görüş +2.0 tile',         max:4},
+  {id:'time+', ico:'⏱',  nm:'+30sn Süre',      dsc:'Bölüm süresine +30 saniye ekler',    max:5},
+  {id:'map1',  ico:'🗺',  nm:'Harita Hakkı',    dsc:'Tüm labirenti 6sn görürsün',         max:3},
+  {id:'noice', ico:'🔥',  nm:'Donma Kalkanı',   dsc:'Donmayı engeller + 5sn kazanırsın', max:3},
+  {id:'notm',  ico:'💰',  nm:'Süre Kalkanı',    dsc:'Süre tuzağını +3sn kazanca çevirir', max:3},
+  {id:'spd+',  ico:'⚡',  nm:'Hız Patlaması',   dsc:'20sn boyunca BFS ile otomatik koş', max:3},
+  {id:'eye+',  ico:'🌟',  nm:'Gece Görüşü',     dsc:'40sn tam görüş + flash açılış',      max:3},
+  {id:'x2gem', ico:'💎',  nm:'Çift Elmas',      dsc:'Bu bölümde tüm elmaslar 2×',         max:3},
+  {id:'magnet',ico:'🧲',  nm:'Elmas Mıknatısı', dsc:'3 tile menzilde elmas otomatik gelir',max:3},
+  {id:'rewind',ico:'🔄',  nm:'Geri Sarma',      dsc:'Son 8 adımı geri alır, tuzaktan kaç',max:2},
+];
+const BANK_DEFS = POWER_DEFS;
+function saveData() { localStorage.setItem('lab_save', JSON.stringify(SAVE)); }
+function applyLang() {
+  const s = (id, txt) => { const el=document.getElementById(id); if(el) el.textContent=txt; };
+  s('mnu-tagline', T.tagline);
+  s('mnu-diamonds-lbl', T.diamonds);
+  s('btn-play', T.play);
+  s('btn-shop', T.shop);
+  s('btn-stats', T.stats);
+  s('btn-settings', T.settings);
+  s('mnu-hint', T.hint);
+  s('chs-title', T.selectChapter);
+  s('cfg-title', T.cfgTitle);
+  s('shop-title', T.shopTitle);
+  s('sco-title', T.statsTitle);
+  const hudLabels = document.querySelectorAll('.hl');
+  if (hudLabels[0]) hudLabels[0].textContent = T.menu;
+  if (hudLabels[1]) hudLabels[1].textContent = T.chapter;
+  if (hudLabels[2]) hudLabels[2].textContent = T.totalGem;
+  const mapSpans = document.querySelectorAll('#mapbtn span');
+  if (mapSpans[1]) mapSpans[1].textContent = T.map;
+  document.querySelectorAll('.WB.s').forEach(b => {
+    if (b.textContent.trim().startsWith('←') || b.textContent.trim().startsWith('رجوع')) {
+      b.textContent = T.back;
+    }
+  });
+}
+let pendingChapIdx = 0;     // chapter to start after reward selection
+let selectedRewards = [];   // up to 2 reward IDs selected
+let G = null; // active game object
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if (id === 'chs')  buildChapGrid();
+  if (id === 'sco')  buildScores();
+  if (id === 'shop') buildShop();
+  if (id === 'cfg')  buildSettings();
+  if (id === 'mnu'||id === 'shop'||id === 'inv') refreshDiamondUI();
+  if (id === 'win') {
+    const wtg=document.getElementById('W_tgold');
+    if(wtg) wtg.textContent=SAVE.diamonds||0;
+  }
+  const gameScreens = ['gms'];
+  if (gameScreens.includes(id)) {
+    if (!AC) initAudio();
+    else if (AC.state === 'suspended') AC.resume();
+    if (AC && masterGain && musicOn) {
+      const sl = document.getElementById('sl_music');
+      const vol = (sl ? sl.value/100 : 0.6) * 0.42;
+      masterGain.gain.setTargetAtTime(vol, AC.currentTime, 0.8);
+    }
+  } else {
+    if (AC && masterGain) {
+      masterGain.gain.setTargetAtTime(0, AC.currentTime, 0.6);
+    }
+  }
+}
+function refreshDiamondUI() {
+  const mg=document.getElementById('MNU_gold'); if(mg) mg.textContent=SAVE.diamonds||0;
+  const sb=document.getElementById('SH_bal');   if(sb) sb.textContent=SAVE.diamonds||0;
+  const hg=document.getElementById('H_tg');     if(hg) hg.textContent=SAVE.diamonds||0;
+}
+function buildChapGrid() {
+  const el = document.getElementById('cgrid');
+  el.innerHTML = '';
+  const phases = [
+    {label:T.phaseLearn,  range:[1,5],  color:'rgba(0,255,170,.15)', border:'rgba(0,255,170,.3)'},
+    {label:T.phaseHard,   range:[6,10], color:'rgba(255,180,0,.1)',  border:'rgba(255,180,0,.3)'},
+    {label:T.phaseLegend, range:[11,15],color:'rgba(255,40,80,.1)',  border:'rgba(255,40,80,.3)'},
+    {label:T.phaseChaos,  range:[16,20],color:'rgba(180,0,255,.1)',  border:'rgba(180,0,255,.4)'},
+    {label:T.phaseDark,   range:[21,25],color:'rgba(30,30,30,.4)',    border:'rgba(150,150,180,.35)'},
+  ];
+  phases.forEach(phase => {
+    const hdr = document.createElement('div');
+    hdr.style.cssText = `grid-column:1/-1;text-align:center;font-family:Oxanium,sans-serif;
+      font-size:.42rem;letter-spacing:.2em;padding:3px 0 2px;
+      color:rgba(200,220,255,.5);text-transform:uppercase;margin-top:4px;`;
+    hdr.textContent = phase.label;
+    el.appendChild(hdr);
+    for (let i = phase.range[0]; i <= phase.range[1]; i++) {
+      const ch = CHAPS[i-1];
+      const unlocked = ch.i <= SAVE.unlocked;
+      const done     = SAVE.done[ch.i];
+      const div = document.createElement('div');
+      div.className = 'chb' + (done ? ' done' : '') + (unlocked ? '' : ' locked');
+      div.style.background = unlocked ? phase.color : '';
+      if (unlocked && !done) div.style.borderColor = phase.border;
+      div.innerHTML =
+        `<span class="chn">${ch.i}</span>` +
+        `<span class="chd" style="color:${DIFF_COLOR[ch.diff]};font-size:.36rem;">${localDiff(ch.diff)}</span>` +
+        (done
+          ? `<span class="chs">${'★'.repeat(done.stars)}${'☆'.repeat(3-done.stars)}</span>`
+          : unlocked
+            ? (ch.noAdv ? '<span style="font-size:.55rem;opacity:.6">🌱</span>' : '<span style="font-size:.55rem;opacity:.45">⚔️</span>')
+            : '<span style="font-size:.9rem;opacity:.5">🔒</span>');
+      if (unlocked) div.onclick = () => openInventory(ch.i - 1);
+      el.appendChild(div);
+    }
+  });
+}
+function openInventory(chapIdx) {
+  pendingChapIdx = chapIdx;
+  selectedRewards = [];
+  const ch = CHAPS[chapIdx];
+  if (ch.noAdv) {
+    startChapter(chapIdx, []);
+    return;
+  }
+  POWER_DEFS.forEach(def => {
+    if (selectedRewards.length >= 2) return;
+    if ((SAVE.bank[def.id]||0) > 0) selectedRewards.push(def.id);
+  });
+  const nameEl = document.getElementById('inv_chname');
+  if (nameEl) nameEl.textContent = `Bölüm ${ch.i} — ${ch.name} · ${ch.diff} · ⏱${ch.tl}sn`;
+  buildInvGrid();
+  showScreen('inv');
+}
+function buildInvGrid() {
+  const el = document.getElementById('invgrid'); if(!el) return;
+  const gems = SAVE.diamonds||0;
+  el.innerHTML = '';
+  POWER_DEFS.forEach(def => {
+    const inBank = SAVE.bank[def.id]||0;
+    const isSel  = selectedRewards.includes(def.id);
+    const canBuy = !isSel && gems >= 1 && inBank < def.max;
+    const card   = document.createElement('div');
+    let stateHtml, cls='invcard';
+    if (isSel) {
+      cls += ' active';
+      stateHtml = `<span class="icnt" style="color:var(--amber);">✅ Seçildi (1💎)</span>`;
+    } else if (inBank > 0) {
+      stateHtml = `<span class="icnt">Depoda ×${inBank} — Kullan</span>`;
+    } else if (canBuy) {
+      stateHtml = `<span class="icnt" style="color:#88ddff;">💎1 ile al</span>`;
+    } else if (gems < 1) {
+      stateHtml = `<span class="icnt" style="color:rgba(100,200,255,.7);">💎 Al</span>`;
+    } else {
+      cls += ' empty';
+      stateHtml = `<span class="icnt" style="color:var(--dm);">Max doldu</span>`;
+    }
+    card.className = cls;
+    card.innerHTML =
+      `<span class="iico">${def.ico}</span>`+
+      `<span class="inm">${def.nm}</span>`+
+      `<span class="idsc">${def.dsc}</span>`+
+      stateHtml;
+    if (!isSel && inBank > 0) {
+      card.onclick = () => toggleReward(def.id);
+    } else if (!isSel && canBuy) {
+      card.onclick = () => {
+        SAVE.diamonds = Math.max(0, (SAVE.diamonds||0)-1);
+        SAVE.bank[def.id] = (SAVE.bank[def.id]||0)+1;
+        saveData(); refreshDiamondUI();
+        toggleReward(def.id);
+      };
+    } else if (!isSel && gems < 1) {
+      card.classList.remove('empty');
+      card.style.cursor = 'pointer';
+      card.onclick = () => { openAd('shop'); };
+    } else if (isSel) {
+      card.onclick = () => toggleReward(def.id);
+    }
+    el.appendChild(card);
+  });
+  const sel = selectedRewards.length;
+  const note = document.getElementById('invnote');
+  if(note) note.textContent = sel===0
+    ? `💎 ${gems} elmasın var — güçlenme seçmek için dokun`
+    : `✅ ${sel} güçlenme seçildi — hazır!`;
+  const summary = document.getElementById('inv_bank_summary');
+  if (summary) {
+    summary.innerHTML = `<span style="font-family:'Oxanium',sans-serif;font-size:.9rem;color:var(--amber);letter-spacing:.1em;">💎 ${gems} Elmas</span>`;
+  }
+}
+function toggleReward(id) {
+  const idx = selectedRewards.indexOf(id);
+  if (idx>=0) selectedRewards.splice(idx,1);
+  else if (selectedRewards.length>=2) selectedRewards[1]=id;
+  else selectedRewards.push(id);
+  buildInvGrid();
+}
+function startWithRewards() {
+  selectedRewards.forEach(id => { if (SAVE.bank[id]>0) SAVE.bank[id]--; });
+  saveData();
+  startChapter(pendingChapIdx, selectedRewards.slice());
+}
+function watchAdForPower() { openAd('shop'); }
+function pauseAndGoMenu() {
+  if (!G) { showScreen('mnu'); return; }
+  G._pausedAt = performance.now();
+  G.running = false;
+  if (G.rafId) { cancelAnimationFrame(G.rafId); G.rafId = null; }
+  if (G.dpTid) { clearInterval(G.dpTid); G.dpTid = null; }
+  if (G.autoMoveTid) { clearTimeout(G.autoMoveTid); G.autoMoveTid = null; }
+  showPauseOverlay();
+}
+function showPauseOverlay() {
+  let ov = document.getElementById('pause-overlay');
+  if (!ov) {
+    ov = document.createElement('div');
+    ov.id = 'pause-overlay';
+    ov.style.cssText = [
+      'position:fixed','inset:0','z-index:200',
+      'background:rgba(8,10,22,.88)','backdrop-filter:blur(4px)',
+      'display:flex','align-items:center','justify-content:center',
+      'flex-direction:column','gap:14px'
+    ].join(';');
+    document.body.appendChild(ov);
+  }
+  ov.innerHTML = `
+    <div style="font-family:Oxanium,sans-serif;font-weight:700;font-size:1.4rem;
+      letter-spacing:.18em;color:#e8eaf6;margin-bottom:.4em;">${T.paused}</div>
+    <button onclick="resumeFromPause()" style="
+      font-family:Oxanium,sans-serif;font-weight:700;font-size:1rem;
+      letter-spacing:.14em;padding:14px 44px;
+      border:2.5px solid #00ffaa;background:rgba(0,255,170,.1);color:#00ffaa;
+      border-radius:6px;cursor:pointer;width:220px;">${T.resume}</button>
+    <button onclick="exitToMenu()" style="
+      font-family:Oxanium,sans-serif;font-weight:600;font-size:.9rem;
+      letter-spacing:.12em;padding:12px 44px;
+      border:2px solid rgba(200,220,255,.22);background:transparent;
+      color:rgba(200,220,255,.55);border-radius:6px;cursor:pointer;width:220px;">${T.exitMenu}</button>
+    <div style="font-size:.44rem;letter-spacing:.1em;color:rgba(200,220,255,.28);margin-top:.4em;">
+      ${T.noSave}
+    </div>`;
+  ov.style.display = 'flex';
+}
+function resumeFromPause() {
+  const ov = document.getElementById('pause-overlay');
+  if (ov) ov.style.display = 'none';
+  if (!G) { showScreen('mnu'); return; }
+  G.running = true;
+  G.t0 += (performance.now() - (G._pausedAt || performance.now()));
+  showScreen('gms');
+  bindDpad();
+  gameLoop();
+}
+function exitToMenu() {
+  const ov = document.getElementById('pause-overlay');
+  if (ov) ov.style.display = 'none';
+  G = null;
+  showScreen('mnu');
+}
+function buildMaze(w, h) {
+  const g = Array.from({length:h}, () => new Array(w).fill(1));
+  const visited = new Set();
+  const stack = [{x:1, y:1}];
+  g[1][1] = 0;
+  visited.add('1,1');
+  const DIRS = [[0,-2],[2,0],[0,2],[-2,0]];
+  while (stack.length) {
+    const cur = stack[stack.length - 1];
+    const shuffled = DIRS.slice().sort(() => Math.random() - .5);
+    let moved = false;
+    for (const [dx, dy] of shuffled) {
+      const nx = cur.x + dx, ny = cur.y + dy;
+      if (nx > 0 && ny > 0 && nx < w-1 && ny < h-1 && !visited.has(nx+','+ny)) {
+        g[cur.y + dy/2][cur.x + dx/2] = 0;
+        g[ny][nx] = 0;
+        visited.add(nx + ',' + ny);
+        stack.push({x:nx, y:ny});
+        moved = true;
+        break;
+      }
+    }
+    if (!moved) stack.pop();
+  }
+  for (let i = 0; i < Math.floor(w * h / 10); i++) {
+    const x = 1 + Math.floor(Math.random() * ((w-2)/2)) * 2;
+    const y = 1 + Math.floor(Math.random() * ((h-2)/2)) * 2;
+    const d = [[0,1],[1,0],[0,-1],[-1,0]][Math.floor(Math.random()*4)];
+    const nx = x+d[0], ny = y+d[1];
+    if (nx > 0 && ny > 0 && nx < w-1 && ny < h-1) g[ny][nx] = 0;
+  }
+  return g;
+}
+function bfsDistance(maze, w, h, sx, sy) {
+  const dist = Array.from({length:h}, () => new Array(w).fill(-1));
+  const queue = [{x:sx, y:sy, d:0}];
+  dist[sy][sx] = 0;
+  let head = 0;
+  while (head < queue.length) {
+    const {x, y, d} = queue[head++];
+    for (const [dx,dy] of [[0,1],[1,0],[0,-1],[-1,0]]) {
+      const nx = x+dx, ny = y+dy;
+      if (nx>=0 && ny>=0 && nx<w && ny<h && maze[ny][nx]===0 && dist[ny][nx]===-1) {
+        dist[ny][nx] = d+1;
+        queue.push({x:nx, y:ny, d:d+1});
+      }
+    }
+  }
+  return dist;
+}
+function pickExit(maze, w, h, minD) {
+  const dist = bfsDistance(maze, w, h, 1, 1);
+  const all = [];
+  for (let y = 0; y < h; y++)
+    for (let x = 0; x < w; x++)
+      if (dist[y][x] > 0) all.push({x, y, d:dist[y][x]});
+  all.sort((a,b) => b.d - a.d);
+  const qualified = all.filter(c => c.d >= minD);
+  const pool = qualified.length
+    ? qualified.slice(0, Math.max(1, Math.floor(qualified.length * 0.15)))
+    : all.slice(0, Math.max(1, Math.floor(all.length * 0.10)));
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+function getFloorCells(maze, w, h, excludeX, excludeY) {
+  const cells = [];
+  for (let y = 0; y < h; y++)
+    for (let x = 0; x < w; x++)
+      if (maze[y][x] === 0 && !(x===1&&y===1) && !(x===excludeX&&y===excludeY))
+        cells.push({x, y});
+  return cells;
+}
+function pickRandom(arr, n) {
+  const copy = arr.slice();
+  const result = [];
+  while (result.length < n && copy.length) {
+    const idx = Math.floor(Math.random() * copy.length);
+    result.push(copy.splice(idx, 1)[0]);
+  }
+  return result;
+}
+function startChapter(idx, activeRewards) {
+  if (!activeRewards) activeRewards = [];
+  if (G && G.rafId) cancelAnimationFrame(G.rafId);
+  const ch  = CHAPS[idx];
+  const mW  = ch.W, mH = ch.H;
+  const maze = buildMaze(mW, mH);
+  const exitCell = pickExit(maze, mW, mH, ch.minD);
+  const ex = exitCell.x, ey = exitCell.y;
+  const seen = Array.from({length:mH}, () => new Uint8Array(mW));
+  const floorFar = getFloorCells(maze, mW, mH, ex, ey).filter(c =>
+    Math.hypot(c.x-1, c.y-1) > 2.5
+  );
+  const bonusTypes = ['t3','t5','eye','spd','cmp']; // time+3, time+5, vision, speed, compass
+  const trapPool = ch.i<=5
+    ? ['tm','tm','tm','tm']
+    : ch.i<=10
+      ? ['tm','tm','tm','ice']
+      : ['tm','tm','ice'];
+  const allPool = pickRandom(floorFar, ch.nb + ch.nt + ch.ntp + (ch.ng||3));
+  let pi = 0;
+  const bonuses = [];
+  for (let i = 0; i < ch.nb && pi < allPool.length; i++, pi++) {
+    bonuses.push({x:allPool[pi].x, y:allPool[pi].y, type:bonusTypes[i % bonusTypes.length], got:false});
+  }
+  const traps = [];
+  for (let i = 0; i < ch.nt && pi < allPool.length; i++, pi++) {
+    traps.push({x:allPool[pi].x, y:allPool[pi].y, type:trapPool[i % trapPool.length], got:false});
+  }
+  const tpTraps = [];
+  const tpCount = Math.min(ch.ntp, 3);
+  for (let i = 0; i < tpCount && pi < allPool.length; i++, pi++) {
+    tpTraps.push({x:allPool[pi].x, y:allPool[pi].y, got:false});
+  }
+  const goldItems = [];
+  const goldCount = Math.min(ch.ng||3, 3);
+  for (let i = 0; i < goldCount && pi < allPool.length; i++, pi++) {
+    goldItems.push({x:allPool[pi].x, y:allPool[pi].y, got:false});
+  }
+  const keyItems = [];
+  const mazeCopy = maze.map(row => row.slice());
+  const doorList = [];
+  const phantomWalls = [];
+  const phantomCount = Math.min(3, Math.floor(ch.i/3)+1);
+  let pwTries=0;
+  while(phantomWalls.length<phantomCount && pwTries<200) {
+    pwTries++;
+    const r2=1+Math.floor(Math.random()*(mH-2));
+    const c3=1+Math.floor(Math.random()*(mW-2));
+    if(mazeCopy[r2][c3]===1 && !(r2===1&&c3===1) && !(r2===ey&&c3===ex)) {
+      const adj=[[0,1],[1,0],[0,-1],[-1,0]].filter(([dx,dy])=>{
+        const nx2=c3+dx,ny2=r2+dy;
+        return nx2>=0&&ny2>=0&&nx2<mW&&ny2<mH&&mazeCopy[ny2][nx2]===0;
+      });
+      if(adj.length>=2) { phantomWalls.push({x:c3,y:r2}); }
+    }
+  }
+  G = {
+    ch, mW, mH,
+    maze: mazeCopy,
+    seen, ex, ey,
+    px:1, py:1,
+    steps:0,
+    bonusTime:0,
+    t0: performance.now(),
+    elapsed:0,
+    running:true,
+    rafId:null,
+    bonuses, traps, tpTraps, keyItems, doorList, goldItems, phantomWalls,
+    breadcrumbs: [],  // {x,y} ziyaret edilen yollar
+    keysHeld:0,
+    gemCount:0,
+    gemMultiplier:1,
+    moveDir:{dx:0,dy:0},
+    lastMoveTime:0,
+    particles:[],  // parçacık sistemi
+    speedTrail: [], // [{x,y,t}]
+    autoMoving:false, autoMovePath:[], autoMoveIdx:0, autoMoveTid:null,
+    frozen:false, frozenUntil:0,
+    visionOn:false, visionUntil:0,
+    speedOn:false,  speedUntil:0,
+    compass:false,  compassUntil:0, compassAngle:0,
+    mapUsed:false, mapReveal:false, mapRevealUntil:0,
+    mapExtra:false, // second map use from reward
+    activeRewards,
+    shieldIce: activeRewards.includes('noice'),
+    shieldTime: activeRewards.includes('notm'),
+    magnetOn: activeRewards.includes('magnet'),
+    rewindBank: activeRewards.includes('rewind') ? 1 : 0,
+    rewindHistory: [],  // son 8 adım [{x,y}]
+    toastTid:null,
+    dpHeld:{u:false,d:false,l:false,r:false},
+    dpTid:null,
+  };
+  const now = performance.now();
+  if (activeRewards.includes('fog+'))  G.fogBonus = (G.fogBonus||0) + ch.fog; // 2x toplam
+  if (activeRewards.includes('time+')) G.bonusTime += 30;
+  if (activeRewards.includes('map1'))  G.mapExtra = true;
+  if (activeRewards.includes('x2gem')) G.gemMultiplier = 2;
+  if (activeRewards.includes('spd+'))  { G.speedOn=true; G.speedUntil=now+20000; }
+  if (activeRewards.includes('eye+'))  { G.visionOn=true; G.visionUntil=now+40000; G.mapReveal=true; G.mapRevealUntil=now+2000; }
+  if (activeRewards.includes('noice')) G.shieldIce = true;
+  if (activeRewards.includes('notm'))  G.shieldTime = true;
+  if (activeRewards.includes('magnet'))G.magnetOn = true;
+  if (activeRewards.includes('rewind')){ G.rewindBank=(G.rewindBank||0)+1; }
+  saveData();
+  markSeen();
+  document.getElementById('H_ch').textContent = ch.i;
+  const gdEl=document.getElementById('H_gd'); if(gdEl) gdEl.textContent='0';
+  const tgEl=document.getElementById('H_tg'); if(tgEl) tgEl.textContent=SAVE.diamonds||0;
+  const mbtn = document.getElementById('mapbtn');
+  if (G.mapExtra) {
+    mbtn.classList.remove('used');
+    mbtn.style.opacity = '1';
+    mbtn.style.pointerEvents = 'all';
+  } else {
+    mbtn.style.opacity = '0.18';
+    mbtn.style.pointerEvents = 'none';
+  }
+  document.getElementById('fxbar').innerHTML = '';
+  showScreen('gms');
+  bindDpad();
+  startCountdown(()=> gameLoop());
+}
+function startCountdown(cb) {
+  const el = document.getElementById('countdown-overlay');
+  if(!el){ cb(); return; }
+  const ch = G.ch;
+  el.style.display='flex';
+  el.innerHTML = `
+    <div style="text-align:center;">
+      <div style="font-family:Oxanium,sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.25em;color:rgba(200,220,255,.6);text-transform:uppercase;margin-bottom:.4em;">
+        BÖLÜM ${ch.i} — ${ch.name}
+      </div>
+      <div style="font-family:Oxanium,sans-serif;font-weight:800;font-size:.55rem;letter-spacing:.2em;color:rgba(160,180,255,.5);margin-bottom:1.2em;">
+        ${ch.diff} &nbsp;·&nbsp; ⏱ ${ch.tl}sn
+      </div>
+      <div id="cd-num" style="font-family:Oxanium,sans-serif;font-weight:800;font-size:clamp(4rem,18vw,7rem);line-height:1;color:#fff;text-shadow:0 0 40px rgba(100,180,255,.8),0 0 80px rgba(80,140,255,.4);">3</div>
+      <div style="font-family:Oxanium,sans-serif;font-size:.55rem;letter-spacing:.3em;color:rgba(180,210,255,.45);margin-top:.6em;">HAZIR OL</div>
+    </div>`;
+  G.running = false;
+  let n = 3;
+  const tick = () => {
+    const num = document.getElementById('cd-num');
+    if(!num){ el.style.display='none'; cb(); return; }
+    if(n <= 0){
+      num.textContent = 'BAŞLA!';
+      num.style.fontSize = 'clamp(2.5rem,12vw,4.5rem)';
+      num.style.color = '#00ffaa';
+      num.style.textShadow = '0 0 40px rgba(0,255,170,.9),0 0 80px rgba(0,255,170,.4)';
+      setTimeout(()=>{ el.style.display='none'; G.running=true; cb(); }, 650);
+      return;
+    }
+    num.textContent = n;
+    num.style.transition = 'none';
+    num.style.transform = 'scale(1.4)';
+    num.style.opacity = '1';
+    num.style.color = n===1 ? '#ffbe30' : '#e8f0ff';
+    num.style.textShadow = n===1
+      ? '0 0 40px rgba(255,190,48,.9),0 0 80px rgba(255,160,0,.4)'
+      : '0 0 40px rgba(100,180,255,.8),0 0 80px rgba(80,140,255,.4)';
+    requestAnimationFrame(()=>{
+      requestAnimationFrame(()=>{
+        num.style.transition = 'transform .5s cubic-bezier(.2,1.4,.5,1), opacity .5s';
+        num.style.transform = 'scale(1)';
+      });
+    });
+    n--;
+    setTimeout(tick, 900);
+  };
+  tick();
+}
+function bindDpad() {
+  const map = {dpu:'u', dpd:'d', dpl:'l', dpr:'r'};
+  Object.entries(map).forEach(([elId, key]) => {
+    const el = document.getElementById(elId);
+    if(!el) return;
+    const newEl = el.cloneNode(true);
+    el.parentNode.replaceChild(newEl, el);
+    newEl.addEventListener('touchstart', e => { e.preventDefault(); if(G) G.dpHeld[key]=true; newEl.classList.add('on'); }, {passive:false});
+    newEl.addEventListener('touchend',   e => { e.preventDefault(); if(G) G.dpHeld[key]=false; newEl.classList.remove('on'); }, {passive:false});
+    newEl.addEventListener('touchcancel',e => { e.preventDefault(); if(G) G.dpHeld[key]=false; newEl.classList.remove('on'); }, {passive:false});
+    newEl.addEventListener('mousedown', () => { if(G) G.dpHeld[key]=true;  newEl.classList.add('on'); });
+    newEl.addEventListener('mouseup',   () => { if(G) G.dpHeld[key]=false; newEl.classList.remove('on'); });
+  });
+  if (G.dpTid) clearInterval(G.dpTid);
+  G.dpTid = setInterval(() => {
+    if (!G || !G.running || G.frozen) return;
+    const h = G.dpHeld;
+    if (h.u) move(0,-1);
+    else if (h.d) move(0, 1);
+    else if (h.l) move(-1,0);
+    else if (h.r) move( 1,0);
+  }, 135);
+}
+function markSeen() {
+  const {seen, px, py, mW, mH, ch, visionOn, fogBonus} = G;
+  const fog = ch.fog + (visionOn ? ch.fog * 1.5 : 0) + (fogBonus||0);
+  const r = Math.ceil(fog) + 1;
+  for (let dy = -r; dy <= r; dy++) {
+    for (let dx = -r; dx <= r; dx++) {
+      const nx = px+dx, ny = py+dy;
+      if (nx>=0 && ny>=0 && nx<mW && ny<mH && Math.hypot(dx,dy) <= fog+.5)
+        seen[ny][nx] = 1;
+    }
+  }
+}
+const KB = {}; const KREP = {};
+document.addEventListener('keydown', e => {
+  if (KB[e.code]) return;
+  KB[e.code] = true;
+  onKey(e.code);
+  KREP[e.code] = setInterval(() => onKey(e.code), 130);
+});
+document.addEventListener('keyup', e => {
+  KB[e.code] = false;
+  clearInterval(KREP[e.code]);
+});
+function onKey(code) {
+  if (!G || !G.running || G.frozen) return;
+  if (code==='ArrowUp'   ||code==='KeyW') move(0,-1);
+  if (code==='ArrowDown' ||code==='KeyS') move(0, 1);
+  if (code==='ArrowLeft' ||code==='KeyA') move(-1,0);
+  if (code==='ArrowRight'||code==='KeyD') move( 1,0);
+  if (code==='Escape') { pauseAndGoMenu(); }
+}
+let swipeXY = null;
+C.addEventListener('touchstart', e => {
+  swipeXY={x:e.changedTouches[0].clientX,y:e.changedTouches[0].clientY};
+}, {passive:true});
+C.addEventListener('touchend',   e => {
+  if (!swipeXY) return;
+  const dx=e.changedTouches[0].clientX-swipeXY.x, dy=e.changedTouches[0].clientY-swipeXY.y;
+  swipeXY=null;
+  if (Math.max(Math.abs(dx),Math.abs(dy)) < 18) return;
+  if (Math.abs(dx)>Math.abs(dy)) move(dx>0?1:-1,0);
+  else move(0,dy>0?1:-1);
+}, {passive:true});
+function spawnParticles(wx, wy, col, count) {
+  if (!G) return;
+  for (let i=0;i<count;i++) {
+    const angle=Math.random()*Math.PI*2;
+    const speed=1.5+Math.random()*2.5;
+    G.particles.push({
+      wx, wy,
+      vx:Math.cos(angle)*speed, vy:Math.sin(angle)*speed,
+      grav:1+Math.random(),
+      col, r:2+Math.random()*3,
+      alpha:0.7+Math.random()*.3,
+      life:500+Math.random()*400,
+      t:performance.now()
+    });
+  }
+}
+function move(dx, dy) {
+  if (!G || !G.running || G.frozen) return;
+  const nx = G.px+dx, ny = G.py+dy;
+  if (nx<0||ny<0||nx>=G.mW||ny>=G.mH) return;
+  const tile = G.maze[ny][nx];
+  const isPhantom = tile===1 && G.phantomWalls && G.phantomWalls.some(p=>p.x===nx&&p.y===ny);
+  if (tile === 1 && !isPhantom) { flashScreen('r'); return; }
+  if (isPhantom) {
+    toast(T.t_phantom,'bon'); flashScreen('b');
+    spawnParticles(nx,ny,'#aa88ff',8);
+  }
+  if (G.speedOn) {
+    G.speedTrail.push({x:G.px, y:G.py, t:performance.now()});
+    if (G.speedTrail.length > 20) G.speedTrail.shift();
+  }
+  if (!G.breadcrumbs.some(b=>b.x===G.px&&b.y===G.py))
+    G.breadcrumbs.push({x:G.px, y:G.py, t:performance.now()});
+  if (G.breadcrumbs.length > 200) G.breadcrumbs.shift();
+  G.moveDir = {dx,dy};
+  G.lastMoveTime = performance.now();
+  if (G.rewindBank > 0) {
+    G.rewindHistory.push({x:G.px, y:G.py});
+    if (G.rewindHistory.length > 10) G.rewindHistory.shift();
+  }
+  G.px = nx; G.py = ny; G.steps++;
+  playTickSound(false);
+  markSeen();
+  checkPickups();
+  if (G.magnetOn) checkMagnet();
+  if (G.px===G.ex && G.py===G.ey) winGame();
+}
+function checkPickups() {
+  const {px,py} = G;
+  G.bonuses.forEach(b => {
+    if (b.got || b.x!==px || b.y!==py) return;
+    b.got = true;
+    applyBonus(b.type);
+  });
+  G.traps.forEach(t => {
+    if (t.got || t.x!==px || t.y!==py) return;
+    t.got = true;
+    applyTrap(t.type);
+  });
+  G.tpTraps.forEach(t => {
+    if (t.got || t.x!==px || t.y!==py) return;
+    t.got = true;
+    const floor = getFloorCells(G.maze, G.mW, G.mH, G.ex, G.ey);
+    if (floor.length) {
+      const dest = floor[Math.floor(Math.random()*floor.length)];
+      G.px = dest.x; G.py = dest.y;
+      markSeen();
+    }
+    toast(T.t_teleport,'pen');
+    flashScreen('b'); playTrapSfx('tp');
+  });
+  G.goldItems.forEach(g => {
+    if (g.got || g.x!==px || g.y!==py) return;
+    g.got = true;
+    const earned = 1 * (G.gemMultiplier||1);
+    G.gemCount = (G.gemCount||0) + earned;
+    SAVE.diamonds = (SAVE.diamonds||0) + earned;
+    saveData();
+    playGoldSound();
+    spawnParticles(g.x, g.y, '#00d4ff', 12);
+    toast('💎 +'+(earned>1?earned+' '+T.t_gems:T.t_gem), 'inf');
+    updateHud();
+  });
+}
+function checkMagnet() {
+  if (!G || !G.magnetOn) return;
+  G.goldItems && G.goldItems.forEach(g => {
+    if (g.got) return;
+    const dist = Math.hypot(G.px - g.x, G.py - g.y);
+    if (dist <= 3) {
+      g.got = true;
+      const earned = 1 * (G.gemMultiplier||1);
+      G.gemCount = (G.gemCount||0) + earned;
+      SAVE.diamonds = (SAVE.diamonds||0) + earned;
+      saveData();
+      playGoldSound();
+      spawnParticles(g.x, g.y, '#00d4ff', 10);
+      spawnParticles(G.px, G.py, '#ffd700', 6);
+      toast('🧲 +'+(earned>1?earned+' '+T.t_gems:T.t_gem), 'inf');
+      updateHud();
+    }
+  });
+}
+function doRewind() {
+  if (!G || !G.running) return;
+  if (!G.rewindBank || G.rewindBank <= 0) { toast(T.t_noRewind,'pen'); return; }
+  if (!G.rewindHistory || G.rewindHistory.length < 2) { toast(T.t_noHistory,'pen'); return; }
+  G.rewindBank--;
+  const steps = Math.min(8, G.rewindHistory.length);
+  const target = G.rewindHistory[G.rewindHistory.length - steps];
+  G.rewindHistory = G.rewindHistory.slice(0, G.rewindHistory.length - steps + 1);
+  G.px = target.x; G.py = target.y;
+  markSeen();
+  flashScreen('b');
+  toast('🔄 '+ steps +' '+T.t_rewound,'bon');
+  playBonusSfx('eye');
+  spawnParticles(G.px, G.py, '#88aaff', 14);
+  refreshFx();
+}
+function applyBonus(type) {
+  if (type==='t3') { G.bonusTime+=3; toast(T.t_time3,'bon'); playBonusSfx('t3'); showBonusFlash('⏱','#00ffaa'); }
+  else if (type==='t5') { G.bonusTime+=5; toast(T.t_time5,'bon'); playBonusSfx('t5'); showBonusFlash('⏱','#00ffaa'); }
+  else if (type==='eye') {
+    G.visionOn=true; G.visionUntil=performance.now()+15000;
+    G.mapReveal=true; G.mapRevealUntil=performance.now()+1200;
+    markSeen(); toast(T.t_vision,'bon'); playBonusSfx('eye'); showBonusFlash('👁','#88ddff');
+  }
+  else if (type==='spd') {
+    G.speedOn=true; G.speedUntil=performance.now()+8000;
+    toast(T.t_speed,'bon');
+    playBonusSfx('spd'); showBonusFlash('⚡','#ffd166');
+    startSpeedAutoMove();
+  }
+  else if (type==='cmp') {
+    G.compass=true; G.compassUntil=performance.now()+8000;
+    G.compassAngle=Math.atan2(G.ey-G.py, G.ex-G.px);
+    toast(T.t_compass,'bon'); playBonusSfx('cmp'); showBonusFlash('🧭','#ff9966');
+  }
+  refreshFx();
+}
+function showBonusFlash(ico, col) {
+  let el = document.getElementById('bonus-flash');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'bonus-flash';
+    el.style.cssText = [
+      'position:fixed','inset:0','z-index:100','pointer-events:none',
+      'display:flex','align-items:center','justify-content:center',
+    ].join(';');
+    document.body.appendChild(el);
+  }
+  el.innerHTML = `<div style="
+    font-size:clamp(4rem,20vw,7rem);
+    filter:drop-shadow(0 0 30px ${col});
+    animation:bonus-pop .6s cubic-bezier(.2,1.4,.4,1) forwards;
+  ">${ico}</div>`;
+  el.style.display='flex';
+  setTimeout(()=>{ el.style.display='none'; },650);
+}
+function applyTrap(type) {
+  if (type==='tm') {
+    if (G.shieldTime) {
+      G.bonusTime+=3; toast(T.t_shieldTime,'bon');
+      spawnParticles(G.px,G.py,'#ffbe30',8); playBonusSfx('t3');
+      return;
+    }
+    G.bonusTime-=3; toast('💀 '+T.t_timeMinus,'pen'); flashScreen('r'); playTrapSfx('tm');
+  }
+  else if (type==='ice') {
+    if (G.shieldIce) {
+      G.bonusTime+=5; toast(T.t_shieldIce,'bon');
+      spawnParticles(G.px,G.py,'#ff8844',8); playBonusSfx('t5');
+      return;
+    }
+    G.frozen=true; G.frozenUntil=performance.now()+2000;
+    toast(T.t_frozen,'pen'); flashScreen('b'); playTrapSfx('ice');
+    refreshFx();
+  }
+}
+function startSpeedAutoMove() {
+  if (!G || G.autoMoving) return;
+  const path = bfsPath(G.maze, G.mW, G.mH, G.px, G.py, G.ex, G.ey);
+  if (!path || path.length < 2) return;
+  G.autoMoving = true;
+  const maxSteps = Math.min(10, path.length - 1);
+  G.autoMovePath = path.slice(0, maxSteps + 1);
+  G.autoMoveIdx = 1;
+  const stepDelay = 135; // adım hızı dpad ile aynı — her bölümde sabit
+  function autoStep() {
+    if (!G || !G.running || !G.autoMoving) { G && (G.autoMoving=false); return; }
+    if (G.autoMoveIdx >= G.autoMovePath.length) {
+      G.autoMoving = false; return;
+    }
+    const {x, y} = G.autoMovePath[G.autoMoveIdx];
+    G.speedTrail.push({x:G.px, y:G.py, t:performance.now()});
+    if (G.speedTrail.length > 18) G.speedTrail.shift();
+    G.px = x; G.py = y; G.steps++;
+    markSeen(); checkPickups();
+    playTickSound(true);
+    if (G.px===G.ex && G.py===G.ey) { G.autoMoving=false; winGame(); return; }
+    G.autoMoveIdx++;
+    if (G.autoMoveIdx < G.autoMovePath.length) {
+      G.autoMoveTid = setTimeout(autoStep, stepDelay);
+    } else {
+      G.autoMoving = false;
+    }
+  }
+  G.autoMoveTid = setTimeout(autoStep, stepDelay);
+}
+function bfsPath(maze, w, h, sx, sy, ex, ey) {
+  const prev = {};
+  const visited = new Set();
+  const queue = [{x:sx, y:sy}];
+  visited.add(sx+','+sy);
+  let head = 0;
+  while (head < queue.length) {
+    const {x, y} = queue[head++];
+    if (x===ex && y===ey) {
+      const path = [];
+      let cur = ex+','+ey;
+      while (cur) { const [cx2,cy2]=cur.split(',').map(Number); path.unshift({x:cx2,y:cy2}); cur=prev[cur]; }
+      return path;
+    }
+    for (const [dx,dy] of [[0,1],[1,0],[0,-1],[-1,0]]) {
+      const nx=x+dx, ny=y+dy;
+      const k=nx+','+ny;
+      if (nx>=0&&ny>=0&&nx<w&&ny<h&&maze[ny][nx]===0&&!visited.has(k)) {
+        visited.add(k); prev[k]=x+','+y; queue.push({x:nx,y:ny});
+      }
+    }
+  }
+  return null;
+}
+const AD_REWARDS = [
+  {id:'map',         ico:'🗺', nm:'Harita Aç',           dsc:'6 saniye tüm labirenti gör',           tag:'Oyun İçi'},
+  {id:'time',        ico:'⏱', nm:'+30 Saniye',           dsc:'Bu bölüme 30sn ekle',                  tag:'Oyun İçi'},
+  {id:'fog',         ico:'👁', nm:'Görüş 20sn',           dsc:'Görüş alanı 20 saniye genişler',       tag:'Oyun İçi'},
+  {id:'gem1',        ico:'💎', nm:'+1 Elmas',             dsc:'Hazineye direkt 1 elmas ekle',         tag:'Hazine'},
+  {id:'gem3',        ico:'💎', nm:'+3 Elmas',             dsc:'Hazineye 3 elmas ekle',                tag:'Hazine'},
+  {id:'pow_spd',     ico:'⚡', nm:'Hız → Depoya',         dsc:'Bir sonraki bölümde 20sn hız patlaması',tag:'Depo'},
+  {id:'pow_fog',     ico:'🔭', nm:'Görüş → Depoya',       dsc:'Bir sonraki bölümde +2 tile görüş',    tag:'Depo'},
+  {id:'pow_time',    ico:'🕐', nm:'Süre → Depoya',        dsc:'Bir sonraki bölüme +30sn',             tag:'Depo'},
+  {id:'pow_magnet',  ico:'🧲', nm:'Mıknatıs → Depoya',   dsc:'Bir sonraki bölümde elmas mıknatısı',  tag:'Depo'},
+  {id:'pow_rewind',  ico:'🔄', nm:'Geri Sarma → Depoya', dsc:'Bir sonraki bölümde geri sarma hakkı', tag:'Depo'},
+];
+let adContext = 'map';
+let adSelectedReward = null;
+let adTid = null;
+function openAd(context) {
+  context = context || 'map';
+  adContext = context;
+  adSelectedReward = null;
+  if (context === 'map') {
+    if (!G || !G.running) return;
+    const canUse = G.mapExtra && !G.mapUsed;
+    if (!canUse) { toast(T.t_mapUsed,'pen'); return; }
+    if (G.rafId) { cancelAnimationFrame(G.rafId); G.rafId=null; }
+    G.running = false;
+    G.adPauseTime = performance.now();
+  }
+  const pick = document.getElementById('ad_reward_pick');
+  const countBox = document.getElementById('ad_countdown_box');
+  if (pick) pick.style.display = '';
+  if (countBox) countBox.style.display = 'none';
+  let opts;
+  if (context==='map')    opts=AD_REWARDS.filter(r=>['map','time','fog','pow_spd','pow_magnet'].includes(r.id));
+  else if (context==='win') opts=AD_REWARDS.filter(r=>['gem1','gem3','pow_spd','pow_fog','pow_time','pow_magnet','pow_rewind'].includes(r.id));
+  else if (context==='shop') opts=AD_REWARDS.filter(r=>['gem1','gem3','pow_spd','pow_fog','pow_time','pow_magnet','pow_rewind'].includes(r.id));
+  else                    opts=AD_REWARDS.filter(r=>['time','gem1','pow_spd','pow_fog','pow_magnet'].includes(r.id));
+  if (pick) pick.innerHTML =
+    `<div class="adtitle">✨ Ödülünü Seç</div>` +
+    opts.map(r=>`<div class="adrew" onclick="selectAdReward('${r.id}')">
+      <span class="ar_ico">${r.ico}</span>
+      <span class="ar_info"><div class="ar_nm">${r.nm}</div><div class="ar_dsc">${r.dsc}</div></span>
+      <span class="ar_tag">${r.tag}</span>
+    </div>`).join('');
+  showScreen('ads');
+}
+function selectAdReward(rewardId) {
+  adSelectedReward = rewardId;
+  document.querySelectorAll('.adrew').forEach(el=>{
+    el.classList.toggle('selected', el.getAttribute('onclick')===`selectAdReward('${rewardId}')`);
+  });
+  const r = AD_REWARDS.find(x=>x.id===rewardId);
+  if (!r) return;
+  const pick = document.getElementById('ad_reward_pick');
+  const countBox = document.getElementById('ad_countdown_box');
+  const przLbl = document.getElementById('ad_prz_lbl');
+  const prog = document.getElementById('ad_prog');
+  if (pick) pick.style.display = 'none';
+  if (countBox) countBox.style.display = 'block';
+  if (przLbl) przLbl.textContent = r.ico+' '+r.nm+' hazırlanıyor...';
+  if (prog) { prog.style.transition='none'; prog.style.width='100%'; }
+  if (adTid) clearInterval(adTid);
+  let n=5;
+  const adEl=document.getElementById('AD_n');
+  if (adEl) adEl.textContent=n;
+  adTid = setInterval(()=>{
+    n--;
+    if (adEl) adEl.textContent=n;
+    if (prog) prog.style.width=(n/5*100)+'%';
+    if (n<=0) { clearInterval(adTid); adTid=null; applyAdReward(adSelectedReward); }
+  },1000);
+}
+function applyAdReward(rewardId) {
+  const r = AD_REWARDS.find(x=>x.id===rewardId);
+  if (!r) return;
+  if (rewardId==='map') {
+    if(G){G.mapUsed=true;G.mapReveal=true;G.mapRevealUntil=performance.now()+6000;document.getElementById('mapbtn').classList.add('used');}
+    resumeGame();
+  } else if (rewardId==='time') {
+    if(G) G.bonusTime+=30;
+    resumeGame(); toast('⏱ +30 Saniye!','bon');
+  } else if (rewardId==='fog') {
+    if(G){G.visionOn=true;G.visionUntil=performance.now()+20000;G.mapReveal=true;G.mapRevealUntil=performance.now()+1500;markSeen();refreshFx();}
+    resumeGame(); toast('👁 Görüş 20sn!','bon');
+  } else if (rewardId==='gem1'||rewardId==='gem3') {
+    const n=rewardId==='gem3'?3:1;
+    SAVE.diamonds=(SAVE.diamonds||0)+n; saveData(); playGoldSound();
+    refreshDiamondUI();
+    const wtg=document.getElementById('W_tgold'); if(wtg) wtg.textContent=SAVE.diamonds;
+    returnFromAd(); toast(`💎 +${n} Elmas!`,'inf');
+  } else if (rewardId==='pow_spd') {
+    const def=POWER_DEFS.find(d=>d.id==='spd+');
+    if(def&&(SAVE.bank['spd+']||0)<def.max){SAVE.bank['spd+']=(SAVE.bank['spd+']||0)+1;saveData();}
+    returnFromAd(); toast('⚡ Hız depoya eklendi!','bon');
+  } else if (rewardId==='pow_fog') {
+    const def=POWER_DEFS.find(d=>d.id==='fog+');
+    if(def&&(SAVE.bank['fog+']||0)<def.max){SAVE.bank['fog+']=(SAVE.bank['fog+']||0)+1;saveData();}
+    returnFromAd(); toast('👁 Görüş depoya eklendi!','bon');
+  } else if (rewardId==='pow_time') {
+    const def=POWER_DEFS.find(d=>d.id==='time+');
+    if(def&&(SAVE.bank['time+']||0)<def.max){SAVE.bank['time+']=(SAVE.bank['time+']||0)+1;saveData();}
+    returnFromAd(); toast('⏱ Süre depoya eklendi!','bon');
+  } else if (rewardId==='pow_magnet') {
+    const def=POWER_DEFS.find(d=>d.id==='magnet');
+    if(def&&(SAVE.bank['magnet']||0)<def.max){SAVE.bank['magnet']=(SAVE.bank['magnet']||0)+1;saveData();}
+    returnFromAd(); toast('🧲 Mıknatıs depoya eklendi!','bon');
+  } else if (rewardId==='pow_rewind') {
+    const def=POWER_DEFS.find(d=>d.id==='rewind');
+    if(def&&(SAVE.bank['rewind']||0)<def.max){SAVE.bank['rewind']=(SAVE.bank['rewind']||0)+1;saveData();}
+    returnFromAd(); toast('🔄 Geri Sarma depoya eklendi!','bon');
+  }
+}
+function resumeGame() {
+  const pick=document.getElementById('ad_reward_pick');
+  const countBox=document.getElementById('ad_countdown_box');
+  if(pick) pick.style.display='';
+  if(countBox) countBox.style.display='none';
+  if(!G){showScreen('mnu');return;}
+  if(G.adPauseTime){G.t0+=(performance.now()-G.adPauseTime);G.adPauseTime=0;}
+  showScreen('gms'); G.running=true; gameLoop();
+}
+function returnFromAd() {
+  const pick=document.getElementById('ad_reward_pick');
+  const countBox=document.getElementById('ad_countdown_box');
+  if(pick) pick.style.display='';
+  if(countBox) countBox.style.display='none';
+  if(adContext==='timesup') { /* openAdTimesUp kendi halleder */ return; }
+  if(adContext==='win') showScreen('win');
+  else if(G&&!G.running) resumeGame();
+  else showScreen('mnu');
+}
+function cancelAd() {
+  if(adTid){clearInterval(adTid);adTid=null;}
+  if(adContext==='timesup'){
+    if(G) showTimesUpScreen(G.ch.i, G.steps, G.gemCount||0, G._adUseCount||0);
+    else showScreen('mnu');
+    return;
+  }
+  if(adContext==='win'){showScreen('win');return;}
+  if(G) resumeGame(); else showScreen('mnu');
+}
+function openAdFromWin() { openAd('win'); }
+function gameLoop() {
+  if (!G || !G.running) return;
+  G.rafId = requestAnimationFrame(gameLoop);
+  const now = performance.now();
+  G.elapsed = (now - G.t0) / 1000;
+  if (G.frozen    && now > G.frozenUntil)   { G.frozen=false;   refreshFx(); }
+  if (G.visionOn  && now > G.visionUntil)   { G.visionOn=false; refreshFx(); }
+  if (G.speedOn   && now > G.speedUntil)    { G.speedOn=false;  refreshFx(); }
+  if (G.compass   && now > G.compassUntil)  { G.compass=false;  refreshFx(); }
+  if (G.mapReveal && now > G.mapRevealUntil) G.mapReveal=false;
+  if (G.ch.tl > 0) {
+    const rem = G.ch.tl - G.elapsed + G.bonusTime;
+    if (rem <= 0) { G.running=false; timesUp(); return; }
+  }
+  resizeCanvas();
+  render();
+  updateHud();
+  updateMusic();
+}
+function timesUp() {
+  if (G.autoMoveTid) clearTimeout(G.autoMoveTid);
+  G.autoMoving = false;
+  G.running = false;
+  G._adUseCount = (G._adUseCount || 0);
+  playLoseMusic();
+  setTimeout(() => { stopAllMusic(); }, 1800);
+  showTimesUpScreen(G.ch.i, G.steps, G.gemCount||0, G._adUseCount);
+}
+function showTimesUpScreen(chapI, steps, gems, adCount) {
+  adCount = adCount || 0;
+  const canUseAd = adCount < 2;
+  const ov = document.getElementById('timesup-overlay');
+  ov.innerHTML = `
+    <div style="text-align:center;padding:24px;max-width:300px;width:90vw;">
+      <div style="font-family:Oxanium,sans-serif;font-weight:800;
+        font-size:clamp(2.2rem,12vw,3.5rem);color:#ff3355;
+        text-shadow:0 0 40px rgba(255,51,85,.6);letter-spacing:.08em;margin-bottom:.2em;">
+        SÜRE BİTTİ
+      </div>
+      <div style="font-size:clamp(1rem,5vw,1.4rem);color:rgba(255,100,120,.7);margin-bottom:.6em;">☆☆☆</div>
+      <div style="font-family:Oxanium,sans-serif;font-size:.55rem;color:rgba(200,220,255,.45);
+        letter-spacing:.12em;margin-bottom:1.2em;line-height:2;">
+        BÖLÜM ${chapI} · ${steps} ADIM${gems?' · 💎'+gems:''}
+      </div>
+      ${canUseAd ? `
+      <button onclick="openAdTimesUp()" style="
+        font-family:Oxanium,sans-serif;font-weight:700;font-size:1rem;letter-spacing:.12em;
+        padding:14px 0;margin-bottom:10px;width:100%;
+        border:2.5px solid rgba(0,255,170,.6);background:rgba(0,255,170,.1);color:#00ffaa;
+        border-radius:6px;cursor:pointer;box-shadow:0 0 20px rgba(0,255,170,.2);">
+        +30 SN${adCount===1?' (Son hak)':''}
+      </button>` : `
+      <div style="font-size:.5rem;color:rgba(255,100,120,.55);letter-spacing:.08em;
+        margin-bottom:10px;padding:9px;border:1px solid rgba(255,50,80,.2);border-radius:6px;">
+        ⛔ Ek süre hakkı bitti
+      </div>`}
+      <div style="display:flex;gap:8px;justify-content:center;">
+        <button onclick="closeTimesUp();openInventory(${chapI-1})" style="
+          font-family:Oxanium,sans-serif;font-size:.82rem;letter-spacing:.1em;
+          padding:10px 20px;border:2px solid rgba(200,220,255,.25);
+          background:transparent;color:rgba(200,220,255,.6);border-radius:4px;cursor:pointer;">
+          ↺ TEKRAR</button>
+        <button onclick="closeTimesUp();showScreen('mnu')" style="
+          font-family:Oxanium,sans-serif;font-size:.82rem;letter-spacing:.1em;
+          padding:10px 20px;border:2px solid rgba(200,220,255,.15);
+          background:transparent;color:rgba(200,220,255,.4);border-radius:4px;cursor:pointer;">
+          ◀ MENÜ</button>
+      </div>
+    </div>`;
+  ov.style.display = 'flex';
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('gms').classList.add('active');
+}
+function closeTimesUp() {
+  const ov = document.getElementById('timesup-overlay');
+  if (ov) ov.style.display = 'none';
+  G = null;
+}
+function openAdTimesUp() {
+  adContext = 'timesup';
+  adSelectedReward = 'time';
+  const pick = document.getElementById('ad_reward_pick');
+  const countBox = document.getElementById('ad_countdown_box');
+  if (pick) pick.style.display = 'none';
+  if (countBox) countBox.style.display = 'block';
+  const przLbl = document.getElementById('ad_prz_lbl');
+  const prog   = document.getElementById('ad_prog');
+  if (przLbl) przLbl.textContent = '⏱ +30 saniye hazırlanıyor...';
+  if (prog) { prog.style.transition='none'; prog.style.width='100%'; }
+  const adEl = document.getElementById('AD_n');
+  if (adEl) adEl.textContent = 5;
+  showScreen('ads');
+  if (adTid) clearInterval(adTid);
+  let n = 5;
+  adTid = setInterval(()=>{
+    n--;
+    if (adEl) adEl.textContent = n;
+    if (prog) prog.style.width = (n/5*100)+'%';
+    if (n <= 0) {
+      clearInterval(adTid); adTid = null;
+      if (G) {
+        G._adUseCount = (G._adUseCount||0) + 1;
+        G.t0 = performance.now() - G.ch.tl * 1000;
+        G.elapsed = G.ch.tl;
+        G.bonusTime = 30;
+        G.running = true;
+        const ov = document.getElementById('timesup-overlay');
+        if (ov) ov.style.display = 'none';
+        if (AC && masterGain && musicOn) {
+          const sl = document.getElementById('sl_music');
+          const vol = (sl ? sl.value/100 : 0.6) * 0.42;
+          masterGain.gain.setTargetAtTime(vol, AC.currentTime, 0.5);
+        }
+        const p2=document.getElementById('ad_reward_pick');
+        const cb=document.getElementById('ad_countdown_box');
+        if(p2) p2.style.display='';
+        if(cb) cb.style.display='none';
+        showScreen('gms');
+        bindDpad();
+        gameLoop();
+        toast(T.t_adTime,'bon');
+      }
+    }
+  }, 1000);
+}
+function continueAfterAd() {
+  const pick = document.getElementById('ad_reward_pick');
+  const countBox = document.getElementById('ad_countdown_box');
+  const przLbl = document.getElementById('ad_prz_lbl');
+  const prog = document.getElementById('ad_prog');
+  if (pick) pick.style.display = 'none';
+  if (countBox) countBox.style.display = 'block';
+  if (przLbl) przLbl.textContent = '⏱ +30 Saniye & Devam hazırlanıyor...';
+  if (prog) { prog.style.transition='none'; prog.style.width='100%'; }
+  if (adTid) clearInterval(adTid);
+  let n=5;
+  const adEl=document.getElementById('AD_n');
+  if (adEl) adEl.textContent=n;
+  adTid = setInterval(()=>{
+    n--; if(adEl) adEl.textContent=n;
+    if(prog) prog.style.width=(n/5*100)+'%';
+    if(n<=0){
+      clearInterval(adTid); adTid=null;
+      G.running=true; G.bonusTime+=30;
+      G.t0=performance.now()-G.elapsed*1000;
+      const pick2=document.getElementById('ad_reward_pick');
+      const cb2=document.getElementById('ad_countdown_box');
+      if(pick2) pick2.style.display='';
+      if(cb2) cb2.style.display='none';
+      showScreen('gms'); gameLoop();
+    }
+  },1000);
+}
+function resizeCanvas() {
+  if (C.width!==C.offsetWidth||C.height!==C.offsetHeight) {
+    C.width=C.offsetWidth; C.height=C.offsetHeight;
+  }
+}
+function render() {
+  const {mW,mH,maze,seen,px,py,ex,ey,elapsed,ch,visionOn,frozen,mapReveal,mapRevealUntil,bonuses,traps,tpTraps,keyItems,doorList,keysHeld,compass,compassAngle,compassUntil,goldItems,speedTrail,speedOn} = G;
+  const W=C.width, H=C.height;
+  cx.fillStyle='#0a0c18';
+  cx.fillRect(0,0,W,H);
+  const rev=mapReveal && performance.now()<mapRevealUntil;
+  const CELL_BASE = Math.max(14, Math.min(W, H) * 0.075);
+  let cell, ox, oy, spx, spy;
+  if (rev) {
+    cell = Math.max(4, Math.min((W - 8) / mW, (H - 50) / mH));
+    ox = (W - mW * cell) / 2;
+    oy = (H - mH * cell) / 2;
+    spx = ox + (px + 0.5) * cell;
+    spy = oy + (py + 0.5) * cell;
+  } else {
+    cell = CELL_BASE;
+    const mazeW = mW * cell;
+    const mazeH = mH * cell;
+    const hudH  = 52; // HUD yüksekliği için üst boşluk
+    const dpadH = 200; // D-pad için alt boşluk
+    const ox_ideal = W / 2 - (px + 0.5) * cell;
+    const oy_ideal = (H - hudH - dpadH) / 2 + hudH - (py + 0.5) * cell;
+    if (mazeW <= W) {
+      ox = (W - mazeW) / 2;
+    } else {
+      ox = Math.min(0, Math.max(W - mazeW, ox_ideal));
+    }
+    if (mazeH <= H - hudH - dpadH) {
+      oy = hudH + (H - hudH - dpadH - mazeH) / 2;
+    } else {
+      oy = Math.min(hudH, Math.max(H - dpadH - mazeH, oy_ideal));
+    }
+    spx = ox + (px + 0.5) * cell;
+    spy = oy + (py + 0.5) * cell;
+  }
+  const fogBonus = G.fogBonus||0;
+  const fog=(ch.fog+(visionOn?ch.fog*1.5:0)+fogBonus)*cell;
+  const visR=Math.ceil((ch.fog+(visionOn?ch.fog*1.5:0)+(G.fogBonus||0))*1.5)+2;
+  const rMin=Math.max(0,py-visR), rMax=Math.min(mH-1,py+visR);
+  const cMin=Math.max(0,px-visR), cMax=Math.min(mW-1,px+visR);
+  const rFrom = rev ? 0 : rMin, rTo = rev ? mH-1 : rMax;
+  const cFrom = rev ? 0 : cMin, cTo = rev ? mW-1 : cMax;
+  for (let r=rFrom;r<=rTo;r++) {
+    for (let c2=cFrom;c2<=cTo;c2++) {
+      if (!rev && !seen[r][c2]) continue;
+      if (!rev) {
+        const sx_test = ox+c2*cell;
+        const sy_test = oy+r*cell;
+        if (sx_test > W+cell || sx_test < -cell || sy_test > H+cell || sy_test < -cell) continue;
+      }
+      const sx=ox+c2*cell, sy=oy+r*cell;
+      const dist=Math.hypot((c2+.5)*cell+ox-spx,(r+.5)*cell+oy-spy);
+      const visited = seen[r][c2] === 1;
+      const bright=rev
+        ? Math.max(.18, .35*(1-dist/(fog*3.5)))
+        : (dist < fog ? Math.max(.04, 1-dist/fog)
+           : visited ? 0.32 : 0);  // geçilen yer sissiz görünür
+      const t=maze[r][c2];
+      const isPhant=t===1 && G.phantomWalls && G.phantomWalls.some(p=>p.x===c2&&p.y===r);
+      if (t===1 && isPhant) {
+        const wr2=Math.floor(18+bright*35); const wg2=Math.floor(20+bright*38); const wb2=Math.floor(38+bright*70);
+        cx.fillStyle=`rgba(${wr2},${wg2},${wb2},0.6)`;
+        cx.fillRect(sx,sy,cell+.5,cell+.5);
+        cx.fillStyle=`rgba(170,100,255,${bright*.18+.05*Math.sin(elapsed*3+c2+r)})`;
+        cx.fillRect(sx,sy,cell,cell);
+        continue;
+      }
+      if (t===1) {
+        const phI = ch.i<=5?0:ch.i<=10?1:ch.i<=15?2:ch.i<=20?3:4;
+        const wallTints = [
+          [18,30,48, 80,140,255],   // Öğrenme: mavi
+          [30,22,12, 220,160,60],   // Zorluk: amber
+          [32,12,12, 220,60,60],    // Efsane: kırmızı
+          [28,10,38, 180,60,255],   // Kaos: mor
+          [22,22,28, 140,150,180],  // Karanlık: antrasit
+        ];
+        const wt = wallTints[Math.min(phI,4)];
+        const nearness = Math.max(0, 1-dist/(fog*0.8));
+        const wr = Math.floor(wt[0] + bright*35 + nearness*12);
+        const wg = Math.floor(wt[1] + bright*32 + nearness*10);
+        const wb = Math.floor(wt[2] + bright*60 + nearness*18);
+        cx.fillStyle=`rgb(${wr},${wg},${wb})`;
+        cx.fillRect(sx,sy,cell+.5,cell+.5);
+        if (bright>.1) {
+          cx.fillStyle=`rgba(${wt[3]},${wt[4]},${wt[5]},${bright*.08})`;
+          cx.fillRect(sx,sy,cell,.5*cell);
+          cx.strokeStyle=`rgba(${wt[3]},${wt[4]},${wt[5]},${bright*.15})`;
+          cx.lineWidth=.6;
+          cx.strokeRect(sx+.3,sy+.3,cell-.1,cell-.1);
+        }
+      } else if (t===2) {
+        const door=doorList.find(d=>d.x===c2&&d.y===r);
+        if (door&&!door.open) {
+          cx.fillStyle=`rgba(180,100,20,${.4+bright*.5})`;
+          cx.fillRect(sx,sy,cell+.5,cell+.5);
+          cx.fillStyle=`rgba(255,160,40,${bright*.15})`;
+          cx.fillRect(sx,sy,cell,cell);
+          if (cell>8) {
+            cx.font=`${Math.max(7,cell*.55)}px serif`;
+            cx.textAlign='center'; cx.textBaseline='middle';
+            cx.fillText('🚪',sx+cell/2,sy+cell/2);
+          }
+        } else {
+          const fr=Math.floor(14+bright*22), fg2=Math.floor(11+bright*16), fb=Math.floor(9+bright*12);
+          cx.fillStyle=`rgb(${fr},${fg2},${fb})`;
+          cx.fillRect(sx,sy,cell+.5,cell+.5);
+        }
+      } else {
+        const fr=Math.floor(8+bright*14);
+        const fg2=Math.floor(10+bright*16);
+        const fb=Math.floor(18+bright*28);
+        cx.fillStyle=`rgb(${fr},${fg2},${fb})`;
+        cx.fillRect(sx,sy,cell+.5,cell+.5);
+        if (bright>.35) {
+          cx.fillStyle=`rgba(80,140,255,${(bright-.35)*.07})`;
+          cx.fillRect(sx,sy,cell,cell);
+        }
+        if (bright>.08) {
+          cx.strokeStyle=`rgba(60,100,220,${bright*.03})`;
+          cx.lineWidth=.4;
+          cx.strokeRect(sx+.3,sy+.3,cell-.1,cell-.1);
+        }
+      }
+    }
+  }
+  function drawSprite(gx, gy, ico, shadow, got) {
+    if (got) return;
+    if (!rev && !seen[gy][gx]) return;
+    const sx2=ox+(gx+.5)*cell, sy2=oy+(gy+.5)*cell;
+    const dist=Math.hypot(sx2-spx,sy2-spy);
+    const alpha=Math.max(.18, rev?(.35-dist/(fog*5)):Math.max(0,1-dist/fog));
+    const bob=Math.sin(elapsed*2.8+gx+gy)*(cell*.11);
+    cx.save();
+    cx.globalAlpha=alpha;
+    cx.shadowColor=shadow; cx.shadowBlur=cell*.6;
+    cx.font=`${Math.max(7,cell*.58)}px serif`;
+    cx.textAlign='center'; cx.textBaseline='middle';
+    cx.fillText(ico, sx2, sy2+bob);
+    cx.shadowBlur=0;
+    cx.restore();
+  }
+  const BICO = {t3:'⏱',t5:'⏱',eye:'👁',spd:'⚡',cmp:'🧭'};
+  const BSHD = {t3:'#00ffaa',t5:'#00ffaa',eye:'#88ddff',spd:'#ffd166',cmp:'#ff9966'};
+  bonuses.forEach(b => drawSprite(b.x,b.y,BICO[b.type]||'⏱',BSHD[b.type]||'#fff',b.got));
+  traps.forEach(t => {
+    if (t.got) return;
+    const dist=Math.hypot(t.x-px,t.y-py);
+    const show=rev || (seen[t.y][t.x] && dist<2.5);
+    if (show) drawSprite(t.x,t.y,t.type==='tm'?'💀':'❄','#ef233c',false);
+  });
+  tpTraps.forEach(t => {
+    if (t.got) return;
+    const dist=Math.hypot(t.x-px,t.y-py);
+    if (rev||(seen[t.y][t.x]&&dist<2.5)) drawSprite(t.x,t.y,'🌀','#cc88ff',false);
+  });
+  keyItems.forEach(k => drawSprite(k.x,k.y,'🔑','#ffd166',k.got));
+  goldItems && goldItems.forEach(g => {
+    if (g.got) return;
+    if (!rev && !seen[g.y][g.x]) return;
+    const gsx=ox+(g.x+.5)*cell, gsy=oy+(g.y+.5)*cell;
+    const gdist=Math.hypot(gsx-spx,gsy-spy);
+    const galpha=Math.max(.18, rev?(.35-gdist/(fog*5)):Math.max(0,1-gdist/fog));
+    const gbob=Math.sin(elapsed*3.5+g.x+g.y)*(cell*.1);
+    cx.save();
+    cx.globalAlpha=galpha*.6;
+    const gg=cx.createRadialGradient(gsx,gsy+gbob,0,gsx,gsy+gbob,cell*.8);
+    gg.addColorStop(0,'rgba(255,215,0,.6)');
+    gg.addColorStop(1,'rgba(255,215,0,0)');
+    cx.fillStyle=gg;
+    cx.beginPath();cx.arc(gsx,gsy+gbob,cell*.8,0,Math.PI*2);cx.fill();
+    cx.globalAlpha=galpha;
+    cx.shadowColor='#ffd700'; cx.shadowBlur=cell*.9;
+    cx.font=`${Math.max(7,cell*.6)}px serif`;
+    cx.textAlign='center'; cx.textBaseline='middle';
+    cx.fillText('💎', gsx, gsy+gbob);
+    cx.shadowBlur=0;
+    cx.restore();
+  });
+  if (speedOn && speedTrail && speedTrail.length > 1) {
+    const now2 = performance.now();
+    speedTrail.forEach((pt, idx) => {
+      const age = (now2 - pt.t) / 800; // fade in 800ms
+      if (age > 1) return;
+      const alpha = (1-age) * 0.55 * (idx/speedTrail.length);
+      const tsx2 = ox+(pt.x+.5)*cell, tsy2 = oy+(pt.y+.5)*cell;
+      cx.save();
+      cx.globalAlpha = alpha;
+      const tg = cx.createRadialGradient(tsx2,tsy2,0,tsx2,tsy2,cell*.5);
+      tg.addColorStop(0,'rgba(255,200,50,0.9)');
+      tg.addColorStop(1,'rgba(255,100,0,0)');
+      cx.fillStyle = tg;
+      cx.beginPath();cx.arc(tsx2,tsy2,cell*.5,0,Math.PI*2);cx.fill();
+      cx.restore();
+    });
+  }
+  if (G.particles && G.particles.length>0) {
+    const now4=performance.now();
+    G.particles = G.particles.filter(p=>{
+      const age=(now4-p.t)/p.life;
+      if(age>=1) return false;
+      const px2=ox+(p.wx+.5)*cell+p.vx*(now4-p.t)*0.06;
+      const py2=oy+(p.wy+.5)*cell+p.vy*(now4-p.t)*0.06 - p.grav*(now4-p.t)*(now4-p.t)*0.000015;
+      const a=(1-age)*p.alpha;
+      const r2=p.r*(1-age*.5);
+      cx.save();
+      cx.globalAlpha=a;
+      cx.fillStyle=p.col;
+      cx.shadowColor=p.col; cx.shadowBlur=r2*3;
+      cx.beginPath();cx.arc(px2,py2,Math.max(.5,r2),0,Math.PI*2);cx.fill();
+      cx.shadowBlur=0;
+      cx.restore();
+      return true;
+    });
+  }
+  if (rev || seen[ey][ex]) {
+    const esx=ox+(ex+.5)*cell, esy=oy+(ey+.5)*cell;
+    const pulse=.5+Math.sin(elapsed*2.6)*.38;
+    const s=cell*.32*pulse;
+    const g=cx.createRadialGradient(esx,esy,0,esx,esy,cell*1.7);
+    g.addColorStop(0,`rgba(0,255,170,${rev?.55:.28*pulse})`);
+    g.addColorStop(1,'rgba(0,255,170,0)');
+    cx.fillStyle=g;
+    cx.fillRect(esx-cell*2,esy-cell*2,cell*4,cell*4);
+    cx.save();
+    cx.translate(esx,esy);
+    cx.rotate(elapsed*.45);
+    cx.strokeStyle=`rgba(0,255,170,${.65+pulse*.3})`;
+    cx.lineWidth=Math.max(.8,cell*.07);
+    cx.strokeRect(-s,-s,s*2,s*2);
+    cx.beginPath();
+    cx.moveTo(0,-s*.58);cx.lineTo(s*.58,0);cx.lineTo(0,s*.58);cx.lineTo(-s*.58,0);
+    cx.closePath();
+    cx.strokeStyle=`rgba(0,255,170,${.35+pulse*.3})`;
+    cx.lineWidth=Math.max(.5,cell*.04);
+    cx.stroke();
+    cx.restore();
+    if (cell>9) {
+      cx.fillStyle=`rgba(0,255,170,${.5+pulse*.28})`;
+      cx.font=`bold ${Math.max(6,Math.floor(cell*.2))}px Oxanium,sans-serif`;
+      cx.textAlign='center'; cx.textBaseline='bottom';
+      cx.fillText('ÇIKIŞ',esx,esy-s-2);
+    }
+  }
+  if (rev) {
+    const rem=(G.mapRevealUntil-performance.now())/6000;
+    cx.fillStyle='rgba(0,0,0,.7)';cx.fillRect(0,0,W,22);
+    cx.fillStyle='rgba(0,255,170,.85)';cx.fillRect(0,0,W*Math.max(0,rem),3);
+    cx.fillStyle='rgba(0,255,170,.75)';
+    cx.font='bold 9px Oxanium,sans-serif';
+    cx.textAlign='center';cx.textBaseline='middle';
+    cx.fillText(T.t_mapOpen+' '+Math.ceil(rem*6)+T.t_mapSec,W/2,12);
+  }
+  if (!rev) {
+    const fg=cx.createRadialGradient(spx,spy,fog*.28,spx,spy,fog*1.08);
+    fg.addColorStop(0,'rgba(8,10,20,0)');
+    fg.addColorStop(.55,'rgba(6,8,18,.05)');
+    fg.addColorStop(1,'rgba(4,5,14,.88)');
+    cx.fillStyle=fg;cx.fillRect(0,0,W,H);
+  }
+  if (compass && performance.now()<compassUntil) {
+    const a=Math.atan2(ey-py,ex-px);
+    const rem=(G.compassUntil-performance.now())/5000;
+    cx.save();
+    cx.translate(spx,spy);cx.rotate(a);
+    cx.globalAlpha=.5+rem*.35;
+    cx.strokeStyle='#ff9966';cx.lineWidth=Math.max(1.5,cell*.09);cx.lineCap='round';
+    const len=cell*1.8;
+    cx.beginPath();cx.moveTo(cell*.4,0);cx.lineTo(len,0);cx.stroke();
+    cx.beginPath();
+    cx.moveTo(len,0);cx.lineTo(len-cell*.3,-cell*.2);
+    cx.moveTo(len,0);cx.lineTo(len-cell*.3, cell*.2);
+    cx.stroke();
+    cx.restore();
+  }
+  if (G.breadcrumbs && G.breadcrumbs.length>0) {
+    const now3=performance.now();
+    G.breadcrumbs.forEach((b,i)=>{
+      if(!seen[b.y]||!seen[b.y][b.x]) return;
+      const bx=ox+(b.x+.5)*cell, by2=oy+(b.y+.5)*cell;
+      const age=Math.min(1,(now3-b.t)/15000); // 15sn'de solar
+      const alpha=(1-age)*0.22*(i/G.breadcrumbs.length);
+      if(alpha<0.02) return;
+      cx.save();
+      cx.globalAlpha=alpha;
+      cx.fillStyle='#00d4ff';
+      cx.beginPath();cx.arc(bx,by2,Math.max(1.2,cell*.13),0,Math.PI*2);cx.fill();
+      cx.restore();
+    });
+  }
+  const phaseIdx = ch.i <= 5 ? 0 : ch.i <= 10 ? 1 : ch.i <= 15 ? 2 : ch.i <= 20 ? 3 : 4;
+  const phaseColors = [
+    {body:'#a0ffcc', glow:'rgba(0,255,150,.9)',  core:'#00dd88'},   // Öğrenme — yeşil
+    {body:'#ffe090', glow:'rgba(255,200,50,.9)', core:'#ffaa00'},   // Zorluk  — altın
+    {body:'#ff9090', glow:'rgba(255,80,80,.9)',  core:'#ff3355'},   // Efsane  — kırmızı
+    {body:'#dd88ff', glow:'rgba(180,0,255,.9)',  core:'#9900cc'},   // Kaos    — mor
+    {body:'#e8eaf6', glow:'rgba(200,210,255,.9)',core:'#8899cc'},   // Karanlık — gümüş
+  ];
+  const pCol = frozen ? {body:'#88ccff',glow:'rgba(100,180,255,.9)',core:'#4488cc'} : phaseColors[phaseIdx];
+  const pc = pCol.body;
+  const ps = pCol.glow;
+  const timeSinceMove=performance.now()-(G.lastMoveTime||0);
+  const squashT=Math.min(1,timeSinceMove/160);
+  const squeeze=squashT<1 ? (1+Math.sin(squashT*Math.PI)*0.28) : 1; // yatay genişle
+  const stretch=squashT<1 ? (1-Math.sin(squashT*Math.PI)*0.18) : 1; // dikey sıkış
+  const bobY=Math.sin(elapsed*6)*cell*.04; // hafif zıplama
+  const r=Math.max(2.5,cell*.27);
+  cx.save();
+  cx.globalAlpha=frozen?.65:1;
+  cx.translate(spx,spy+bobY);
+  cx.scale(squeeze,stretch);
+  const pg=cx.createRadialGradient(0,0,r*.2,0,0,r*2.2);
+  pg.addColorStop(0,'rgba(200,230,255,.18)');
+  pg.addColorStop(.5,'rgba(100,200,255,.08)');
+  pg.addColorStop(1,'rgba(100,200,255,0)');
+  cx.fillStyle=pg;cx.beginPath();cx.arc(0,0,r*2.2,0,Math.PI*2);cx.fill();
+  const bodyG=cx.createRadialGradient(-r*.25,-r*.3,r*.05,0,0,r);
+  bodyG.addColorStop(0,'#ffffff');
+  bodyG.addColorStop(.3,pc);
+  bodyG.addColorStop(1,pCol.core);
+  cx.fillStyle=bodyG;
+  cx.shadowColor=ps;cx.shadowBlur=cell*.7;
+  cx.beginPath();cx.arc(0,0,r,0,Math.PI*2);cx.fill();
+  cx.shadowBlur=0;
+  const {dx:md,dy:mdy}=G.moveDir||{dx:0,dy:0};
+  const eyeX=md*.3*r, eyeY=mdy*.3*r;
+  cx.fillStyle='rgba(10,20,60,.8)';
+  cx.beginPath();cx.arc(eyeX-r*.2,eyeY-r*.1,r*.14,0,Math.PI*2);cx.fill();
+  cx.beginPath();cx.arc(eyeX+r*.2,eyeY-r*.1,r*.14,0,Math.PI*2);cx.fill();
+  cx.fillStyle='rgba(255,255,255,.9)';
+  cx.beginPath();cx.arc(eyeX-r*.17,eyeY-r*.15,r*.05,0,Math.PI*2);cx.fill();
+  cx.beginPath();cx.arc(eyeX+r*.23,eyeY-r*.15,r*.05,0,Math.PI*2);cx.fill();
+  if (!frozen) {
+    const badges = ['🌱','⚔️','💀','☠️','⚫'];
+    const badge = badges[phaseIdx];
+    cx.save();
+    cx.font = `${Math.max(5, r*.7)}px serif`;
+    cx.textAlign='center'; cx.textBaseline='bottom';
+    cx.globalAlpha = .85;
+    cx.fillText(badge, 0, -r*.9);
+    cx.restore();
+  }
+  cx.strokeStyle=`rgba(200,230,255,${.4+Math.sin(elapsed*4)*.15})`;
+  cx.lineWidth=Math.max(.5,cell*.035);
+  cx.beginPath();cx.arc(0,0,r*1.08,0,Math.PI*2);cx.stroke();
+  cx.restore();
+  if (keysHeld>0) {
+    cx.fillStyle='rgba(255,209,102,.9)';
+    cx.font=`bold ${Math.max(7,Math.floor(cell*.33))}px Oxanium,sans-serif`;
+    cx.textAlign='center';cx.textBaseline='bottom';
+    cx.fillText('🔑×'+keysHeld,spx,spy-cell*.44);
+  }
+  const ev=cx.createRadialGradient(W/2,H/2,Math.min(W,H)*.3,W/2,H/2,Math.min(W,H)*.72);
+  ev.addColorStop(0,'rgba(8,8,16,0)');ev.addColorStop(1,'rgba(8,8,16,.72)');
+  cx.fillStyle=ev;cx.fillRect(0,0,W,H);
+  if (frozen) {
+    cx.fillStyle=`rgba(100,170,255,${.08+Math.sin(elapsed*8)*.04})`;
+    cx.fillRect(0,0,W,H);
+  }
+  if (G.ch.tl>0) {
+    const rem=Math.max(0,G.ch.tl-G.elapsed+G.bonusTime)/G.ch.tl;
+    cx.fillStyle='rgba(0,0,0,.55)';cx.fillRect(0,H-3,W,3);
+    cx.fillStyle=rem>.5?'rgba(0,255,170,.8)':rem>.25?'rgba(255,209,102,.85)':'rgba(239,35,60,.9)';
+    cx.fillRect(0,H-3,W*rem,3);
+  }
+}
+function updateHud() {
+  const {elapsed,bonusTime,ch,gemCount} = G;
+  let s, ts;
+  if (ch.tl>0) {
+    s = Math.max(0, Math.floor(ch.tl - elapsed + bonusTime));
+    ts = String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+    const el=document.getElementById('H_tm'); if(el) el.textContent=ts;
+    const big=document.getElementById('hud-timer-big');
+    if(big){
+      big.textContent=ts;
+      big.className = s<15?'danger':s<35?'warn':'';
+    }
+  } else {
+    s=Math.floor(elapsed);
+    ts=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+    const el=document.getElementById('H_tm'); if(el) el.textContent=ts;
+    const big=document.getElementById('hud-timer-big'); if(big){ big.textContent=ts; big.className=''; }
+  }
+  const gdEl=document.getElementById('H_gd'); if(gdEl) gdEl.textContent=gemCount||0;
+  const tgEl=document.getElementById('H_tg'); if(tgEl) tgEl.textContent=SAVE.diamonds||0;
+}
+function refreshFx() {
+  if (!G) return;
+  const bar=document.getElementById('fxbar');
+  const now=performance.now();
+  let html='';
+  if (G.frozen)        html+=`<span class="fx b">❄ ${Math.ceil((G.frozenUntil-now)/1000)}s</span>`;
+  if (G.visionOn)      html+=`<span class="fx g">👁 ${Math.ceil((G.visionUntil-now)/1000)}s</span>`;
+  if (G.speedOn)       html+=`<span class="fx y">⚡ ${Math.ceil((G.speedUntil-now)/1000)}s</span>`;
+  if (G.compass)       html+=`<span class="fx o">🧭 ${Math.ceil((G.compassUntil-now)/1000)}s</span>`;
+  if (G.gemMultiplier>1) html+=`<span class="fx y">💎 x${G.gemMultiplier}</span>`;
+  if (G.magnetOn)      html+=`<span class="fx b">🧲 Aktif</span>`;
+  if (G.shieldIce)     html+=`<span class="fx o">🔥 Kalkan</span>`;
+  if (G.shieldTime)    html+=`<span class="fx o">💰 Kalkan</span>`;
+  if (G.rewindBank > 0) html+=`<span class="fx g" onclick="doRewind()" style="cursor:pointer;pointer-events:all;">🔄 ×${G.rewindBank}</span>`;
+  bar.innerHTML=html;
+  bar.style.pointerEvents = G.rewindBank > 0 ? 'all' : 'none';
+}
+function winGame() {
+  if (!G || !G.running) return;
+  G.running = false;
+  if (G.autoMoveTid) clearTimeout(G.autoMoveTid);
+  G.autoMoving = false;
+  const {ch,elapsed,steps,bonusTime,gemCount,mW,mH,maze,seen} = G;
+  const s=Math.floor(elapsed);
+  const ts=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+  let tot=0,vis=0;
+  for(let r=0;r<mH;r++) for(let c2=0;c2<mW;c2++) if(maze[r][c2]!==1){tot++;if(seen[r][c2])vis++;}
+  const pct=Math.floor(vis/tot*100);
+  const stars=pct>=80?3:pct>=50?2:1;
+  const remSec   = ch.tl>0 ? Math.max(0,Math.floor(ch.tl-elapsed+bonusTime)) : 0;
+  const timeGems = Math.floor(remSec/10);
+  const prev=SAVE.done[ch.i];
+  if(!prev||stars>prev.stars||(stars===prev.stars&&s<prev.time)) SAVE.done[ch.i]={stars,time:s};
+  if(ch.i>=SAVE.unlocked&&ch.i<25) SAVE.unlocked=ch.i+1;
+  SAVE.diamonds=(SAVE.diamonds||0)+(gemCount||0);
+  SAVE.hi.unshift({ts,s,chi:ch.i,name:ch.name,steps,pct,stars,gems:(gemCount||0)+timeGems});
+  if(SAVE.hi.length>15) SAVE.hi=SAVE.hi.slice(0,15);
+  saveData();
+  document.getElementById('W_ch').textContent=`BÖLÜM ${ch.i} — ${ch.name.toUpperCase()} TAMAMLANDI`;
+  document.getElementById('W_st').textContent='★'.repeat(stars)+'☆'.repeat(3-stars);
+  document.getElementById('W_rw').textContent=timeGems>0
+    ? `⏱ ${remSec}sn kaldı → +${timeGems}💎 geliyor!`
+    : gemCount?`💎 ${gemCount} elmas topladın!`:'🏁 Tamamlandı!';
+  document.getElementById('W_bank').textContent=gemCount
+    ? `💎 Bölüm: +${gemCount} elmas`:'🏁 Çıkışı buldun!';
+  document.getElementById('W_info').innerHTML=
+    `Süre: <b>${ts}</b> &nbsp;·&nbsp; Adım: <b>${steps}</b> &nbsp;·&nbsp; Keşif: <b>${pct}%</b>`;
+  document.getElementById('W_next').textContent=ch.i<25?`▶ BÖLÜM ${ch.i+1}`:'🏆 TAMAMLANDI!';
+  setTimeout(()=>{
+    showScreen('win');
+    launchConfetti();
+    if(timeGems>0) animateTimeToGems(timeGems); else refreshDiamondUI();
+  },450);
+}
+function animateTimeToGems(gemsToAdd) {
+  const winInfo=document.getElementById('W_info');
+  const winTotal=document.getElementById('W_tgold');
+  const hudTotal=document.getElementById('H_tg');
+  const base=SAVE.diamonds;
+  if(winTotal) winTotal.textContent=base;
+  const bonusDiv=document.createElement('div');
+  bonusDiv.style.cssText='margin-top:8px;font-family:Oxanium,sans-serif;font-size:.95rem;color:#88eeff;letter-spacing:.1em;';
+  bonusDiv.innerHTML=`⏱→💎 <span id="rem_gd">0</span>/${gemsToAdd} elmas ekleniyor...`;
+  if(winInfo) winInfo.appendChild(bonusDiv);
+  let added=0;
+  const TICK=Math.max(60,Math.floor(1800/gemsToAdd));
+  const tid=setInterval(()=>{
+    added++;
+    SAVE.diamonds=base+added;
+    const rgEl=document.getElementById('rem_gd');
+    if(rgEl) rgEl.textContent=added;
+    if(winTotal) winTotal.textContent=SAVE.diamonds;
+    if(hudTotal) hudTotal.textContent=SAVE.diamonds;
+    if(added>=gemsToAdd){
+      clearInterval(tid); saveData();
+      bonusDiv.innerHTML=`✅ +${gemsToAdd}💎 eklendi! Toplam: ${SAVE.diamonds}💎`;
+      playGoldSound(); refreshDiamondUI();
+    }
+  },TICK);
+}
+function nextChap() {
+  if (!G) return;
+  const nextIdx = G.ch.i < 25 ? G.ch.i : G.ch.i-1;
+  openInventory(nextIdx);
+}
+function buildShop() {
+  const bal = document.getElementById('SH_bal');
+  if(bal) bal.textContent = SAVE.diamonds||0;
+  const grid = document.getElementById('shopgrid');
+  if(!grid) return;
+  const gems = SAVE.diamonds||0;
+  grid.innerHTML = POWER_DEFS.map(def => {
+    const cur  = SAVE.bank[def.id]||0;
+    const full = cur >= def.max;
+    const canBuy = gems >= 1 && !full;
+    const dots = Array.from({length:def.max}, (_,i) =>
+      `<span style="display:inline-block;width:7px;height:7px;border-radius:50%;margin:0 2px;
+        background:${i<cur?'var(--gd)':'rgba(255,255,255,.12)'};"></span>`
+    ).join('');
+    const borderCol = full ? 'rgba(255,255,255,.1)' : canBuy ? 'rgba(255,190,48,.55)' : 'rgba(255,255,255,.1)';
+    const opacity   = full ? '0.4' : canBuy ? '1' : '0.45';
+    const cursor    = (canBuy || full) ? 'pointer' : 'default';
+    return `<div onclick="shopBuyPower('${def.id}')" style="
+        display:flex;align-items:center;gap:12px;
+        padding:10px 14px;border-radius:10px;
+        border:1.5px solid ${borderCol};
+        background:rgba(255,255,255,.03);
+        opacity:${opacity};cursor:${cursor};
+        transition:all .18s;">
+      <span style="font-size:1.6rem;min-width:32px;text-align:center;">${def.ico}</span>
+      <div style="flex:1;min-width:0;">
+        <div style="font-family:Oxanium,sans-serif;font-size:.78rem;color:var(--pl);letter-spacing:.06em;">${def.nm}</div>
+        <div style="font-size:.4rem;color:var(--dm);margin-top:2px;letter-spacing:.04em;line-height:1.5;">${def.dsc}</div>
+        <div style="margin-top:5px;">${dots}</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0;">
+        ${full
+          ? `<div style="font-size:.5rem;color:rgba(255,255,255,.25);letter-spacing:.08em;">MAKS</div>`
+          : `<div style="font-family:Oxanium,sans-serif;font-size:.95rem;color:var(--gd);">💎1</div>
+             <div style="font-size:.38rem;color:var(--dm);margin-top:2px;">${cur}/${def.max} depoda</div>`
+        }
+      </div>
+    </div>`;
+  }).join('');
+}
+function shopBuyPower(id) {
+  document.querySelectorAll('.shopcard').forEach(el=>{
+    el.classList.toggle('selected', el.getAttribute('onclick')===`shopBuyPower('${id}')`);
+  });
+  const def = POWER_DEFS.find(d=>d.id===id);
+  if(!def) return;
+  if((SAVE.diamonds||0)<1) {
+    toast('💎 Elmas yok!','pen');
+    openAd('shop'); return;
+  }
+  const cur = SAVE.bank[id]||0;
+  if(cur>=def.max){ toast('Depo dolu!','pen'); return; }
+  SAVE.diamonds = Math.max(0,(SAVE.diamonds||0)-1);
+  SAVE.bank[id] = cur+1;
+  saveData(); playGoldSound(); buildShop(); refreshDiamondUI();
+  toast(`${def.ico} ${def.nm} alındı! Depoda: ${SAVE.bank[id]}×`,'bon');
+}
+function buildSettings() {
+  setTog('tog_music', musicOn);
+  setTog('tog_step',  STEP_ON);
+  setTog('tog_sfx',   SFX_ON);
+  const sm=document.getElementById('sl_music');
+  if(sm){ sm.value=Math.round((musicOn?masterGain?masterGain.gain.value*100:55:0)); }
+  const sv=document.getElementById('sv_music');
+  if(sv) sv.textContent=document.getElementById('sl_music')?.value||55;
+  const ss=document.getElementById('sl_sfx');
+  if(ss){ ss.value=Math.round(sfxVol*100); }
+  const ssv=document.getElementById('sv_sfx');
+  if(ssv) ssv.textContent=Math.round(sfxVol*100);
+}
+function setTog(id, on) {
+  const el=document.getElementById(id);
+  if(!el) return;
+  if(on) el.classList.add('on'); else el.classList.remove('on');
+}
+function toggleSetting(key) {
+  if(key==='music') {
+    toggleMusic();
+    setTog('tog_music', musicOn);
+  } else if(key==='step') {
+    STEP_ON=!STEP_ON;
+    setTog('tog_step', STEP_ON);
+  } else if(key==='sfx') {
+    SFX_ON=!SFX_ON;
+    if(sfxGain && AC) sfxGain.gain.setTargetAtTime(SFX_ON?sfxVol*0.7:0, AC.currentTime, 0.1);
+    setTog('tog_sfx', SFX_ON);
+  }
+}
+function setMusicVol(v) {
+  const frac=v/100;
+  document.getElementById('sv_music').textContent=v;
+  if(masterGain && AC) masterGain.gain.setTargetAtTime(musicOn?frac:0, AC.currentTime, 0.1);
+}
+function setSfxVol(v) {
+  sfxVol=v/100;
+  if(sfxGain && AC) sfxGain.gain.setTargetAtTime(sfxVol*0.7, AC.currentTime, 0.1);
+  const el=document.getElementById('sv_sfx'); if(el) el.textContent=v;
+}
+function launchConfetti() {
+  const canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:500;';
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const COLORS = ['#00ffaa','#ffd700','#ff3399','#00d4ff','#ff8800','#aa55ff','#ffffff'];
+  const pieces = Array.from({length:90}, () => ({
+    x: Math.random() * canvas.width,
+    y: -10 - Math.random() * 80,
+    vx: (Math.random()-0.5) * 4,
+    vy: 2 + Math.random() * 4,
+    r: 3 + Math.random() * 5,
+    col: COLORS[Math.floor(Math.random()*COLORS.length)],
+    rot: Math.random()*Math.PI*2,
+    vrot: (Math.random()-.5)*.2,
+    shape: Math.random() > .5 ? 'rect' : 'circle',
+    w: 4+Math.random()*8, h: 6+Math.random()*12,
+    alpha: 1,
+  }));
+  let frame = 0;
+  function draw() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    let alive = false;
+    pieces.forEach(p => {
+      if (p.y > canvas.height + 20) return;
+      alive = true;
+      p.x += p.vx; p.y += p.vy; p.vy += 0.08;
+      p.rot += p.vrot;
+      p.alpha = Math.max(0, 1 - Math.max(0, p.y - canvas.height*.7) / (canvas.height*.3));
+      ctx.save();
+      ctx.globalAlpha = p.alpha;
+      ctx.fillStyle = p.col;
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      if (p.shape === 'rect') {
+        ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      } else {
+        ctx.beginPath(); ctx.arc(0,0,p.r,0,Math.PI*2); ctx.fill();
+      }
+      ctx.restore();
+    });
+    frame++;
+    if (alive && frame < 200) requestAnimationFrame(draw);
+    else canvas.remove();
+  }
+  draw();
+}
+function buildScores() {
+  const el = document.getElementById('sclist');
+  const phases = [
+    {label:'🌱 ÖĞRENME', range:[1,5],  col:'rgba(0,255,170,.7)'},
+    {label:'⚔️ ZORLUK',  range:[6,10], col:'rgba(255,180,0,.8)'},
+    {label:'💀 EFSANE',  range:[11,15],col:'rgba(255,60,80,.8)'},
+    {label:'☠️ KAOS',    range:[16,20],col:'rgba(180,0,255,.9)'},
+    {label:'⚫ KARANLIK', range:[21,25],col:'rgba(180,180,210,.8)'},
+  ];
+  let out = '';
+  let totalDone = 0, totalStars = 0;
+  phases.forEach(ph => {
+    out += `<div style="font-family:Oxanium,sans-serif;font-size:.4rem;letter-spacing:.2em;
+      color:${ph.col};text-transform:uppercase;padding:10px 0 4px;border-bottom:1px solid rgba(255,255,255,.06);">
+      ${ph.label}</div>`;
+    for (let i = ph.range[0]; i <= ph.range[1]; i++) {
+      const ch = CHAPS[i-1];
+      const done = SAVE.done[i];
+      const locked = i > SAVE.unlocked;
+      totalDone += done ? 1 : 0;
+      totalStars += done ? (done.stars||0) : 0;
+      const stars = done ? ('★'.repeat(done.stars||0)+'☆'.repeat(3-(done.stars||0))) : '☆☆☆';
+      const timeStr = done ? (String(Math.floor(done.time/60)).padStart(2,'0')+':'+String(done.time%60).padStart(2,'0')) : '--:--';
+      const stateCol = done ? ph.col : locked ? 'rgba(255,255,255,.12)' : 'rgba(255,255,255,.3)';
+      out += `<div style="display:flex;align-items:center;padding:6px 2px;border-bottom:1px solid rgba(255,255,255,.04);">
+        <span style="font-family:Oxanium,sans-serif;font-size:.75rem;color:rgba(255,255,255,.22);width:22px;">${i}</span>
+        <span style="flex:1;font-family:Oxanium,sans-serif;font-size:.55rem;color:${stateCol};letter-spacing:.04em;">
+          ${locked ? '🔒 '+ch.name : ch.name}</span>
+        <span style="font-size:.55rem;color:${done?'#ffd700':'rgba(255,255,255,.15)'};letter-spacing:.05em;margin-right:10px;">${stars}</span>
+        <span style="font-family:Oxanium,sans-serif;font-size:.55rem;color:${done?'rgba(200,220,255,.7)':'rgba(255,255,255,.15)'};">${timeStr}</span>
+      </div>`;
+    }
+  });
+  const maxStars = 25 * 3;
+  out += `<div style="margin-top:12px;padding:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;text-align:center;">
+    <div style="font-family:Oxanium,sans-serif;font-size:.85rem;color:var(--gd);letter-spacing:.08em;">
+      ${totalDone}/25 Bölüm &nbsp;·&nbsp; ${totalStars}/${maxStars} Yıldız</div>
+    <div style="margin-top:6px;height:4px;background:rgba(255,255,255,.08);border-radius:2px;">
+      <div style="height:4px;background:linear-gradient(90deg,#00ffaa,#ffd700);border-radius:2px;width:${Math.round(totalDone/25*100)}%;"></div>
+    </div>
+  </div>`;
+  el.innerHTML = out;
+}
+(function initMenuParticles() {
+  const canvas = document.getElementById('mnu-cv');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, pts = [];
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  for (let i = 0; i < 60; i++) pts.push({
+    x: Math.random() * 1000,
+    y: Math.random() * 1000,
+    r: .5 + Math.random() * 1.5,
+    spd: .15 + Math.random() * .4,
+    opacity: .1 + Math.random() * .4,
+    drift: (Math.random() - .5) * .3,
+    hue: Math.random() > .6 ? 200 : 260,  // mavi veya mor
+  });
+  function draw() {
+    if (!document.getElementById('mnu').classList.contains('active')) {
+      requestAnimationFrame(draw); return;
+    }
+    ctx.clearRect(0, 0, W, H);
+    pts.forEach(p => {
+      p.y -= p.spd; p.x += p.drift;
+      if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
+      if (p.x < -10) p.x = W + 10;
+      if (p.x > W + 10) p.x = -10;
+      ctx.beginPath();
+      ctx.arc(p.x % W, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `hsla(${p.hue},90%,70%,${p.opacity})`;
+      ctx.fill();
+    });
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i+1; j < pts.length; j++) {
+        const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 80) {
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x, pts[i].y);
+          ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.strokeStyle = `hsla(220,80%,65%,${.06*(1-dist/80)})`;
+          ctx.lineWidth = .5;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+let AC=null, musicOn=true, masterGain=null, dangerGain=null, heartGain=null, sfxGain=null;
+let musicNodes=[], heartTid=null, melodyTid=null, ambTid=null;
+const NOTE = {
+  E3:164.8, Fs3:185.0, Gs3:207.7, B3:246.9, Cs4:277.2,
+  E4:329.6, Fs4:370.0, Gs4:415.3, B4:493.9, Cs5:554.4,
+  E5:659.3, Fs5:740.0, Gs5:830.6, B5:987.8,
+};
+const THEME_A = [
+  'E4','Gs4','B4','E5','B4','Gs4',   // yükselen arpeji
+  'E5','Fs5','E5','B4','Gs4','E4',   // inen melodi
+  'Fs4','B4','Fs5','E5','Cs5','B4',  // varyasyon
+  'Gs4','E4','Cs4','E4','Gs4','B4',  // döngü
+];
+const THEME_B = [
+  'B3','E4','Gs4','B4','Cs5','B4',
+  'Gs4','Fs4','E4','Fs4','Gs4','E4',
+  'E4','B4','E5','Gs5','Fs5','E5',
+  'B4','Gs4','Fs4','E4','Cs4','B3',
+];
+const ARP_PAT = ['E4','Gs4','B4','E5','B4','Gs4','E4','Cs4'];
+function initAudio() {
+  if (AC) return;
+  try {
+    AC = new (window.AudioContext || window.webkitAudioContext)();
+    const comp = AC.createDynamicsCompressor();
+    comp.threshold.value=-14; comp.ratio.value=3; comp.attack.value=0.003; comp.release.value=0.25;
+    masterGain = AC.createGain();
+    masterGain.gain.value = musicOn ? 0.42 : 0;
+    comp.connect(masterGain); masterGain.connect(AC.destination);
+    const rev = createReverb(1.4, 0.18);
+    rev.connect(masterGain);
+    const dry = AC.createGain(); dry.gain.value=0.72; dry.connect(comp);
+    const basOsc = AC.createOscillator();
+    const basG   = AC.createGain();
+    const basF   = AC.createBiquadFilter();
+    basOsc.type = 'sawtooth';
+    basOsc.frequency.value = 82.4; // E2
+    basF.type='lowpass'; basF.frequency.value=280; basF.Q.value=1.2;
+    basG.gain.value = 0.09;
+    basOsc.connect(basF); basF.connect(basG); basG.connect(dry);
+    basOsc.start(); musicNodes.push(basOsc);
+    dangerGain = AC.createGain(); dangerGain.gain.value=0; dangerGain.connect(comp);
+    startPadHarmony(dry, rev);
+    startMelody(dry, rev);
+    heartGain = AC.createGain(); heartGain.gain.value=0; heartGain.connect(comp);
+    startHeartbeat();
+    sfxGain = AC.createGain();
+    sfxGain.gain.value = sfxVol * 0.7;
+    sfxGain.connect(AC.destination);
+    startAmbience(rev);
+  } catch(e){ console.warn('Ses başlatılamadı:',e); }
+}
+function arpNote(freq, vol, when, dur) {
+  if (!AC||!masterGain) return;
+  const t=when||AC.currentTime, d=dur||0.18;
+  const o1=AC.createOscillator(), g1=AC.createGain();
+  o1.type='triangle'; o1.frequency.value=freq;
+  const o2=AC.createOscillator(), g2=AC.createGain();
+  o2.type='sine'; o2.frequency.value=freq*1.003; // +5 cent
+  g2.gain.value=0.25*vol;
+  g1.gain.setValueAtTime(0,t);
+  g1.gain.linearRampToValueAtTime(vol, t+0.012);
+  g1.gain.exponentialRampToValueAtTime(vol*0.55, t+0.06);
+  g1.gain.exponentialRampToValueAtTime(0.001, t+d+0.04);
+  g2.gain.setValueAtTime(0,t);
+  g2.gain.linearRampToValueAtTime(0.25*vol,t+0.015);
+  g2.gain.exponentialRampToValueAtTime(0.001,t+d*0.6);
+  const filt=AC.createBiquadFilter(); filt.type='bandpass'; filt.frequency.value=freq*2.2; filt.Q.value=0.7;
+  o1.connect(filt); filt.connect(g1); g1.connect(masterGain);
+  o2.connect(g2); g2.connect(masterGain);
+  o1.start(t); o1.stop(t+d+0.1);
+  o2.start(t); o2.stop(t+d*0.6+0.05);
+}
+function startMelody() {
+  const BPM=168; const BEAT=60/BPM;
+  const EIGHTH=BEAT/2;
+  const SIXTEENTH=BEAT/4;
+  let phraseIdx=0, noteIdx=0;
+  const phrases=[THEME_A, THEME_B];
+  let arpIdx=0;
+  function scheduleBar() {
+    if(!AC||!musicOn){melodyTid=setTimeout(scheduleBar,300);return;}
+    const phrase=phrases[phraseIdx%phrases.length];
+    const t=AC.currentTime;
+    for(let i=0;i<8;i++){
+      const ni=(noteIdx+i)%phrase.length;
+      const freq=NOTE[phrase[ni]];
+      if(freq){
+        arpNote(freq, 0.068, t+i*EIGHTH, EIGHTH*1.1);
+      }
+      const afreq=NOTE[ARP_PAT[arpIdx%ARP_PAT.length]];
+      if(afreq){
+        arpNote(afreq*0.5, 0.032, t+i*EIGHTH+SIXTEENTH*0.5, SIXTEENTH*0.9); // oktav aşağı
+      }
+      arpIdx++;
+    }
+    noteIdx=(noteIdx+8)%phrase.length;
+    if(noteIdx===0) phraseIdx++;
+    melodyTid=setTimeout(scheduleBar, EIGHTH*8*1000-20);
+  }
+  melodyTid=setTimeout(scheduleBar, 600);
+}
+function startPadHarmony(dry, rev) {
+  const chords=[
+    [NOTE.E3, NOTE.Gs3, NOTE.B3],  // E majör
+    [NOTE.Cs4, NOTE.E4,  NOTE.Gs4], // C#m
+    [NOTE.Fs3, NOTE.B3,  NOTE.Cs4], // F#m
+    [NOTE.B3,  NOTE.Fs4, NOTE.B4],  // B
+  ];
+  let ci=0;
+  function playChord(){
+    if(!AC||!musicOn){setTimeout(playChord,4000);return;}
+    const chord=chords[ci++%chords.length];
+    const dur=4.5+Math.random()*1.5;
+    chord.forEach((freq,fi)=>{
+      const o=AC.createOscillator(),g=AC.createGain(),f=AC.createBiquadFilter();
+      o.type='sine'; o.frequency.value=freq;
+      f.type='lowpass'; f.frequency.value=700;
+      const vol=[0.05,0.038,0.028][fi];
+      const t=AC.currentTime;
+      g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(vol,t+1.2);
+      g.gain.setValueAtTime(vol,t+dur-1.5); g.gain.linearRampToValueAtTime(0,t+dur);
+      o.connect(f); f.connect(g); g.connect(rev); g.connect(dry);
+      o.start(t); o.stop(t+dur+0.1);
+    });
+    setTimeout(playChord,(dur-0.5)*1000);
+  }
+  setTimeout(playChord, 1200);
+}
+function createReverb(dur, wet) {
+  const conv=AC.createConvolver();
+  const len=AC.sampleRate*dur;
+  const buf=AC.createBuffer(2,len,AC.sampleRate);
+  for(let c=0;c<2;c++){const d=buf.getChannelData(c);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,1.8);}
+  conv.buffer=buf;
+  const g=AC.createGain(); g.gain.value=wet; conv.connect(g); return g;
+}
+function startHeartbeat(){
+  if(!AC)return;
+  function beat(){
+    if(!AC||!heartGain)return;
+    playPulse(0,0.05); playPulse(0.10,0.03);
+    heartTid=setTimeout(beat, G&&G.running&&getDangerLevel()>0.5?520:820);
+  }
+  heartTid=setTimeout(beat,2500);
+}
+function playPulse(delay,vol){
+  if(!AC||!heartGain)return;
+  const t=AC.currentTime+delay;
+  const o=AC.createOscillator(),g=AC.createGain();
+  o.type='sine'; o.frequency.setValueAtTime(55,t); o.frequency.exponentialRampToValueAtTime(28,t+0.07);
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(vol,t+0.01); g.gain.exponentialRampToValueAtTime(0.001,t+0.12);
+  o.connect(g); g.connect(heartGain); o.start(t); o.stop(t+0.14);
+}
+function getDangerLevel(){
+  if(!G||!G.running)return 0;
+  let m=999;
+  G.traps&&G.traps.forEach(t=>{if(t.got)return;const d=Math.hypot(G.px-t.x,G.py-t.y);if(d<4)m=Math.min(m,d);});
+  return Math.max(0,Math.min(1,1-m/4));
+}
+function startAmbience(rev){
+  function drop(){
+    if(!AC||!musicOn){ambTid=setTimeout(drop,3000);return;}
+    const o=AC.createOscillator(),g=AC.createGain();
+    o.type='sine';
+    const f0=600+Math.random()*300;
+    o.frequency.setValueAtTime(f0,AC.currentTime);
+    o.frequency.exponentialRampToValueAtTime(f0*0.45,AC.currentTime+0.12);
+    g.gain.setValueAtTime(0,AC.currentTime); g.gain.linearRampToValueAtTime(0.04,AC.currentTime+0.01);
+    g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+0.16);
+    o.connect(g); g.connect(rev);
+    o.start(AC.currentTime); o.stop(AC.currentTime+0.18);
+    ambTid=setTimeout(drop,2000+Math.random()*5000);
+  }
+  ambTid=setTimeout(drop,4000);
+}
+let lastDangerUpdate=0;
+function updateMusic(){
+  if(!AC||!masterGain)return;
+  const now=Date.now();
+  if(now-lastDangerUpdate<300)return;
+  lastDangerUpdate=now;
+  const danger=getDangerLevel(),t=AC.currentTime;
+  if(dangerGain) dangerGain.gain.setTargetAtTime(danger*0.18,t,1.2);
+  if(heartGain)  heartGain.gain.setTargetAtTime(G&&G.running?0.02+danger*0.07:0,t,1.5);
+  const sl=document.getElementById('sl_music');
+  const vol=(sl?sl.value/100:0.6)*0.42;
+  masterGain.gain.setTargetAtTime(musicOn?vol:0,t,3.5);
+}
+function toggleMusic(){
+  musicOn=!musicOn;
+  const btn=document.getElementById('musicBtn');
+  if(!AC){if(musicOn)initAudio();if(btn)btn.textContent=musicOn?'🔊':'🔇';return;}
+  const sl=document.getElementById('sl_music');
+  const vol=(sl?sl.value/100:0.6)*0.42;
+  masterGain.gain.setTargetAtTime(musicOn?vol:0,AC.currentTime,0.5);
+  if(btn)btn.textContent=musicOn?'🔊':'🔇';
+}
+function playLoseMusic() {
+  if (!AC) return;
+  const dest = AC.destination; // masterGain'den bağımsız, direkt çıkış
+  const t = AC.currentTime;
+  if (masterGain) masterGain.gain.setTargetAtTime(0, t, 0.5);
+  const notes = [293.7, 246.9, 220.0, 164.8];
+  notes.forEach((freq, i) => {
+    const o = AC.createOscillator(), g = AC.createGain();
+    o.type = 'triangle'; o.frequency.value = freq;
+    const delay = i * 0.25;
+    g.gain.setValueAtTime(0, t+delay);
+    g.gain.linearRampToValueAtTime(0.22, t+delay+0.04);
+    g.gain.exponentialRampToValueAtTime(0.001, t+delay+0.5);
+    o.connect(g); g.connect(dest);
+    o.start(t+delay); o.stop(t+delay+0.55);
+  });
+  setTimeout(()=>{
+    if (!AC) return;
+    const t2 = AC.currentTime;
+    const o2 = AC.createOscillator(), g2 = AC.createGain();
+    o2.type = 'sine'; o2.frequency.value = 55;
+    g2.gain.setValueAtTime(0,t2);
+    g2.gain.linearRampToValueAtTime(0.28, t2+0.02);
+    g2.gain.exponentialRampToValueAtTime(0.001, t2+0.7);
+    o2.connect(g2); g2.connect(dest);
+    o2.start(t2); o2.stop(t2+0.75);
+  }, 1000);
+}
+function stopAllMusic() {
+  if (!AC || !masterGain) return;
+  masterGain.gain.setTargetAtTime(0, AC.currentTime, 0.4);
+  if (heartGain) heartGain.gain.setTargetAtTime(0, AC.currentTime, 0.3);
+  if (dangerGain) dangerGain.gain.setTargetAtTime(0, AC.currentTime, 0.3);
+  musicOn = false;
+  const btn = document.getElementById('musicBtn');
+  if (btn) btn.textContent = '🔇';
+}
+function playBonusSfx(type) {
+  if (!AC || !SFX_ON) return;
+  const dest = sfxGain || AC.destination;
+  const t = AC.currentTime;
+  let freqs, vol, waveType;
+  if (type === 'eye' || type === 'fog') {
+    freqs = [523.3, 659.3, 783.9, 1046.5];
+    vol = 0.13; waveType = 'triangle';
+  } else if (type === 'spd') {
+    freqs = [440, 554.4, 659.3, 880];
+    vol = 0.15; waveType = 'square';
+  } else if (type === 'time' || type === 't3' || type === 't5') {
+    freqs = [659.3, 830.6, 987.8];
+    vol = 0.12; waveType = 'sine';
+  } else if (type === 'cmp') {
+    freqs = [880, 1108.7];
+    vol = 0.10; waveType = 'sine';
+  } else {
+    freqs = [523.3, 659.3]; vol = 0.10; waveType = 'triangle';
+  }
+  freqs.forEach((freq, i) => {
+    const o = AC.createOscillator(), g = AC.createGain();
+    o.type = waveType; o.frequency.value = freq;
+    const d = i * 0.08;
+    g.gain.setValueAtTime(0, t+d);
+    g.gain.linearRampToValueAtTime(vol * sfxVol, t+d+0.02);
+    g.gain.exponentialRampToValueAtTime(0.001, t+d+0.25);
+    o.connect(g); g.connect(dest);
+    o.start(t+d); o.stop(t+d+0.3);
+  });
+}
+function playTrapSfx(type) {
+  if (!AC || !SFX_ON) return;
+  const dest = sfxGain || AC.destination;
+  const t = AC.currentTime;
+  if (type === 'ice') {
+    const o = AC.createOscillator(), g = AC.createGain();
+    o.type = 'sine';
+    o.frequency.setValueAtTime(1200, t);
+    o.frequency.exponentialRampToValueAtTime(300, t+0.4);
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(0.2 * sfxVol, t+0.02);
+    g.gain.exponentialRampToValueAtTime(0.001, t+0.45);
+    o.connect(g); g.connect(dest);
+    o.start(t); o.stop(t+0.5);
+  } else if (type === 'tm') {
+    [400, 300, 200].forEach((freq, i) => {
+      const o = AC.createOscillator(), g = AC.createGain();
+      o.type = 'sawtooth'; o.frequency.value = freq;
+      const d = i * 0.12;
+      g.gain.setValueAtTime(0, t+d);
+      g.gain.linearRampToValueAtTime(0.15 * sfxVol, t+d+0.02);
+      g.gain.exponentialRampToValueAtTime(0.001, t+d+0.2);
+      o.connect(g); g.connect(dest);
+      o.start(t+d); o.stop(t+d+0.25);
+    });
+  } else {
+    const o = AC.createOscillator(), g = AC.createGain();
+    o.type = 'sine';
+    o.frequency.setValueAtTime(200, t);
+    o.frequency.exponentialRampToValueAtTime(1800, t+0.15);
+    o.frequency.exponentialRampToValueAtTime(400, t+0.35);
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(0.18 * sfxVol, t+0.05);
+    g.gain.exponentialRampToValueAtTime(0.001, t+0.4);
+    o.connect(g); g.connect(dest);
+    o.start(t); o.stop(t+0.45);
+  }
+}
+function playGoldSound(){
+  if(!AC||!SFX_ON) return;
+  const dest = sfxGain || AC.destination;
+  const freqs = [NOTE.E5||659.3, NOTE.Gs5||830.6, NOTE.B5||987.8, 1318.6];
+  const t = AC.currentTime;
+  freqs.forEach((freq,i)=>{
+    const o=AC.createOscillator(), g=AC.createGain();
+    o.type='triangle'; o.frequency.value=freq;
+    const d=i*0.07;
+    g.gain.setValueAtTime(0,t+d);
+    g.gain.linearRampToValueAtTime(0.14*sfxVol,t+d+0.025);
+    g.gain.exponentialRampToValueAtTime(0.001,t+d+0.28);
+    o.connect(g); g.connect(dest);
+    o.start(t+d); o.stop(t+d+0.3);
+  });
+}
+function playTickSound(loud){
+  if(!AC||!STEP_ON) return;
+  const dest = sfxGain || AC.destination;
+  const t=AC.currentTime;
+  const o=AC.createOscillator(),g=AC.createGain();
+  o.type='square'; o.frequency.value=120+Math.random()*60;
+  const f=AC.createBiquadFilter(); f.type='bandpass'; f.frequency.value=550; f.Q.value=3;
+  const vol=(loud?0.07:0.028)*sfxVol;
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(vol,t+0.006); g.gain.exponentialRampToValueAtTime(0.001,t+0.042);
+  o.connect(f); f.connect(g); g.connect(dest);
+  o.start(t); o.stop(t+0.048);
+}
+function ensureAudio() {
+  if (!AC) initAudio();
+  else if (AC.state === 'suspended') AC.resume();
+}
+document.addEventListener('touchstart', ensureAudio, {once:true, passive:true});
+document.addEventListener('mousedown',  ensureAudio, {once:true});
+document.addEventListener('keydown',    ensureAudio, {once:true});
+applyLang();
+let toastTid=null;
+function toast(txt,cls) {
+  clearTimeout(toastTid);
+  const t=document.getElementById('toast');
+  t.className=''; t.textContent=txt;
+  void t.offsetWidth;
+  t.className=cls+' show';
+  toastTid=setTimeout(()=>{t.className='';},900);
+}
+function flashScreen(cls) {
+  const f=document.getElementById('fl');
+  f.className=cls;
+  setTimeout(()=>{f.className='';},140);
+}
+window.addEventListener('resize',()=>{
+  if(G&&G.running){C.width=C.offsetWidth;C.height=C.offsetHeight;}
+});</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(() => console.log('PWA aktif'))
+      .catch(err => console.log('SW:', err));
+  });
+}
+</script>
+<!-- Labyrinth:FogFortune:v21:2026:TGFieXJpbnRoOkZv -->
+</body>
+</html>
